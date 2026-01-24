@@ -1,6 +1,7 @@
 import { MessageCircle, Play, ArrowRight, Check, Star } from "lucide-react";
 import { Link } from "react-router";
 import { ImageWithFallback } from "@/app/components/figma/ImageWithFallback";
+import { GlowingCard } from "../components/ui/glowing-card";
 
 export function Home() {
   const services = [
@@ -152,10 +153,7 @@ export function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {services.map((service, index) => (
-              <div
-                key={index}
-                className="group relative bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:border-white/20 transition-all"
-              >
+              <GlowingCard key={index} innerClassName="p-8">
                 <div className="space-y-4">
                   <h3 className="text-2xl text-white">{service.title}</h3>
                   <p className="text-gray-400">{service.description}</p>
@@ -171,7 +169,7 @@ export function Home() {
                 <div className="absolute top-8 right-8 w-12 h-12 rounded-full bg-[#8B1538]/20 flex items-center justify-center group-hover:bg-[#8B1538]/30 transition-colors">
                   <ArrowRight className="w-6 h-6 text-[#8B1538]" />
                 </div>
-              </div>
+              </GlowingCard>
             ))}
           </div>
 
@@ -320,10 +318,7 @@ export function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className="bg-white/5 border border-white/10 rounded-2xl p-8 space-y-4 hover:bg-white/10 hover:border-white/20 transition-all"
-              >
+              <GlowingCard key={index} innerClassName="p-8 space-y-4">
                 <div className="flex gap-1">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star key={i} className="w-5 h-5 fill-[#8B1538] text-[#8B1538]" />
@@ -334,7 +329,7 @@ export function Home() {
                   <p className="text-white">{testimonial.name}</p>
                   <p className="text-gray-400 text-sm">{testimonial.role}</p>
                 </div>
-              </div>
+              </GlowingCard>
             ))}
           </div>
         </div>
@@ -355,15 +350,13 @@ export function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {pricingPlans.map((plan, index) => (
-              <div
+              <GlowingCard
                 key={index}
-                className={`relative bg-white/5 border rounded-2xl p-8 ${plan.popular
-                  ? "border-[#8B1538] bg-[#8B1538]/10"
-                  : "border-white/10 hover:border-white/20"
-                  } transition-all`}
+                className={plan.popular ? "border-[#8B1538]" : ""}
+                innerClassName={`p-8 ${plan.popular ? "bg-[#8B1538]/10" : ""}`}
               >
                 {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#8B1538] rounded-full text-white text-sm">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#8B1538] rounded-full text-white text-sm z-10">
                     Most Popular
                   </div>
                 )}
@@ -397,7 +390,7 @@ export function Home() {
                     Get Started
                   </a>
                 </div>
-              </div>
+              </GlowingCard>
             ))}
           </div>
         </div>

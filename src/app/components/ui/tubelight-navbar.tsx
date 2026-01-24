@@ -15,9 +15,10 @@ interface NavItem {
 interface NavBarProps {
     items: NavItem[]
     className?: string
+    mobile?: boolean
 }
 
-export function NavBar({ items, className }: NavBarProps) {
+export function NavBar({ items, className, mobile = false }: NavBarProps) {
     const location = useLocation()
     const [activeTab, setActiveTab] = useState("")
     const [isMobile, setIsMobile] = useState(false)
@@ -46,11 +47,16 @@ export function NavBar({ items, className }: NavBarProps) {
     return (
         <div
             className={cn(
-                "fixed bottom-0 sm:top-0 left-1/2 -translate-x-1/2 z-50 mb-6 sm:pt-6",
+                mobile
+                    ? "flex flex-col gap-2 w-full"
+                    : "fixed top-0 left-1/2 -translate-x-1/2 z-50 pt-6",
                 className,
             )}
         >
-            <div className="flex items-center gap-3 bg-black/50 border border-white/10 backdrop-blur-lg py-1 px-1 rounded-full shadow-lg">
+            <div className={cn(
+                "flex items-center gap-3 bg-black/50 border border-white/10 backdrop-blur-lg py-1 px-1 rounded-full shadow-lg",
+                mobile && "flex-col w-full rounded-xl p-2 bg-transparent border-none backdrop-blur-none"
+            )}>
                 {items.map((item) => {
                     const Icon = item.icon
                     const isActive = activeTab === item.name
@@ -63,13 +69,17 @@ export function NavBar({ items, className }: NavBarProps) {
                             className={cn(
                                 "relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors",
                                 "text-white/80 hover:text-[#8B1538]",
+                                mobile && "flex items-center gap-3 px-4 py-3 w-full text-base",
                                 isActive && "bg-white/10 text-[#8B1538]",
                             )}
                         >
-                            <span className="hidden md:inline">{item.name}</span>
-                            <span className="md:hidden">
+                            <span className={cn("hidden md:inline", mobile && "inline")}>{item.name}</span>
+                            <span className={cn("md:hidden", mobile && "hidden")}>
                                 <Icon size={18} strokeWidth={2.5} />
                             </span>
+                            {mobile && (
+                                <Icon size={18} strokeWidth={2.5} />
+                            )}
                             {isActive && (
                                 <motion.div
                                     layoutId="lamp"
@@ -81,11 +91,13 @@ export function NavBar({ items, className }: NavBarProps) {
                                         damping: 30,
                                     }}
                                 >
-                                    <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-[#8B1538] rounded-t-full">
-                                        <div className="absolute w-12 h-6 bg-[#8B1538]/20 rounded-full blur-md -top-2 -left-2" />
-                                        <div className="absolute w-8 h-6 bg-[#8B1538]/20 rounded-full blur-md -top-1" />
-                                        <div className="absolute w-4 h-4 bg-[#8B1538]/20 rounded-full blur-sm top-0 left-2" />
-                                    </div>
+                                    {!mobile && (
+                                        <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-[#8B1538] rounded-t-full">
+                                            <div className="absolute w-12 h-6 bg-[#8B1538]/20 rounded-full blur-md -top-2 -left-2" />
+                                            <div className="absolute w-8 h-6 bg-[#8B1538]/20 rounded-full blur-md -top-1" />
+                                            <div className="absolute w-4 h-4 bg-[#8B1538]/20 rounded-full blur-sm top-0 left-2" />
+                                        </div>
+                                    )}
                                 </motion.div>
                             )}
                         </Link>

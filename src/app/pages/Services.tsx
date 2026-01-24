@@ -1,4 +1,5 @@
 import { Check, ArrowRight, MessageCircle } from "lucide-react";
+import { GlowingCard } from "../components/ui/glowing-card";
 
 export function Services() {
   const services = [
@@ -83,72 +84,77 @@ export function Services() {
       <section className="py-12 bg-[#0A0A0A]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-24">
           {services.map((service, index) => (
-            <div
+            <GlowingCard
               key={index}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start"
+              className="bg-transparent border-none p-0"
+              innerClassName="bg-transparent border-none rounded-none overflow-visible"
             >
-              {/* Content */}
-              <div className="space-y-6">
-                <div>
-                  <div className="inline-block px-4 py-2 bg-[#8B1538]/20 border border-[#8B1538]/30 rounded-full mb-4">
-                    <span className="text-[#8B1538] text-sm">Service {index + 1}</span>
+              <div
+                className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start"
+              >
+                {/* Content */}
+                <div className="space-y-6">
+                  <div>
+                    <div className="inline-block px-4 py-2 bg-[#8B1538]/20 border border-[#8B1538]/30 rounded-full mb-4">
+                      <span className="text-[#8B1538] text-sm">Service {index + 1}</span>
+                    </div>
+                    <h2 className="text-3xl md:text-4xl text-white tracking-tight mb-3">
+                      {service.title}
+                    </h2>
+                    <p className="text-xl text-[#8B1538] mb-4">{service.tagline}</p>
+                    <p className="text-gray-400 text-lg">{service.description}</p>
                   </div>
-                  <h2 className="text-3xl md:text-4xl text-white tracking-tight mb-3">
-                    {service.title}
-                  </h2>
-                  <p className="text-xl text-[#8B1538] mb-4">{service.tagline}</p>
-                  <p className="text-gray-400 text-lg">{service.description}</p>
+
+                  <div>
+                    <h3 className="text-white text-lg mb-3">What's Included:</h3>
+                    <ul className="space-y-2">
+                      {service.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-start gap-2">
+                          <Check className="w-5 h-5 text-[#8B1538] mt-0.5" />
+                          <span className="text-gray-300">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
 
-                <div>
-                  <h3 className="text-white text-lg mb-3">What's Included:</h3>
-                  <ul className="space-y-2">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-2">
-                        <Check className="w-5 h-5 text-[#8B1538] mt-0.5" />
-                        <span className="text-gray-300">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
+                {/* Details Card */}
+                <div className="bg-white/5 border border-white/10 rounded-2xl p-8 space-y-6">
+                  <div>
+                    <h3 className="text-white text-lg mb-3">Ideal For:</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {service.idealFor.map((client, idx) => (
+                        <span
+                          key={idx}
+                          className="px-4 py-2 bg-white/10 border border-white/20 rounded-full text-gray-300 text-sm"
+                        >
+                          {client}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="pt-6 border-t border-white/10">
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="text-gray-400">Turnaround Time</span>
+                      <span className="text-white">{service.turnaround}</span>
+                    </div>
+                  </div>
+
+                  <a
+                    href={`https://wa.me/923398837213?text=${encodeURIComponent(
+                      `Hey Kivomedia I want ${service.title} service which includes: ${service.features.join(", ")}`
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 bg-[#8B1538] hover:bg-[#6B1028] text-white px-6 py-3 rounded-full transition-colors w-full"
+                  >
+                    <MessageCircle className="w-4 h-4" />
+                    <span>Get Started</span>
+                  </a>
                 </div>
               </div>
-
-              {/* Details Card */}
-              <div className="bg-white/5 border border-white/10 rounded-2xl p-8 space-y-6">
-                <div>
-                  <h3 className="text-white text-lg mb-3">Ideal For:</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {service.idealFor.map((client, idx) => (
-                      <span
-                        key={idx}
-                        className="px-4 py-2 bg-white/10 border border-white/20 rounded-full text-gray-300 text-sm"
-                      >
-                        {client}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="pt-6 border-t border-white/10">
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-gray-400">Turnaround Time</span>
-                    <span className="text-white">{service.turnaround}</span>
-                  </div>
-                </div>
-
-                <a
-                  href={`https://wa.me/923398837213?text=${encodeURIComponent(
-                    `Hey Kivomedia I want ${service.title} service which includes: ${service.features.join(", ")}`
-                  )}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 bg-[#8B1538] hover:bg-[#6B1028] text-white px-6 py-3 rounded-full transition-colors w-full"
-                >
-                  <MessageCircle className="w-4 h-4" />
-                  <span>Get Started</span>
-                </a>
-              </div>
-            </div>
+            </GlowingCard>
           ))}
         </div>
       </section>

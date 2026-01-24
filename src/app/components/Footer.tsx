@@ -8,16 +8,19 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="space-y-4">
-            <h3 className="text-2xl tracking-tight">
-              <span className="text-white">KIVO</span>{" "}
-              <span className="text-[#8B1538]">MEDIA</span>
-            </h3>
+            <div className="block">
+              <img
+                src="https://i.postimg.cc/pLr46KX7/Chat-GPT-Image-Jan-24-2026-11-38-27-PM.png"
+                alt="KIVO MEDIA"
+                className="h-24 w-auto object-contain"
+              />
+            </div>
             <p className="text-gray-400 text-sm">
               Premium video editing for creators, brands, and agencies that
               scale.
             </p>
             <a
-              href="https://wa.me/1234567890"
+              href="https://wa.me/923398837213"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-[#8B1538] hover:bg-[#6B1028] text-white px-6 py-3 rounded-full transition-colors"

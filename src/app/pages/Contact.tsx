@@ -11,8 +11,22 @@ export function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log("Form submitted:", formData);
+    const messageText = `
+*New Project Inquiry*
+----------------
+*Name:* ${formData.name}
+*Email:* ${formData.email}
+*Project Type:* ${formData.projectType}
+----------------
+*Message:*
+${formData.message}
+    `.trim();
+
+    const whatsappUrl = `https://wa.me/923398837213?text=${encodeURIComponent(
+      messageText
+    )}`;
+
+    window.open(whatsappUrl, "_blank");
   };
 
   const handleChange = (
@@ -160,12 +174,12 @@ export function Contact() {
                     required
                     className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:border-[#8B1538] transition-colors"
                   >
-                    <option value="">Select a service</option>
-                    <option value="long-form">YouTube Long-Form</option>
-                    <option value="short-form">Short-Form Content</option>
-                    <option value="brand">Brand & Ads</option>
-                    <option value="podcast">Podcast Editing</option>
-                    <option value="other">Other</option>
+                    <option value="" className="text-black">Select a service</option>
+                    <option value="long-form" className="text-black">YouTube Long-Form</option>
+                    <option value="short-form" className="text-black">Short-Form Content</option>
+                    <option value="brand" className="text-black">Brand & Ads</option>
+                    <option value="podcast" className="text-black">Podcast Editing</option>
+                    <option value="other" className="text-black">Other</option>
                   </select>
                 </div>
 

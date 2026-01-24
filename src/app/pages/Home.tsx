@@ -49,43 +49,38 @@ export function Home() {
 
   const pricingPlans = [
     {
-      name: "Creator",
-      price: "$1,200",
+      name: "BASIC",
+      price: "$499",
       period: "/month",
       features: [
-        "4 long-form videos",
-        "8 short-form clips",
-        "2 revisions per video",
-        "48h turnaround",
-        "Dedicated editor",
+        "2 YouTube Videos",
+        "5 Reels/Shorts",
+        "10 Stories",
+        "5 Posts",
       ],
       popular: false,
     },
     {
-      name: "Professional",
-      price: "$2,500",
+      name: "STANDARD",
+      price: "$999",
       period: "/month",
       features: [
-        "8 long-form videos",
-        "16 short-form clips",
-        "Unlimited revisions",
-        "24h turnaround",
-        "Senior editor + manager",
-        "Priority support",
+        "3 YouTube Videos",
+        "10 Reels/Shorts",
+        "20 Stories",
+        "10 Posts",
       ],
       popular: true,
     },
     {
-      name: "Enterprise",
-      price: "Custom",
-      period: "",
+      name: "PREMIUM",
+      price: "$1399",
+      period: "/month",
       features: [
-        "Unlimited content",
-        "White-glove service",
-        "Same-day delivery",
-        "Dedicated team",
-        "Strategic consulting",
-        "Custom workflows",
+        "5 YouTube Videos",
+        "15 Reels/Shorts",
+        "30 Stories",
+        "15 Posts",
       ],
       popular: false,
     },
@@ -122,13 +117,11 @@ export function Home() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
               <a
-                href="https://wa.me/1234567890"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#pricing"
                 className="inline-flex items-center gap-2 bg-[#8B1538] hover:bg-[#6B1028] text-white px-8 py-4 rounded-full transition-all text-lg group"
               >
                 <MessageCircle className="w-5 h-5" />
-                <span>WhatsApp Us</span>
+                <span>Content Packages</span>
               </a>
               <Link
                 to="/work"
@@ -141,12 +134,7 @@ export function Home() {
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20">
-          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex items-start justify-center p-2">
-            <div className="w-1 h-3 bg-white/50 rounded-full animate-bounce" />
-          </div>
-        </div>
+
       </section>
 
       {/* Services Overview Section */}
@@ -280,11 +268,11 @@ export function Home() {
                 className="group relative aspect-video bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-white/20 transition-all cursor-pointer"
               >
                 <ImageWithFallback
-                  src={i === 1 
+                  src={i === 1
                     ? "https://images.unsplash.com/photo-1758390851386-79c99432120e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaW5lbWF0aWMlMjBjYW1lcmElMjBlcXVpcG1lbnR8ZW58MXx8fHwxNzY5MTE1NDcyfDA&ixlib=rb-4.1.0&q=80&w=1080"
                     : i === 2
-                    ? "https://images.unsplash.com/photo-1624717369095-ebacc7d68a40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb250ZW50JTIwY3JlYXRvciUyMGZpbG1pbmd8ZW58MXx8fHwxNzY5MjAyNzAzfDA&ixlib=rb-4.1.0&q=80&w=1080"
-                    : "https://images.unsplash.com/photo-1575320854760-bfffc3550640?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2aWRlbyUyMGVkaXRpbmclMjB3b3Jrc3BhY2V8ZW58MXx8fHwxNzY5MjMxMTMwfDA&ixlib=rb-4.1.0&q=80&w=1080"}
+                      ? "https://images.unsplash.com/photo-1624717369095-ebacc7d68a40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb250ZW50JTIwY3JlYXRvciUyMGZpbG1pbmd8ZW58MXx8fHwxNzY5MjAyNzAzfDA&ixlib=rb-4.1.0&q=80&w=1080"
+                      : "https://images.unsplash.com/photo-1575320854760-bfffc3550640?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2aWRlbyUyMGVkaXRpbmclMjB3b3Jrc3BhY2V8ZW58MXx8fHwxNzY5MjMxMTMwfDA&ixlib=rb-4.1.0&q=80&w=1080"}
                   alt={`Work sample ${i}`}
                   className="w-full h-full object-cover"
                 />
@@ -353,12 +341,12 @@ export function Home() {
       </section>
 
       {/* Pricing Teaser */}
-      <section className="py-24 bg-gradient-to-b from-black to-[#0A0A0A]">
+      <section id="pricing" className="py-24 bg-gradient-to-b from-black to-[#0A0A0A]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl lg:text-6xl tracking-tighter mb-6">
-              <span className="text-white">Simple</span>{" "}
-              <span className="text-[#8B1538]">Pricing</span>
+              <span className="text-white">Social Media</span>{" "}
+              <span className="text-[#8B1538]">Content Packages</span>
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
               Monthly retainers designed for scale
@@ -369,11 +357,10 @@ export function Home() {
             {pricingPlans.map((plan, index) => (
               <div
                 key={index}
-                className={`relative bg-white/5 border rounded-2xl p-8 ${
-                  plan.popular
-                    ? "border-[#8B1538] bg-[#8B1538]/10"
-                    : "border-white/10 hover:border-white/20"
-                } transition-all`}
+                className={`relative bg-white/5 border rounded-2xl p-8 ${plan.popular
+                  ? "border-[#8B1538] bg-[#8B1538]/10"
+                  : "border-white/10 hover:border-white/20"
+                  } transition-all`}
               >
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#8B1538] rounded-full text-white text-sm">
@@ -397,14 +384,15 @@ export function Home() {
                     ))}
                   </ul>
                   <a
-                    href="https://wa.me/1234567890"
+                    href={`https://wa.me/923398837213?text=${encodeURIComponent(
+                      `Hey Kivomedia I want ${plan.name} package which includes: ${plan.features.join(", ")}`
+                    )}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`block text-center px-6 py-3 rounded-full transition-colors ${
-                      plan.popular
-                        ? "bg-[#8B1538] hover:bg-[#6B1028] text-white"
-                        : "bg-white/10 hover:bg-white/20 text-white border border-white/20"
-                    }`}
+                    className={`block text-center px-6 py-3 rounded-full transition-colors ${plan.popular
+                      ? "bg-[#8B1538] hover:bg-[#6B1028] text-white"
+                      : "bg-white/10 hover:bg-white/20 text-white border border-white/20"
+                      }`}
                   >
                     Get Started
                   </a>

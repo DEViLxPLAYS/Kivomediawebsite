@@ -137,7 +137,9 @@ export function Services() {
                 </div>
 
                 <a
-                  href="https://wa.me/1234567890"
+                  href={`https://wa.me/923398837213?text=${encodeURIComponent(
+                    `Hey Kivomedia I want ${service.title} service which includes: ${service.features.join(", ")}`
+                  )}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 bg-[#8B1538] hover:bg-[#6B1028] text-white px-6 py-3 rounded-full transition-colors w-full"
@@ -190,7 +192,7 @@ export function Services() {
             Let's discuss your project and find the perfect solution
           </p>
           <a
-            href="https://wa.me/1234567890"
+            href="https://wa.me/923398837213"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-[#8B1538] hover:bg-[#6B1028] text-white px-8 py-4 rounded-full transition-all text-lg"

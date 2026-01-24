@@ -23,11 +23,15 @@ export function Navigation() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-28">
           {/* Logo */}
-          <Link to="/" className="text-2xl tracking-tight">
-            <span className="text-white">KIVO</span>{" "}
-            <span className="text-[#8B1538]">MEDIA</span>
+          {/* Logo */}
+          <Link to="/" className="block">
+            <img
+              src="https://i.postimg.cc/pLr46KX7/Chat-GPT-Image-Jan-24-2026-11-38-27-PM.png"
+              alt="KIVO MEDIA"
+              className="h-24 w-auto object-contain"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -36,11 +40,10 @@ export function Navigation() {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-sm transition-colors ${
-                  isActive(link.path)
-                    ? "text-white"
-                    : "text-gray-400 hover:text-white"
-                }`}
+                className={`text-sm transition-colors ${isActive(link.path)
+                  ? "text-white"
+                  : "text-gray-400 hover:text-white"
+                  }`}
               >
                 {link.label}
               </Link>
@@ -97,11 +100,10 @@ export function Navigation() {
                   key={link.path}
                   to={link.path}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`text-sm transition-colors ${
-                    isActive(link.path)
-                      ? "text-white"
-                      : "text-gray-400 hover:text-white"
-                  }`}
+                  className={`text-sm transition-colors ${isActive(link.path)
+                    ? "text-white"
+                    : "text-gray-400 hover:text-white"
+                    }`}
                 >
                   {link.label}
                 </Link>

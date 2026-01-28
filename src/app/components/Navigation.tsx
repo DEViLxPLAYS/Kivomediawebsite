@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router";
-import { MessageCircle, Home, Briefcase, FileText, User, Layers, Phone, Menu, X } from "lucide-react";
+import { MessageCircle, Home, Briefcase, FileText, User, Layers, Phone, Menu, X, Tag } from "lucide-react";
 import { NavBar } from "./ui/tubelight-navbar";
 import { useState, useEffect } from "react";
 
@@ -25,6 +25,7 @@ export function Navigation() {
     { name: 'Home', url: '/', icon: Home },
     { name: 'Services', url: '/services', icon: Layers },
     { name: 'Work', url: '/work', icon: Briefcase },
+    { name: 'Pricing', url: '/pricing', icon: Tag },
     { name: 'Process', url: '/process', icon: FileText },
     { name: 'About', url: '/about', icon: User },
     { name: 'Contact', url: '/contact', icon: Phone }
@@ -38,8 +39,8 @@ export function Navigation() {
             {/* Logo */}
             <Link to="/" className="block">
               <img
-                src="https://i.postimg.cc/pLr46KX7/Chat-GPT-Image-Jan-24-2026-11-38-27-PM.png"
-                alt="KIVO MEDIA"
+                src="https://i.postimg.cc/zGd03Gxt/Chat-GPT-Image-Jan-28-2026-02-41-08-PM.png"
+                alt="Zivo Creative"
                 className="h-14 w-auto object-contain"
               />
             </Link>

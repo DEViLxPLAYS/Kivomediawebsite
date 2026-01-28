@@ -10,8 +10,8 @@ export function Footer() {
           <div className="space-y-4">
             <div className="block">
               <img
-                src="https://i.postimg.cc/pLr46KX7/Chat-GPT-Image-Jan-24-2026-11-38-27-PM.png"
-                alt="KIVO MEDIA"
+                src="https://i.postimg.cc/zGd03Gxt/Chat-GPT-Image-Jan-28-2026-02-41-08-PM.png"
+                alt="Zivo Creative"
                 className="h-24 w-auto object-contain"
               />
             </div>
@@ -115,7 +115,7 @@ export function Footer() {
         <div className="mt-12 pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm">
-              © {new Date().getFullYear()} Kivo Media. All rights reserved.
+              © {new Date().getFullYear()} Zivo Creative. All rights reserved.
             </p>
             <div className="flex gap-6">
               <a

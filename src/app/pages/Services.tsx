@@ -143,7 +143,7 @@ export function Services() {
 
                   <a
                     href={`https://wa.me/923398837213?text=${encodeURIComponent(
-                      `Hey Kivomedia I want ${service.title} service which includes: ${service.features.join(", ")}`
+                      `Hey Zivo Creative, I want ${service.title} service which includes: ${service.features.join(", ")}`
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"

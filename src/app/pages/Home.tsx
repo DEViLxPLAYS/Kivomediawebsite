@@ -31,19 +31,19 @@ export function Home() {
     {
       name: "Alex Chen",
       role: "YouTube Creator • 2.4M Subs",
-      content: "Kivo Media transformed my channel. Their edits don't just look good—they perform. My watch time increased 40% after switching to them.",
+      content: "Zivo Creative transformed my channel. Their edits don't just look good—they perform. My watch time increased 40% after switching to them.",
       rating: 5,
     },
     {
       name: "Sarah Mitchell",
       role: "Brand Manager • TechFlow",
-      content: "Working with Kivo is like having an elite in-house team, but better. They understand our brand and deliver consistently premium work.",
+      content: "Working with Zivo Creative is like having an elite in-house team, but better. They understand our brand and deliver consistently premium work.",
       rating: 5,
     },
     {
       name: "Marcus Rodriguez",
       role: "Content Agency • Digital Pulse",
-      content: "We've tried every editor out there. Kivo is the only team that matches our pace and exceeds our quality standards. They're our secret weapon.",
+      content: "We've tried every editor out there. Zivo Creative is the only team that matches our pace and exceeds our quality standards. They're our secret weapon.",
       rating: 5,
     },
   ];
@@ -378,7 +378,7 @@ export function Home() {
                   </ul>
                   <a
                     href={`https://wa.me/923398837213?text=${encodeURIComponent(
-                      `Hey Kivomedia I want ${plan.name} package which includes: ${plan.features.join(", ")}`
+                      `Hey Zivo Creative, I want ${plan.name} package which includes: ${plan.features.join(", ")}`
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"

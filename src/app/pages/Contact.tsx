@@ -48,8 +48,8 @@ ${formData.message}
     {
       icon: Mail,
       title: "Email",
-      detail: "hello@kivomedia.com",
-      link: "mailto:hello@kivomedia.com",
+      detail: "hello@zivocreative.com",
+      link: "mailto:hello@zivocreative.com",
     },
     {
       icon: Clock,

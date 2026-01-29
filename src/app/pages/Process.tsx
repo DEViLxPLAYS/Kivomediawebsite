@@ -230,7 +230,7 @@ export function Process() {
             <span className="text-[#8B1538]">Start?</span>
           </h2>
           <p className="text-xl text-gray-400 mb-8">
-            Experience the Kivo Media difference
+            Experience the Zivo Creative difference
           </p>
           <a
             href="https://wa.me/1234567890"

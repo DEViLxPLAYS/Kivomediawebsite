@@ -61,7 +61,7 @@ export function About() {
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl lg:text-7xl tracking-tighter mb-6">
             <span className="text-white">About</span>{" "}
-            <span className="text-[#8B1538]">Kivo Media</span>
+            <span className="text-[#8B1538]">Zivo Creative</span>
           </h1>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
             Where content machines meet luxury storytelling
@@ -74,13 +74,13 @@ export function About() {
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
           <div className="space-y-6 text-gray-400 text-lg">
             <p>
-              We started Kivo Media with a simple belief: <span className="text-white">content creators deserve better editing partners</span>.
+              We started Zivo Creative with a simple belief: <span className="text-white">content creators deserve better editing partners</span>.
             </p>
             <p>
               Too often, we saw creators stuck between two bad options—either sacrifice quality for speed with cheap editors, or sacrifice speed for quality with slow agencies.
             </p>
             <p className="text-white text-xl">
-              We built Kivo Media to solve this problem.
+              We built Zivo Creative to solve this problem.
             </p>
             <p>
               Today, we're a team of elite editors, motion designers, and content strategists working with some of the fastest-growing creators and brands in the world. We've edited everything from million-view YouTube videos to high-converting brand campaigns.
@@ -187,7 +187,7 @@ export function About() {
             <blockquote className="text-2xl text-gray-300 text-center italic">
               "Less clutter, more intent. Every frame should have a purpose. Every edit should drive action. Every video should perform."
             </blockquote>
-            <p className="text-center text-gray-500 mt-6">— Kivo Media Team</p>
+            <p className="text-center text-gray-500 mt-6">— Zivo Creative Team</p>
           </div>
         </div>
       </section>
@@ -200,7 +200,7 @@ export function About() {
             <span className="text-[#8B1538]">The Best</span>
           </h2>
           <p className="text-xl text-gray-400 mb-8">
-            Join the growing list of creators and brands who trust Kivo Media
+            Join the growing list of creators and brands who trust Zivo Creative
           </p>
           <a
             href="https://wa.me/1234567890"

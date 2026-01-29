@@ -1,4 +1,4 @@
-# Kivo Media Website
+# Zivo Creative Website
 
 A premium video editing agency website built with React, Vite, and Tailwind CSS.
 

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage - Highest Priority -->
+  <url>
+    <loc>https://zivocreative.com/</loc>
+    <lastmod>2026-01-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://zivocreative.com/" />
+    <xhtml:link rel="alternate" hreflang="en-ca" href="https://zivocreative.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zivocreative.com/" />
+  </url>
+
+  <!-- Services Page - High Priority -->
+  <url>
+    <loc>https://zivocreative.com/services</loc>
+    <lastmod>2026-01-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://zivocreative.com/services" />
+    <xhtml:link rel="alternate" hreflang="en-ca" href="https://zivocreative.com/services" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zivocreative.com/services" />
+  </url>
+
+  <!-- Pricing Page - High Priority -->
+  <url>
+    <loc>https://zivocreative.com/pricing</loc>
+    <lastmod>2026-01-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://zivocreative.com/pricing" />
+    <xhtml:link rel="alternate" hreflang="en-ca" href="https://zivocreative.com/pricing" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zivocreative.com/pricing" />
+  </url>
+
+  <!-- Contact Page - High Priority -->
+  <url>
+    <loc>https://zivocreative.com/contact</loc>
+    <lastmod>2026-01-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://zivocreative.com/contact" />
+    <xhtml:link rel="alternate" hreflang="en-ca" href="https://zivocreative.com/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zivocreative.com/contact" />
+  </url>
+
+  <!-- Portfolio/Work Page -->
+  <url>
+    <loc>https://zivocreative.com/work</loc>
+    <lastmod>2026-01-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://zivocreative.com/work" />
+    <xhtml:link rel="alternate" hreflang="en-ca" href="https://zivocreative.com/work" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zivocreative.com/work" />
+  </url>
+
+  <!-- Process Page -->
+  <url>
+    <loc>https://zivocreative.com/process</loc>
+    <lastmod>2026-01-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://zivocreative.com/process" />
+    <xhtml:link rel="alternate" hreflang="en-ca" href="https://zivocreative.com/process" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zivocreative.com/process" />
+  </url>
+
+  <!-- About Page -->
+  <url>
+    <loc>https://zivocreative.com/about</loc>
+    <lastmod>2026-01-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://zivocreative.com/about" />
+    <xhtml:link rel="alternate" hreflang="en-ca" href="https://zivocreative.com/about" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zivocreative.com/about" />
+  </url>
+
+</urlset>

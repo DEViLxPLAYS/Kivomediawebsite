@@ -1,0 +1,25 @@
+/* TEAM */
+Brand: Zivo Creative
+Location: USA & Canada
+Website: https://zivocreative.com
+Email: hello@zivocreative.com
+WhatsApp: +92 339 8837213
+
+/* SITE */
+Last update: 2026-01-30
+Standards: HTML5, CSS3, JavaScript ES6+, React 19
+Components: Vite, TailwindCSS, TypeScript
+Software: VS Code, Figma, Adobe Creative Suite
+SEO: Optimized for Google Search Console
+Target Markets: USA, Canada, Global
+
+/* SERVICES */
+- YouTube Long-Form Video Editing
+- Short-Form Content (Reels, TikTok, Shorts)
+- Brand & Commercial Video Production
+- Podcast Editing
+- Social Media Management
+- Website Design with AI Chatbot Integration
+
+/* THANKS */
+Special thanks to all our clients and creative partners who trust us with their content.

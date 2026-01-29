@@ -125,11 +125,11 @@ export function Home() {
                 <span>Content Packages</span>
               </a>
               <Link
-                to="/work"
+                to="/contact"
                 className="inline-flex items-center gap-2 border border-white/20 hover:border-white/40 text-white px-8 py-4 rounded-full transition-all text-lg group"
               >
-                <Play className="w-5 h-5" />
-                <span>View Our Work</span>
+                <MessageCircle className="w-5 h-5" />
+                <span>Contact Us</span>
               </Link>
             </div>
           </div>
@@ -185,62 +185,34 @@ export function Home() {
         </div>
       </section>
 
-      {/* Content Machine + Luxury Agency Split */}
+      {/* Content Machine */}
       <section className="py-24 bg-[#0A0A0A]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Content Machine */}
-            <div className="space-y-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="space-y-6 text-center">
               <div className="inline-block px-4 py-2 bg-[#8B1538]/20 border border-[#8B1538]/30 rounded-full">
                 <span className="text-[#8B1538] text-sm">Content Machine</span>
               </div>
               <h3 className="text-3xl md:text-4xl text-white tracking-tight">
-                High Output.<br />Lightning Fast.
+                High Output. Lightning Fast.
               </h3>
               <p className="text-gray-400 text-lg">
                 Need 20 videos a week? We've got you. Built for creators and brands that demand volume without sacrificing quality.
               </p>
-              <ul className="space-y-3">
-                <li className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-[#8B1538] mt-0.5" />
-                  <span className="text-gray-300">Batch editing workflows</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-[#8B1538] mt-0.5" />
-                  <span className="text-gray-300">Same-day turnaround available</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-[#8B1538] mt-0.5" />
-                  <span className="text-gray-300">Consistent brand style</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* Luxury Agency */}
-            <div className="space-y-6">
-              <div className="inline-block px-4 py-2 bg-white/10 border border-white/20 rounded-full">
-                <span className="text-white text-sm">Luxury Agency</span>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6">
+                <div className="flex flex-col items-center gap-3 p-6 bg-white/5 border border-white/10 rounded-2xl">
+                  <Check className="w-8 h-8 text-[#8B1538]" />
+                  <span className="text-gray-300 text-center">Batch editing workflows</span>
+                </div>
+                <div className="flex flex-col items-center gap-3 p-6 bg-white/5 border border-white/10 rounded-2xl">
+                  <Check className="w-8 h-8 text-[#8B1538]" />
+                  <span className="text-gray-300 text-center">Same-day turnaround available</span>
+                </div>
+                <div className="flex flex-col items-center gap-3 p-6 bg-white/5 border border-white/10 rounded-2xl">
+                  <Check className="w-8 h-8 text-[#8B1538]" />
+                  <span className="text-gray-300 text-center">Consistent brand style</span>
+                </div>
               </div>
-              <h3 className="text-3xl md:text-4xl text-white tracking-tight">
-                Precision.<br />Storytelling. Polish.
-              </h3>
-              <p className="text-gray-400 text-lg">
-                For high-ticket clients who need every frame perfect. Cinematic editing that commands attention and drives results.
-              </p>
-              <ul className="space-y-3">
-                <li className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-white mt-0.5" />
-                  <span className="text-gray-300">Senior editor assigned</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-white mt-0.5" />
-                  <span className="text-gray-300">Unlimited revisions</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-white mt-0.5" />
-                  <span className="text-gray-300">White-glove service</span>
-                </li>
-              </ul>
             </div>
           </div>
         </div>
@@ -340,8 +312,8 @@ export function Home() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl lg:text-6xl tracking-tighter mb-6">
-              <span className="text-white">Social Media</span>{" "}
-              <span className="text-[#8B1538]">Content Packages</span>
+              <span className="text-white">Our</span>{" "}
+              <span className="text-[#8B1538]">Packages</span>
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
               Monthly retainers designed for scale

@@ -9,67 +9,101 @@ import { useRef } from "react";
 
 const plans = [
     {
-        name: "Starter",
-        description: "Small businesses; intro sites, single product or service",
-        price: 149, // Monthly Service
-        yearlyPrice: 850, // One-Time Build
-        delivery: "1–2 weeks",
-        buttonText: "Get started",
+        name: "Starter Growth",
+        description: "Perfect for new creators, small businesses, or coaches starting from scratch",
+        price: 500,
+        maxPrice: 800,
+        delivery: "Ongoing",
+        buttonText: "Get Started",
         buttonVariant: "outline" as const,
         features: [
-            { text: "Animated landing", icon: <Rocket size={20} /> },
-            { text: "Responsive Design", icon: <Zap size={20} /> },
-            { text: "Basic SEO", icon: <Database size={20} /> },
-            { text: "Chatbot setup", icon: <Briefcase size={20} /> },
+            { text: "Social media setup & optimization (Instagram, TikTok, YouTube, Facebook)", icon: <Rocket size={20} /> },
+            { text: "8 short-form videos (reels/shorts) per month", icon: <Zap size={20} /> },
+            { text: "2-3 YouTube long-form edits per month", icon: <Server size={20} /> },
+            { text: "Consistent CTAs & story templates", icon: <Briefcase size={20} /> },
+            { text: "YouTube thumbnails (up to 3 per month)", icon: <Database size={20} /> },
+            { text: "Monthly performance report", icon: <CheckCheck size={20} /> },
         ],
         includes: [
             "Package Includes:",
-            "1–2 weeks Delivery",
-            "Responsive Layout",
-            "Basic SEO Setup",
+            "Social media setup & optimization",
+            "8 short-form videos/month",
+            "2-3 long-form edits/month",
+            "Monthly performance report",
         ],
     },
     {
-        name: "Growth",
-        description: "Growing businesses aiming for conversions",
-        price: 249, // Monthly Service
-        yearlyPrice: 1250, // One-Time Build
-        delivery: "2–4 weeks",
-        buttonText: "Get started",
+        name: "Accelerator",
+        description: "For brands ready to scale and grow their audience faster",
+        price: 1200,
+        maxPrice: 1800,
+        delivery: "Ongoing",
+        buttonText: "Get Started",
         buttonVariant: "outline" as const,
         popular: true,
         features: [
-            { text: "Full animated site", icon: <Rocket size={20} /> },
-            { text: "AI chat intent", icon: <Briefcase size={20} /> },
-            { text: "Email automation", icon: <Server size={20} /> },
-            { text: "Technical SEO", icon: <Database size={20} /> },
+            { text: "15 short-form videos per month", icon: <Rocket size={20} /> },
+            { text: "4 long-form edits per month", icon: <Server size={20} /> },
+            { text: "Advanced YouTube strategy (titles, descriptions, thumbnails)", icon: <Briefcase size={20} /> },
+            { text: "Weekly story/offer campaigns", icon: <Zap size={20} /> },
+            { text: "Social Media Management (Stories, Comments, DMs strategy)", icon: <Database size={20} /> },
+            { text: "Professional Website landing page design with AI chatbot integration", icon: <CheckCheck size={20} /> },
+            { text: "Bi-weekly analytics & growth consultation", icon: <CheckCheck size={20} /> },
         ],
         includes: [
             "Everything in Starter, plus:",
-            "3 months Free Service",
-            "Technical SEO",
-            "Email Automation",
+            "15 short-form videos/month",
+            "4 long-form edits/month",
+            "Website with AI chatbot",
+            "Bi-weekly consultation",
         ],
     },
     {
-        name: "Enterprise",
-        description: "Established brands, multi-service platforms",
-        price: 349, // Monthly Service
-        yearlyPrice: 2999, // One-Time Build
-        delivery: "4–6 weeks",
-        buttonText: "Contact Sales",
-        buttonVariant: "default" as const,
+        name: "Premium Authority",
+        description: "For established businesses & creators who want full-scale management",
+        price: 2500,
+        maxPrice: 4000,
+        delivery: "Ongoing",
+        buttonText: "Get Started",
+        buttonVariant: "outline" as const,
         features: [
-            { text: "Custom animations", icon: <Rocket size={20} /> },
-            { text: "Advanced AI", icon: <Briefcase size={20} /> },
-            { text: "Full Automation", icon: <Server size={20} /> },
-            { text: "Ongoing SEO", icon: <Database size={20} /> },
+            { text: "20 short-form videos per month", icon: <Rocket size={20} /> },
+            { text: "5 long-form edits per month", icon: <Server size={20} /> },
+            { text: "Complete YouTube channel management (uploads, SEO, thumbnails, playlists)", icon: <Briefcase size={20} /> },
+            { text: "Daily story/offer campaigns with CTAs", icon: <Zap size={20} /> },
+            { text: "Full advanced website design (multi-page, professional branding, AI chatbot)", icon: <Database size={20} /> },
+            { text: "Monthly strategy call + growth roadmap", icon: <CheckCheck size={20} /> },
+            { text: "Priority support & dedicated account manager", icon: <CheckCheck size={20} /> },
         ],
         includes: [
-            "Everything in Growth, plus:",
-            "6 months enhanced service",
-            "Full Uptime Guarantee",
-            "Off-page SEO Monitoring",
+            "Everything in Accelerator, plus:",
+            "20 short-form videos/month",
+            "5 long-form edits/month",
+            "Full advanced website",
+            "Dedicated account manager",
+        ],
+    },
+    {
+        name: "Custom Enterprise",
+        description: "Tailored for larger businesses or influencers with unique needs",
+        price: 0,
+        maxPrice: 0,
+        delivery: "Custom",
+        buttonText: "Contact Us",
+        buttonVariant: "default" as const,
+        isCustom: true,
+        features: [
+            { text: "Fully customizable mix of short-form, long-form, and website services", icon: <Rocket size={20} /> },
+            { text: "Website add-ons: Paid ads management, advanced funnel design, email marketing", icon: <Server size={20} /> },
+            { text: "Flexible content volume & posting schedule", icon: <Briefcase size={20} /> },
+            { text: "Dedicated creative team", icon: <CheckCheck size={20} /> },
+        ],
+        includes: [
+            "Fully Custom Package:",
+            "Customizable service mix",
+            "Advanced website add-ons",
+            "Flexible scheduling",
+            "Dedicated team",
         ],
     },
 ];
@@ -131,7 +165,7 @@ export default function PricingSection() {
                 </div>
             </article>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6 items-start">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 items-start">
                 {plans.map((plan) => (
                     <div
                         key={plan.name}
@@ -162,24 +196,29 @@ export default function PricingSection() {
 
                                     <div className="pt-3">
                                         <div className="flex items-baseline gap-1">
-                                            <span className="text-3xl font-bold text-white">
-                                                $
-                                                <NumberFlow
-                                                    format={{ currency: "USD" }}
-                                                    value={plan.yearlyPrice}
-                                                />
-                                            </span>
-                                            <span className="text-gray-500 font-medium text-sm">One-Time</span>
-                                        </div>
-                                        <div className="flex items-baseline gap-2 mt-0.5">
-                                            <span className="text-base text-[#8B1538] font-semibold">
-                                                +$
-                                                <NumberFlow
-                                                    format={{ currency: "USD" }}
-                                                    value={plan.price}
-                                                />
-                                            </span>
-                                            <span className="text-gray-500 text-xs">/month service</span>
+                                            {plan.isCustom ? (
+                                                <span className="text-3xl font-bold text-white">Custom Pricing</span>
+                                            ) : (
+                                                <>
+                                                    <span className="text-3xl font-bold text-white">
+                                                        $
+                                                        <NumberFlow
+                                                            format={{ currency: "USD" }}
+                                                            value={plan.price}
+                                                        />
+                                                        {plan.maxPrice && plan.maxPrice !== plan.price && (
+                                                            <>
+                                                                {" - $"}
+                                                                <NumberFlow
+                                                                    format={{ currency: "USD" }}
+                                                                    value={plan.maxPrice}
+                                                                />
+                                                            </>
+                                                        )}
+                                                    </span>
+                                                    <span className="text-gray-500 font-medium text-sm">/month</span>
+                                                </>
+                                            )}
                                         </div>
                                     </div>
 

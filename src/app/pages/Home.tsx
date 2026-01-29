@@ -48,44 +48,6 @@ export function Home() {
     },
   ];
 
-  const pricingPlans = [
-    {
-      name: "BASIC",
-      price: "$499",
-      period: "/month",
-      features: [
-        "2 YouTube Videos",
-        "5 Reels/Shorts",
-        "10 Stories",
-        "5 Posts",
-      ],
-      popular: false,
-    },
-    {
-      name: "STANDARD",
-      price: "$999",
-      period: "/month",
-      features: [
-        "3 YouTube Videos",
-        "10 Reels/Shorts",
-        "20 Stories",
-        "10 Posts",
-      ],
-      popular: true,
-    },
-    {
-      name: "PREMIUM",
-      price: "$1399",
-      period: "/month",
-      features: [
-        "5 YouTube Videos",
-        "15 Reels/Shorts",
-        "30 Stories",
-        "15 Posts",
-      ],
-      popular: false,
-    },
-  ];
 
   return (
     <div className="min-h-screen">
@@ -117,13 +79,13 @@ export function Home() {
               Editing for YouTubers, creators, and brands that scale
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
-              <a
-                href="#pricing"
+              <Link
+                to="/pricing"
                 className="inline-flex items-center gap-2 bg-[#8B1538] hover:bg-[#6B1028] text-white px-8 py-4 rounded-full transition-all text-lg group"
               >
                 <MessageCircle className="w-5 h-5" />
                 <span>Content Packages</span>
-              </a>
+              </Link>
               <Link
                 to="/contact"
                 className="inline-flex items-center gap-2 border border-white/20 hover:border-white/40 text-white px-8 py-4 rounded-full transition-all text-lg group"
@@ -307,66 +269,6 @@ export function Home() {
         </div>
       </section>
 
-      {/* Pricing Teaser */}
-      <section id="pricing" className="py-24 bg-gradient-to-b from-black to-[#0A0A0A]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl tracking-tighter mb-6">
-              <span className="text-white">Our</span>{" "}
-              <span className="text-[#8B1538]">Packages</span>
-            </h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Monthly retainers designed for scale
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {pricingPlans.map((plan, index) => (
-              <GlowingCard
-                key={index}
-                className={plan.popular ? "border-[#8B1538]" : ""}
-                innerClassName={`p-8 ${plan.popular ? "bg-[#8B1538]/10" : ""}`}
-              >
-                {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#8B1538] rounded-full text-white text-sm z-10">
-                    Most Popular
-                  </div>
-                )}
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="text-2xl text-white mb-2">{plan.name}</h3>
-                    <div className="flex items-baseline gap-1">
-                      <span className="text-5xl text-white">{plan.price}</span>
-                      <span className="text-gray-400">{plan.period}</span>
-                    </div>
-                  </div>
-                  <ul className="space-y-3">
-                    {plan.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-gray-300">
-                        <Check className="w-5 h-5 text-[#8B1538] mt-0.5" />
-                        <span className="text-sm">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <a
-                    href={`https://wa.me/923398837213?text=${encodeURIComponent(
-                      `Hey Zivo Creative, I want ${plan.name} package which includes: ${plan.features.join(", ")}`
-                    )}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`block text-center px-6 py-3 rounded-full transition-colors ${plan.popular
-                      ? "bg-[#8B1538] hover:bg-[#6B1028] text-white"
-                      : "bg-white/10 hover:bg-white/20 text-white border border-white/20"
-                      }`}
-                  >
-                    Get Started
-                  </a>
-                </div>
-              </GlowingCard>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Final CTA */}
       <section className="py-24 bg-[#0A0A0A]">

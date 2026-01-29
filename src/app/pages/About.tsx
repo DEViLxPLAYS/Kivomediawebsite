@@ -203,7 +203,7 @@ export function About() {
             Join the growing list of creators and brands who trust Zivo Creative
           </p>
           <a
-            href="https://wa.me/1234567890"
+            href="https://wa.me/923398837213"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-[#8B1538] hover:bg-[#6B1028] text-white px-8 py-4 rounded-full transition-all text-lg"

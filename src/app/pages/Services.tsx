@@ -63,6 +63,21 @@ export function Services() {
       idealFor: ["Podcasters", "Thought leaders", "Agencies", "Business owners"],
       turnaround: "48-72 hours",
     },
+    {
+      title: "Website Design & Development",
+      tagline: "Custom websites with AI-powered features",
+      description: "Modern, responsive websites built for performance. From portfolio sites to e-commerce platforms with integrated AI chatbots.",
+      features: [
+        "Custom website design",
+        "AI chatbot integration",
+        "E-commerce development",
+        "Responsive & mobile-first",
+        "SEO optimization",
+        "Performance tuning",
+      ],
+      idealFor: ["Creators", "Small businesses", "E-commerce brands", "Agencies"],
+      turnaround: "1-3 weeks",
+    },
   ];
 
   return (
@@ -75,7 +90,7 @@ export function Services() {
             <span className="text-[#8B1538]">Services</span>
           </h1>
           <p className="text-xl text-gray-400 mb-8">
-            Premium video editing solutions for every content need
+            Video editing, content creation & web development solutions
           </p>
         </div>
       </section>

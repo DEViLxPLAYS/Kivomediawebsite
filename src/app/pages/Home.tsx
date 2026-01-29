@@ -25,6 +25,11 @@ export function Home() {
       description: "Transform raw footage into engaging podcast content",
       features: ["Multi-cam editing", "Audio polish", "Clips for social", "Full repurposing"],
     },
+    {
+      title: "Web Development",
+      description: "Custom websites with AI chatbot integration",
+      features: ["Responsive design", "AI chatbots", "E-commerce", "SEO optimized"],
+    },
   ];
 
   const testimonials = [
@@ -76,7 +81,7 @@ export function Home() {
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto">
-              Editing for YouTubers, creators, and brands that scale
+              Video editing, content creation & web development for creators and brands
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
               <Link
@@ -282,7 +287,7 @@ export function Home() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="https://wa.me/1234567890"
+              href="https://wa.me/923398837213"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-[#8B1538] hover:bg-[#6B1028] text-white px-8 py-4 rounded-full transition-all text-lg"

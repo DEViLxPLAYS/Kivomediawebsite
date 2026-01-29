@@ -16,8 +16,7 @@ export function Footer() {
               />
             </div>
             <p className="text-gray-400 text-sm">
-              Premium video editing for creators, brands, and agencies that
-              scale.
+              Video editing, content creation & web development for creators, brands, and agencies that scale.
             </p>
             <a
               href="https://wa.me/923398837213"
@@ -77,6 +76,8 @@ export function Footer() {
               <li className="text-gray-400 text-sm">Short-Form Content</li>
               <li className="text-gray-400 text-sm">Brand & Ads</li>
               <li className="text-gray-400 text-sm">Podcast Editing</li>
+              <li className="text-gray-400 text-sm">Web Development</li>
+              <li className="text-gray-400 text-sm">Social Media Management</li>
             </ul>
           </div>
 

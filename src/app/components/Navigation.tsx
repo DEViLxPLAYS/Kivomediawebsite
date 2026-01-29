@@ -48,7 +48,7 @@ export function Navigation() {
             <div className="flex items-center gap-4">
               {/* WhatsApp CTA (Desktop) */}
               <a
-                href="https://wa.me/1234567890"
+                href="https://wa.me/923398837213"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hidden md:flex items-center gap-2 bg-[#8B1538] hover:bg-[#6B1028] text-white px-6 py-3 rounded-full transition-colors pointer-events-auto"
@@ -78,7 +78,7 @@ export function Navigation() {
           <NavBar items={navItems} mobile />
 
           <a
-            href="https://wa.me/1234567890"
+            href="https://wa.me/923398837213"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 bg-[#8B1538] hover:bg-[#6B1028] text-white px-8 py-4 rounded-full transition-colors"

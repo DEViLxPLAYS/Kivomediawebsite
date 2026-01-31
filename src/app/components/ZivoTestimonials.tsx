@@ -54,21 +54,21 @@ const TESTIMONIALS = [
 
 export function ZivoTestimonials() {
     return (
-        <section className="bg-black px-8 py-12">
+        <section className="bg-black px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-20">
             <div className="max-w-7xl mx-auto">
-                <div className="text-center mb-8">
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl tracking-tighter mb-4">
+                <div className="text-center mb-6 sm:mb-8">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tighter mb-3 sm:mb-4">
                         <span className="text-white">What Clients</span>{" "}
                         <span className="text-[#8B1538]">Say</span>
                     </h2>
-                    <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+                    <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 max-w-2xl mx-auto px-4">
                         Trusted by creators and brands worldwide
                     </p>
                 </div>
 
                 <ContainerScroll className="container h-[300vh]">
-                    <div className="sticky left-0 top-0 h-svh w-full py-12">
-                        <CardsContainer className="mx-auto size-full h-[450px] w-[350px]">
+                    <div className="sticky left-0 top-0 h-svh w-full py-8 sm:py-12">
+                        <CardsContainer className="mx-auto size-full h-[380px] w-[300px] sm:h-[420px] sm:w-[340px] md:h-[450px] md:w-[350px]">
                             {TESTIMONIALS.map((testimonial, index) => (
                                 <CardTransformed
                                     arrayLength={TESTIMONIALS.length}

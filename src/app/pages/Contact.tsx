@@ -175,24 +175,24 @@ export function Contact() {
   ];
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-16 sm:pt-20">
       {/* Hero */}
-      <section className="py-24 bg-gradient-to-b from-black to-[#0A0A0A]">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl tracking-tighter mb-6">
+      <section className="py-16 sm:py-20 md:py-24 bg-gradient-to-b from-black to-[#0A0A0A]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-tighter mb-4 sm:mb-6">
             <span className="text-white">Get In</span>{" "}
             <span className="text-[#8B1538]">Touch</span>
           </h1>
-          <p className="text-xl text-gray-400">
+          <p className="text-base sm:text-lg md:text-xl text-gray-400 px-4">
             Let's discuss your project and bring your vision to life
           </p>
         </div>
       </section>
 
       {/* Contact Info */}
-      <section className="py-16 bg-[#0A0A0A]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <section className="py-12 sm:py-16 bg-[#0A0A0A]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {contactInfo.map((info, index) => (
               <div
                 key={index}
@@ -220,14 +220,14 @@ export function Contact() {
       </section>
 
       {/* Contact Form */}
-      <section className="py-24 bg-gradient-to-b from-black to-[#0A0A0A]">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl tracking-tighter mb-4">
+      <section className="py-16 sm:py-20 md:py-24 bg-gradient-to-b from-black to-[#0A0A0A]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tighter mb-3 sm:mb-4">
               <span className="text-white">Send Us a</span>{" "}
               <span className="text-[#8B1538]">Message</span>
             </h2>
-            <p className="text-gray-400">
+            <p className="text-sm sm:text-base text-gray-400 px-4">
               Fill out the form below and we'll get back to you within 2 hours
             </p>
           </div>

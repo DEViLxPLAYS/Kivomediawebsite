@@ -329,49 +329,49 @@ export default function PricingSection() {
 
     return (
         <div
-            className="px-4 pt-20 pb-10 min-h-screen max-w-7xl mx-auto relative mb-20"
+            className="px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-10 min-h-screen max-w-7xl mx-auto relative mb-12 sm:mb-20"
             ref={pricingRef}
         >
             {/* Category Tabs */}
-            <div className="flex flex-wrap justify-center gap-3 mb-12">
+            <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-12">
                 <button
                     onClick={() => setActiveCategory("all-in-one")}
                     className={cn(
-                        "px-6 py-3 rounded-full transition-all text-sm font-medium",
+                        "px-4 sm:px-6 py-2.5 sm:py-3 rounded-full transition-all text-xs sm:text-sm font-medium whitespace-nowrap",
                         activeCategory === "all-in-one"
                             ? "bg-[#8B1538] text-white shadow-lg shadow-[#8B1538]/20"
                             : "bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border border-white/10"
                     )}
                 >
-                    All-in-One Packages
+                    All-in-One
                 </button>
                 <button
                     onClick={() => setActiveCategory("video-editing")}
                     className={cn(
-                        "px-6 py-3 rounded-full transition-all text-sm font-medium",
+                        "px-4 sm:px-6 py-2.5 sm:py-3 rounded-full transition-all text-xs sm:text-sm font-medium whitespace-nowrap",
                         activeCategory === "video-editing"
                             ? "bg-[#8B1538] text-white shadow-lg shadow-[#8B1538]/20"
                             : "bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border border-white/10"
                     )}
                 >
-                    Video Edit Packages
+                    Video Editing
                 </button>
                 <button
                     onClick={() => setActiveCategory("web-development")}
                     className={cn(
-                        "px-6 py-3 rounded-full transition-all text-sm font-medium",
+                        "px-4 sm:px-6 py-2.5 sm:py-3 rounded-full transition-all text-xs sm:text-sm font-medium whitespace-nowrap",
                         activeCategory === "web-development"
                             ? "bg-[#8B1538] text-white shadow-lg shadow-[#8B1538]/20"
                             : "bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border border-white/10"
                     )}
                 >
-                    Website Development
+                    Web Development
                 </button>
             </div>
 
-            <article className="flex sm:flex-row flex-col sm:pb-0 pb-12 sm:items-center items-start justify-between mb-12">
+            <article className="flex sm:flex-row flex-col sm:pb-0 pb-8 sm:items-center items-start justify-between mb-8 sm:mb-12">
                 <div className="text-left">
-                    <h2 className="text-4xl md:text-5xl font-medium leading-[130%] text-white mb-4">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium leading-[130%] text-white mb-3 sm:mb-4">
                         <VerticalCutReveal
                             splitBy="words"
                             staggerDuration={0.15}
@@ -394,14 +394,14 @@ export default function PricingSection() {
                         animationNum={0}
                         timelineRef={pricingRef}
                         customVariants={revealVariants}
-                        className="text-gray-400 w-full md:w-[60%]"
+                        className="text-sm sm:text-base text-gray-400 w-full md:w-[80%] lg:w-[60%]"
                     >
                         {currentData.subtitle}
                     </TimelineContent>
                 </div>
             </article>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 items-start">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6 items-start">
                 {currentData.plans.map((plan) => (
                     <div
                         key={plan.name}

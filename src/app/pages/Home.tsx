@@ -1,7 +1,8 @@
-import { MessageCircle, Play, ArrowRight, Check, Star } from "lucide-react";
+import { MessageCircle, Play, ArrowRight, Check } from "lucide-react";
 import { Link } from "react-router";
 import { ImageWithFallback } from "@/app/components/figma/ImageWithFallback";
 import { GlowingCard } from "../components/ui/glowing-card";
+import { ZivoTestimonials } from "@/app/components/ZivoTestimonials";
 
 export function Home() {
   const services = [
@@ -16,11 +17,6 @@ export function Home() {
       features: ["Hook mastery", "Trend optimization", "Fast delivery", "Batch editing"],
     },
     {
-      title: "Brand & Ads",
-      description: "Premium commercial content for brands that scale",
-      features: ["Concept to delivery", "Platform optimization", "Performance focus", "Unlimited revisions"],
-    },
-    {
       title: "Podcast Editing",
       description: "Transform raw footage into engaging podcast content",
       features: ["Multi-cam editing", "Audio polish", "Clips for social", "Full repurposing"],
@@ -32,26 +28,7 @@ export function Home() {
     },
   ];
 
-  const testimonials = [
-    {
-      name: "Alex Chen",
-      role: "YouTube Creator • 2.4M Subs",
-      content: "Zivo Creative transformed my channel. Their edits don't just look good—they perform. My watch time increased 40% after switching to them.",
-      rating: 5,
-    },
-    {
-      name: "Sarah Mitchell",
-      role: "Brand Manager • TechFlow",
-      content: "Working with Zivo Creative is like having an elite in-house team, but better. They understand our brand and deliver consistently premium work.",
-      rating: 5,
-    },
-    {
-      name: "Marcus Rodriguez",
-      role: "Content Agency • Digital Pulse",
-      content: "We've tried every editor out there. Zivo Creative is the only team that matches our pace and exceeds our quality standards. They're our secret weapon.",
-      rating: 5,
-    },
-  ];
+
 
 
   return (
@@ -152,38 +129,7 @@ export function Home() {
         </div>
       </section>
 
-      {/* Content Machine */}
-      <section className="py-24 bg-[#0A0A0A]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <div className="space-y-6 text-center">
-              <div className="inline-block px-4 py-2 bg-[#8B1538]/20 border border-[#8B1538]/30 rounded-full">
-                <span className="text-[#8B1538] text-sm">Content Machine</span>
-              </div>
-              <h3 className="text-3xl md:text-4xl text-white tracking-tight">
-                High Output. Lightning Fast.
-              </h3>
-              <p className="text-gray-400 text-lg">
-                Need 20 videos a week? We've got you. Built for creators and brands that demand volume without sacrificing quality.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6">
-                <div className="flex flex-col items-center gap-3 p-6 bg-white/5 border border-white/10 rounded-2xl">
-                  <Check className="w-8 h-8 text-[#8B1538]" />
-                  <span className="text-gray-300 text-center">Batch editing workflows</span>
-                </div>
-                <div className="flex flex-col items-center gap-3 p-6 bg-white/5 border border-white/10 rounded-2xl">
-                  <Check className="w-8 h-8 text-[#8B1538]" />
-                  <span className="text-gray-300 text-center">Same-day turnaround available</span>
-                </div>
-                <div className="flex flex-col items-center gap-3 p-6 bg-white/5 border border-white/10 rounded-2xl">
-                  <Check className="w-8 h-8 text-[#8B1538]" />
-                  <span className="text-gray-300 text-center">Consistent brand style</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* Featured Work Preview */}
       <section className="py-24 bg-gradient-to-b from-[#0A0A0A] to-black">
@@ -243,36 +189,7 @@ export function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-24 bg-black">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl tracking-tighter mb-6">
-              <span className="text-white">What Clients</span>{" "}
-              <span className="text-[#8B1538]">Say</span>
-            </h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Trusted by creators and brands worldwide
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {testimonials.map((testimonial, index) => (
-              <GlowingCard key={index} innerClassName="p-8 space-y-4">
-                <div className="flex gap-1">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-[#8B1538] text-[#8B1538]" />
-                  ))}
-                </div>
-                <p className="text-gray-300">{testimonial.content}</p>
-                <div>
-                  <p className="text-white">{testimonial.name}</p>
-                  <p className="text-gray-400 text-sm">{testimonial.role}</p>
-                </div>
-              </GlowingCard>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ZivoTestimonials />
 
 
       {/* Final CTA */}

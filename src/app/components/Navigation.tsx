@@ -25,7 +25,15 @@ export function Navigation() {
     { name: 'Home', url: '/', icon: Home },
     { name: 'Services', url: '/services', icon: Layers },
     { name: 'Work', url: '/work', icon: Briefcase },
-    { name: 'Pricing', url: '/pricing', icon: Tag },
+    {
+      name: 'Pricing',
+      icon: Tag,
+      dropdown: [
+        { label: 'All-in-One Packages', url: '/pricing?category=all-in-one' },
+        { label: 'Video Edit Packages', url: '/pricing?category=video-editing' },
+        { label: 'Website Development', url: '/pricing?category=web-development' },
+      ]
+    },
     { name: 'Process', url: '/process', icon: FileText },
     { name: 'About', url: '/about', icon: User },
     { name: 'Contact', url: '/contact', icon: Phone }

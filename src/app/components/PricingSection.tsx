@@ -5,9 +5,31 @@ import { VerticalCutReveal } from "@/app/components/ui/vertical-cut-reveal";
 import { cn } from "@/lib/utils";
 import NumberFlow from "@number-flow/react";
 import { Briefcase, CheckCheck, Database, Server, Zap, Rocket } from "lucide-react";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
+import { useSearchParams } from "react-router";
 
-const plans = [
+type PricingCategory = "all-in-one" | "video-editing" | "web-development";
+
+interface PlanFeature {
+    text: string;
+    icon: React.ReactNode;
+}
+
+interface Plan {
+    name: string;
+    description: string;
+    price: number;
+    maxPrice?: number;
+    delivery: string;
+    buttonText: string;
+    buttonVariant: "outline" | "default";
+    popular?: boolean;
+    isCustom?: boolean;
+    features: PlanFeature[];
+    includes: string[];
+}
+
+const allInOnePackages: Plan[] = [
     {
         name: "Starter Growth",
         description: "Perfect for new creators, small businesses, or coaches starting from scratch",
@@ -108,8 +130,185 @@ const plans = [
     },
 ];
 
+const videoEditPackages: Plan[] = [
+    {
+        name: "Starter Growth Package",
+        description: "Best for new creators, coaches & small businesses",
+        price: 399,
+        maxPrice: 599,
+        delivery: "Ongoing",
+        buttonText: "Get Started",
+        buttonVariant: "outline" as const,
+        features: [
+            { text: "Social media setup & optimization (Instagram, TikTok, YouTube, Facebook)", icon: <Rocket size={20} /> },
+            { text: "8 short-form videos per month", icon: <Zap size={20} /> },
+            { text: "2–3 long-form YouTube edits per month", icon: <Server size={20} /> },
+            { text: "Consistent CTAs & story templates", icon: <Briefcase size={20} /> },
+            { text: "Up to 3 YouTube thumbnails per month", icon: <Database size={20} /> },
+            { text: "Monthly performance report", icon: <CheckCheck size={20} /> },
+        ],
+        includes: [
+            "Package Includes:",
+            "Social media setup & optimization",
+            "8 short-form videos/month",
+            "2-3 long-form edits/month",
+            "Monthly performance report",
+        ],
+    },
+    {
+        name: "Accelerator Package",
+        description: "For brands ready to scale faster",
+        price: 999,
+        maxPrice: 1299,
+        delivery: "Ongoing",
+        buttonText: "Get Started",
+        buttonVariant: "outline" as const,
+        popular: true,
+        features: [
+            { text: "15 short-form videos per month", icon: <Rocket size={20} /> },
+            { text: "4 long-form YouTube edits per month", icon: <Server size={20} /> },
+            { text: "Advanced YouTube strategy (titles, descriptions, thumbnails)", icon: <Briefcase size={20} /> },
+            { text: "Weekly story & offer campaigns", icon: <Zap size={20} /> },
+            { text: "Social media management strategy (stories, comments, DMs)", icon: <Database size={20} /> },
+            { text: "Bi-weekly analytics & growth consultation", icon: <CheckCheck size={20} /> },
+        ],
+        includes: [
+            "Package Includes:",
+            "15 short-form videos/month",
+            "4 long-form edits/month",
+            "Advanced YouTube strategy",
+            "Bi-weekly consultation",
+        ],
+    },
+    {
+        name: "Premium Authority Package",
+        description: "For creators & businesses building long-term authority",
+        price: 2500,
+        maxPrice: 4000,
+        delivery: "Ongoing",
+        buttonText: "Get Started",
+        buttonVariant: "outline" as const,
+        features: [
+            { text: "20 short-form videos per month", icon: <Rocket size={20} /> },
+            { text: "5 long-form YouTube edits per month", icon: <Server size={20} /> },
+            { text: "Complete YouTube channel management (uploads, SEO, thumbnails, playlists)", icon: <Briefcase size={20} /> },
+            { text: "Daily story & offer campaigns with CTAs", icon: <Zap size={20} /> },
+            { text: "Monthly strategy call + growth roadmap", icon: <Database size={20} /> },
+            { text: "Priority support & dedicated account manager", icon: <CheckCheck size={20} /> },
+        ],
+        includes: [
+            "Package Includes:",
+            "20 short-form videos/month",
+            "5 long-form edits/month",
+            "Complete YouTube management",
+            "Dedicated account manager",
+        ],
+    },
+];
+
+const webDevelopmentPackages: Plan[] = [
+    {
+        name: "Starter",
+        description: "Great for small businesses and startups looking to get started with AI",
+        price: 850,
+        delivery: "1–2 weeks",
+        buttonText: "Get Started",
+        buttonVariant: "outline" as const,
+        features: [
+            { text: "1–2 weeks delivery", icon: <Rocket size={20} /> },
+            { text: "Animated landing page", icon: <Zap size={20} /> },
+            { text: "Responsive design", icon: <Server size={20} /> },
+            { text: "Basic SEO optimization", icon: <Briefcase size={20} /> },
+            { text: "Chatbot setup", icon: <Database size={20} /> },
+        ],
+        includes: [
+            "Package Includes:",
+            "Animated landing page",
+            "Responsive design",
+            "Basic SEO optimization",
+            "Chatbot setup",
+        ],
+    },
+    {
+        name: "Growth",
+        description: "Best value for growing businesses aiming for conversions",
+        price: 1250,
+        delivery: "2–4 weeks",
+        buttonText: "Get Started",
+        buttonVariant: "outline" as const,
+        popular: true,
+        features: [
+            { text: "2–4 weeks delivery", icon: <Rocket size={20} /> },
+            { text: "Full animated website", icon: <Zap size={20} /> },
+            { text: "AI chatbot integration", icon: <Server size={20} /> },
+            { text: "Email automation", icon: <Briefcase size={20} /> },
+            { text: "Technical SEO", icon: <Database size={20} /> },
+            { text: "3 months free service", icon: <CheckCheck size={20} /> },
+        ],
+        includes: [
+            "Everything in Starter, plus:",
+            "Full animated website",
+            "Email automation",
+            "Technical SEO",
+            "3 months free service",
+        ],
+    },
+    {
+        name: "Enterprise",
+        description: "Advanced plan with enhanced security and unlimited access for large teams",
+        price: 2999,
+        delivery: "4–6 weeks",
+        buttonText: "Contact Us",
+        buttonVariant: "default" as const,
+        features: [
+            { text: "4–6 weeks delivery", icon: <Rocket size={20} /> },
+            { text: "Custom animations", icon: <Zap size={20} /> },
+            { text: "Advanced AI integration", icon: <Server size={20} /> },
+            { text: "Ongoing SEO & monitoring", icon: <Briefcase size={20} /> },
+            { text: "Off-page SEO", icon: <Database size={20} /> },
+            { text: "6 months enhanced service", icon: <CheckCheck size={20} /> },
+        ],
+        includes: [
+            "Everything in Growth, plus:",
+            "Custom animations",
+            "Advanced AI integration",
+            "Ongoing SEO & monitoring",
+            "6 months enhanced service",
+        ],
+    },
+];
+
+const categoryData: Record<PricingCategory, { title: string; subtitle: string; plans: Plan[] }> = {
+    "all-in-one": {
+        title: "All-in-One Packages",
+        subtitle: "Complete content creation and management solutions for your business",
+        plans: allInOnePackages,
+    },
+    "video-editing": {
+        title: "Video Edit Packages",
+        subtitle: "Professional video editing services to elevate your content",
+        plans: videoEditPackages,
+    },
+    "web-development": {
+        title: "Website Development",
+        subtitle: "Modern, AI-powered websites that drive results",
+        plans: webDevelopmentPackages,
+    },
+};
+
 export default function PricingSection() {
     const pricingRef = useRef<HTMLDivElement>(null);
+    const [searchParams, setSearchParams] = useSearchParams();
+    const [activeCategory, setActiveCategory] = useState<PricingCategory>("all-in-one");
+
+    useEffect(() => {
+        const category = searchParams.get("category") as PricingCategory;
+        if (category && categoryData[category]) {
+            setActiveCategory(category);
+        }
+    }, [searchParams]);
+
+    const currentData = categoryData[activeCategory];
 
     const revealVariants = {
         visible: (i: number) => ({
@@ -133,6 +332,43 @@ export default function PricingSection() {
             className="px-4 pt-20 pb-10 min-h-screen max-w-7xl mx-auto relative mb-20"
             ref={pricingRef}
         >
+            {/* Category Tabs */}
+            <div className="flex flex-wrap justify-center gap-3 mb-12">
+                <button
+                    onClick={() => setActiveCategory("all-in-one")}
+                    className={cn(
+                        "px-6 py-3 rounded-full transition-all text-sm font-medium",
+                        activeCategory === "all-in-one"
+                            ? "bg-[#8B1538] text-white shadow-lg shadow-[#8B1538]/20"
+                            : "bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border border-white/10"
+                    )}
+                >
+                    All-in-One Packages
+                </button>
+                <button
+                    onClick={() => setActiveCategory("video-editing")}
+                    className={cn(
+                        "px-6 py-3 rounded-full transition-all text-sm font-medium",
+                        activeCategory === "video-editing"
+                            ? "bg-[#8B1538] text-white shadow-lg shadow-[#8B1538]/20"
+                            : "bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border border-white/10"
+                    )}
+                >
+                    Video Edit Packages
+                </button>
+                <button
+                    onClick={() => setActiveCategory("web-development")}
+                    className={cn(
+                        "px-6 py-3 rounded-full transition-all text-sm font-medium",
+                        activeCategory === "web-development"
+                            ? "bg-[#8B1538] text-white shadow-lg shadow-[#8B1538]/20"
+                            : "bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border border-white/10"
+                    )}
+                >
+                    Website Development
+                </button>
+            </div>
+
             <article className="flex sm:flex-row flex-col sm:pb-0 pb-12 sm:items-center items-start justify-between mb-12">
                 <div className="text-left">
                     <h2 className="text-4xl md:text-5xl font-medium leading-[130%] text-white mb-4">
@@ -149,7 +385,7 @@ export default function PricingSection() {
                                 delay: 0,
                             }}
                         >
-                            Package Comparison
+                            {currentData.title}
                         </VerticalCutReveal>
                     </h2>
 
@@ -160,13 +396,13 @@ export default function PricingSection() {
                         customVariants={revealVariants}
                         className="text-gray-400 w-full md:w-[60%]"
                     >
-                        Choose the perfect package for your business needs. Transparent pricing, no hidden fees.
+                        {currentData.subtitle}
                     </TimelineContent>
                 </div>
             </article>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 items-start">
-                {plans.map((plan) => (
+                {currentData.plans.map((plan) => (
                     <div
                         key={plan.name}
                         className="h-full"
@@ -216,7 +452,9 @@ export default function PricingSection() {
                                                             </>
                                                         )}
                                                     </span>
-                                                    <span className="text-gray-500 font-medium text-sm">/month</span>
+                                                    <span className="text-gray-500 font-medium text-sm">
+                                                        {activeCategory === "web-development" ? "/one-time" : "/month"}
+                                                    </span>
                                                 </>
                                             )}
                                         </div>
@@ -247,15 +485,37 @@ export default function PricingSection() {
                                     </ul>
                                 </div>
                             </CardContent>
-                            <CardFooter className="pb-5 px-5">
+                            <CardFooter className="pb-5 px-5 flex flex-col gap-2">
+                                {/* WhatsApp Button */}
                                 <button
                                     className={`w-full py-3 px-4 text-sm rounded-lg transition-all duration-300 font-bold ${plan.popular
                                         ? "bg-[#8B1538] hover:bg-[#6B1028] text-white shadow-md shadow-[#8B1538]/10"
-                                        : "bg-white text-black hover:bg-gray-200"
+                                        : "bg-[#8B1538] text-white hover:bg-[#6B1028]"
                                         }`}
                                     onClick={() => window.open(`https://wa.me/923398837213?text=${encodeURIComponent(`Hey Zivo Creative, I'm interested in the ${plan.name} package.`)}`, '_blank')}
                                 >
                                     {plan.buttonText}
+                                </button>
+
+                                {/* Email Us Button */}
+                                <button
+                                    className="w-full py-3 px-4 text-sm rounded-lg transition-all duration-300 font-bold bg-white text-black hover:bg-gray-200 border border-gray-300"
+                                    onClick={() => {
+                                        const categoryName = activeCategory === "all-in-one" ? "All in One" : activeCategory === "video-editing" ? "Video Edit" : "Website Development";
+                                        const priceRange = plan.isCustom
+                                            ? "custom pricing based on project requirements"
+                                            : plan.maxPrice && plan.maxPrice !== plan.price
+                                                ? `$${plan.price}-$${plan.maxPrice}${activeCategory === "web-development" ? " (one-time)" : "/month"}`
+                                                : `$${plan.price}${activeCategory === "web-development" ? " (one-time)" : "/month"}`;
+
+                                        const features = plan.includes.slice(1).join('\n');
+
+                                        const message = `Hello Zivo Creative,\n\nI want ${categoryName} ${plan.name} Package which includes:\n${features}\n\nat a service fee of ${priceRange} depending on my project size and details.\n\nI would like to speak to a representative as soon as possible.\n\nThanks.`;
+
+                                        window.location.href = `/contact?message=${encodeURIComponent(message)}&package=${encodeURIComponent(categoryName + " " + plan.name)}`;
+                                    }}
+                                >
+                                    Email Us
                                 </button>
                             </CardFooter>
                         </Card>

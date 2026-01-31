@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import { Link, useLocation } from "react-router"
 import { LucideIcon } from "lucide-react"
@@ -8,8 +8,9 @@ import { cn } from "./utils"
 
 interface NavItem {
     name: string
-    url: string
+    url?: string
     icon: LucideIcon
+    dropdown?: { label: string; url: string }[]
 }
 
 interface NavBarProps {
@@ -21,11 +22,17 @@ interface NavBarProps {
 export function NavBar({ items, className, mobile = false }: NavBarProps) {
     const location = useLocation()
     const [activeTab, setActiveTab] = useState("")
-    const [isMobile, setIsMobile] = useState(false)
 
     useEffect(() => {
+        // Special handling for pricing since it's a dropdown
+        if (location.pathname.startsWith('/pricing')) {
+            setActiveTab('Pricing')
+            return
+        }
+
         // Set active tab based on current path
         const currentItem = items.find(item => {
+            if (!item.url) return false
             if (item.url === "/") return location.pathname === "/"
             return location.pathname.startsWith(item.url)
         })
@@ -34,15 +41,7 @@ export function NavBar({ items, className, mobile = false }: NavBarProps) {
         }
     }, [location.pathname, items])
 
-    useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth < 768)
-        }
 
-        handleResize()
-        window.addEventListener("resize", handleResize)
-        return () => window.removeEventListener("resize", handleResize)
-    }, [])
 
     return (
         <div
@@ -59,12 +58,67 @@ export function NavBar({ items, className, mobile = false }: NavBarProps) {
             )}>
                 {items.map((item) => {
                     const Icon = item.icon
-                    const isActive = activeTab === item.name
+                    const isActive = item.url ? activeTab === item.name : false
 
+                    // If item has dropdown, render dropdown menu
+                    if (item.dropdown && !mobile) {
+                        return (
+                            <div key={item.name} className="relative group">
+                                <button
+                                    className={cn(
+                                        "relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors",
+                                        "text-white/80 hover:text-[#8B1538] flex items-center gap-1",
+                                        isActive && "bg-white/10 text-[#8B1538]",
+                                    )}
+                                >
+                                    <span>{item.name}</span>
+                                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </button>
+                                <div className="absolute top-full left-0 mt-2 w-56 bg-[#111] border border-white/10 rounded-lg shadow-xl overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                    {item.dropdown.map((dropdownItem, idx) => (
+                                        <Link
+                                            key={idx}
+                                            to={dropdownItem.url}
+                                            className="block px-4 py-3 text-sm text-gray-300 hover:bg-[#8B1538]/20 hover:text-white transition-colors border-b border-white/5 last:border-b-0"
+                                        >
+                                            {dropdownItem.label}
+                                        </Link>
+                                    ))}
+                                </div>
+                            </div>
+                        )
+                    }
+
+                    // Mobile dropdown rendering
+                    if (item.dropdown && mobile) {
+                        return (
+                            <div key={item.name} className="w-full">
+                                <div className="flex items-center gap-3 px-4 py-3 w-full text-base text-white/80 font-semibold">
+                                    <Icon size={18} strokeWidth={2.5} />
+                                    <span>{item.name}</span>
+                                </div>
+                                <div className="pl-8 space-y-1">
+                                    {item.dropdown.map((dropdownItem, idx) => (
+                                        <Link
+                                            key={idx}
+                                            to={dropdownItem.url}
+                                            className="block px-4 py-2 text-sm text-gray-400 hover:text-white transition-colors"
+                                        >
+                                            {dropdownItem.label}
+                                        </Link>
+                                    ))}
+                                </div>
+                            </div>
+                        )
+                    }
+
+                    // Regular nav item rendering
                     return (
                         <Link
                             key={item.name}
-                            to={item.url}
+                            to={item.url!}
                             onClick={() => setActiveTab(item.name)}
                             className={cn(
                                 "relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors",

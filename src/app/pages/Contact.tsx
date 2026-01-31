@@ -1,16 +1,22 @@
-import { useState } from "react";
-import { MessageCircle, Mail, Clock, MapPin, AlertCircle, CheckCircle2 } from "lucide-react";
+import { useState, useEffect } from "react";
+import { MessageCircle, Mail, Clock, MapPin, AlertCircle, CheckCircle2, Link as LinkIcon, User, Zap, Briefcase } from "lucide-react";
 import { submitContactForm } from "@/lib/supabase";
 import { validateContactForm, sanitizeText } from "@/lib/validation";
 import { checkRateLimit, recordSubmission, getRateLimitMessage } from "@/lib/rateLimit";
+import { useSearchParams } from "react-router";
 
 export function Contact() {
+  const [searchParams] = useSearchParams();
+
   const [formData, setFormData] = useState({
     name: "",
+    businessName: "",
     email: "",
     projectType: "",
     message: "",
     phone: "",
+    socialMediaLink: "",
+    priority: "normal",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -19,6 +25,27 @@ export function Contact() {
     message: string;
   }>({ type: null, message: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});
+
+  // Pre-fill message from URL parameters
+  useEffect(() => {
+    const messageParam = searchParams.get("message");
+    const packageParam = searchParams.get("package");
+    const categoryParam = searchParams.get("category");
+
+    if (messageParam) {
+      setFormData(prev => ({
+        ...prev,
+        message: decodeURIComponent(messageParam)
+      }));
+    }
+
+    if (packageParam || categoryParam) {
+      setFormData(prev => ({
+        ...prev,
+        projectType: packageParam || categoryParam || ""
+      }));
+    }
+  }, [searchParams]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -77,10 +104,13 @@ export function Contact() {
         // Reset form
         setFormData({
           name: "",
+          businessName: "",
           email: "",
           projectType: "",
           message: "",
           phone: "",
+          socialMediaLink: "",
+          priority: "normal",
         });
 
         // Open WhatsApp as backup/confirmation
@@ -166,8 +196,7 @@ export function Contact() {
             {contactInfo.map((info, index) => (
               <div
                 key={index}
-                className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:border-white/20 transition-all text-center"
-              >
+                className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:border-white/20 transition-all text-center">
                 <div className="w-12 h-12 bg-[#8B1538]/20 rounded-full flex items-center justify-center mx-auto mb-4">
                   <info.icon className="w-6 h-6 text-[#8B1538]" />
                 </div>
@@ -191,8 +220,8 @@ export function Contact() {
       </section>
 
       {/* Contact Form */}
-      <section className="py-24 bg-black">
-        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+      <section className="py-24 bg-gradient-to-b from-black to-[#0A0A0A]">
+        <div className="max-w-4xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl tracking-tighter mb-4">
               <span className="text-white">Send Us a</span>{" "}
@@ -207,8 +236,8 @@ export function Contact() {
           {submitStatus.type && (
             <div
               className={`mb-6 p-4 rounded-xl border flex items-start gap-3 ${submitStatus.type === "success"
-                  ? "bg-green-500/10 border-green-500/30 text-green-400"
-                  : "bg-red-500/10 border-red-500/30 text-red-400"
+                ? "bg-green-500/10 border-green-500/30 text-green-400"
+                : "bg-red-500/10 border-red-500/30 text-red-400"
                 }`}
             >
               {submitStatus.type === "success" ? (
@@ -220,132 +249,204 @@ export function Contact() {
             </div>
           )}
 
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Name */}
-              <div>
-                <label htmlFor="name" className="block text-white mb-2">
-                  Name *
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className={`w-full bg-white/5 border ${errors.name ? "border-red-500" : "border-white/10"
-                    } text-white px-4 py-3 rounded-xl focus:outline-none focus:border-[#8B1538] transition-colors`}
-                  placeholder="John Doe"
-                />
-                {errors.name && <p className="mt-1 text-sm text-red-400">{errors.name}</p>}
+          {/* Beautiful Form Card */}
+          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-10 shadow-2xl">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Name */}
+                <div>
+                  <label htmlFor="name" className="block text-white mb-2 font-medium flex items-center gap-2">
+                    <User className="w-4 h-4 text-[#8B1538]" />
+                    Your Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className={`w-full bg-white border ${errors.name ? "border-red-500" : "border-gray-200"
+                      } text-black px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B1538] focus:border-transparent transition-all placeholder-gray-400`}
+                    placeholder="John Doe"
+                  />
+                  {errors.name && <p className="mt-1 text-sm text-red-400">{errors.name}</p>}
+                </div>
+
+                {/* Business/Influencer Name */}
+                <div>
+                  <label htmlFor="businessName" className="block text-white mb-2 font-medium flex items-center gap-2">
+                    <Briefcase className="w-4 h-4 text-[#8B1538]" />
+                    Business/Brand Name
+                  </label>
+                  <input
+                    type="text"
+                    id="businessName"
+                    name="businessName"
+                    value={formData.businessName}
+                    onChange={handleChange}
+                    className="w-full bg-white border border-gray-200 text-black px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B1538] focus:border-transparent transition-all placeholder-gray-400"
+                    placeholder="Your brand or channel name"
+                  />
+                </div>
               </div>
 
-              {/* Email */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Email */}
+                <div>
+                  <label htmlFor="email" className="block text-white mb-2 font-medium flex items-center gap-2">
+                    <Mail className="w-4 h-4 text-[#8B1538]" />
+                    Email *
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className={`w-full bg-white border ${errors.email ? "border-red-500" : "border-gray-200"
+                      } text-black px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B1538] focus:border-transparent transition-all placeholder-gray-400`}
+                    placeholder="john@example.com"
+                  />
+                  {errors.email && <p className="mt-1 text-sm text-red-400">{errors.email}</p>}
+                </div>
+
+                {/* Phone */}
+                <div>
+                  <label htmlFor="phone" className="block text-white mb-2 font-medium flex items-center gap-2">
+                    <MessageCircle className="w-4 h-4 text-[#8B1538]" />
+                    Phone (Optional)
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className={`w-full bg-white border ${errors.phone ? "border-red-500" : "border-gray-200"
+                      } text-black px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B1538] focus:border-transparent transition-all placeholder-gray-400`}
+                    placeholder="+1 (555) 000-0000"
+                  />
+                  {errors.phone && <p className="mt-1 text-sm text-red-400">{errors.phone}</p>}
+                </div>
+              </div>
+
+              {/* Social Media Link */}
               <div>
-                <label htmlFor="email" className="block text-white mb-2">
-                  Email *
+                <label htmlFor="socialMediaLink" className="block text-white mb-2 font-medium flex items-center gap-2">
+                  <LinkIcon className="w-4 h-4 text-[#8B1538]" />
+                  Social Media Link (Optional)
                 </label>
                 <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
+                  type="url"
+                  id="socialMediaLink"
+                  name="socialMediaLink"
+                  value={formData.socialMediaLink}
                   onChange={handleChange}
-                  className={`w-full bg-white/5 border ${errors.email ? "border-red-500" : "border-white/10"
-                    } text-white px-4 py-3 rounded-xl focus:outline-none focus:border-[#8B1538] transition-colors`}
-                  placeholder="john@example.com"
+                  className="w-full bg-white border border-gray-200 text-black px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B1538] focus:border-transparent transition-all placeholder-gray-400"
+                  placeholder="https://instagram.com/yourbrand or YouTube channel"
                 />
-                {errors.email && <p className="mt-1 text-sm text-red-400">{errors.email}</p>}
+                <p className="mt-1 text-sm text-gray-400">Attach your social media profile for reference</p>
               </div>
-            </div>
 
-            {/* Phone (Optional) */}
-            <div>
-              <label htmlFor="phone" className="block text-white mb-2">
-                Phone (Optional)
-              </label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                className={`w-full bg-white/5 border ${errors.phone ? "border-red-500" : "border-white/10"
-                  } text-white px-4 py-3 rounded-xl focus:outline-none focus:border-[#8B1538] transition-colors`}
-                placeholder="+1 (555) 000-0000"
-              />
-              {errors.phone && <p className="mt-1 text-sm text-red-400">{errors.phone}</p>}
-            </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Project Type */}
+                <div>
+                  <label htmlFor="projectType" className="block text-white mb-2 font-medium">
+                    Package/Service *
+                  </label>
+                  <select
+                    id="projectType"
+                    name="projectType"
+                    value={formData.projectType}
+                    onChange={handleChange}
+                    className={`w-full bg-white border ${errors.projectType ? "border-red-500" : "border-gray-200"
+                      } text-black px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B1538] focus:border-transparent transition-all`}
+                  >
+                    <option value="" className="text-gray-400">Select a package</option>
+                    <option value="All-in-One Starter Growth">All-in-One: Starter Growth</option>
+                    <option value="All-in-One Accelerator">All-in-One: Accelerator</option>
+                    <option value="All-in-One Premium Authority">All-in-One: Premium Authority</option>
+                    <option value="All-in-One Custom Enterprise">All-in-One: Custom Enterprise</option>
+                    <option value="Video Edit Starter Growth">Video Edit: Starter Growth</option>
+                    <option value="Video Edit Accelerator">Video Edit: Accelerator</option>
+                    <option value="Video Edit Premium Authority">Video Edit: Premium Authority</option>
+                    <option value="Website Starter">Website: Starter</option>
+                    <option value="Website Growth">Website: Growth</option>
+                    <option value="Website Enterprise">Website: Enterprise</option>
+                    <option value="Other">Other</option>
+                  </select>
+                  {errors.projectType && <p className="mt-1 text-sm text-red-400">{errors.projectType}</p>}
+                </div>
 
-            {/* Project Type */}
-            <div>
-              <label htmlFor="projectType" className="block text-white mb-2">
-                Project Type *
-              </label>
-              <select
-                id="projectType"
-                name="projectType"
-                value={formData.projectType}
-                onChange={handleChange}
-                className={`w-full bg-white/5 border ${errors.projectType ? "border-red-500" : "border-white/10"
-                  } text-white px-4 py-3 rounded-xl focus:outline-none focus:border-[#8B1538] transition-colors`}
+                {/* Priority */}
+                <div>
+                  <label htmlFor="priority" className="block text-white mb-2 font-medium flex items-center gap-2">
+                    <Zap className="w-4 h-4 text-[#8B1538]" />
+                    Priority
+                  </label>
+                  <select
+                    id="priority"
+                    name="priority"
+                    value={formData.priority}
+                    onChange={handleChange}
+                    className="w-full bg-white border border-gray-200 text-black px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B1538] focus:border-transparent transition-all"
+                  >
+                    <option value="normal">Normal Priority</option>
+                    <option value="fast">Fast Priority ⚡</option>
+                  </select>
+                  <p className="mt-1 text-sm text-gray-400">
+                    {formData.priority === "fast"
+                      ? "We'll prioritize your request for faster turnaround"
+                      : "Standard response within 2 hours"}
+                  </p>
+                </div>
+              </div>
+
+              {/* Message */}
+              <div>
+                <label htmlFor="message" className="block text-white mb-2 font-medium">
+                  Message *
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  rows={8}
+                  className={`w-full bg-white border ${errors.message ? "border-red-500" : "border-gray-200"
+                    } text-black px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B1538] focus:border-transparent transition-all resize-none placeholder-gray-400`}
+                  placeholder="Tell us about your project, goals, and any specific requirements..."
+                />
+                {errors.message && <p className="mt-1 text-sm text-red-400">{errors.message}</p>}
+                <p className="mt-1 text-sm text-gray-400">
+                  {formData.message.length} / 2000 characters
+                </p>
+              </div>
+
+              {/* Submit Button */}
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full bg-gradient-to-r from-[#8B1538] to-[#6B1028] hover:from-[#6B1028] hover:to-[#8B1538] disabled:from-gray-600 disabled:to-gray-600 disabled:cursor-not-allowed text-white px-8 py-4 rounded-full transition-all text-lg font-bold flex items-center justify-center gap-2 shadow-lg shadow-[#8B1538]/20 hover:shadow-[#8B1538]/40 hover:scale-[1.02] active:scale-[0.98]"
               >
-                <option value="">Select a project type</option>
-                <option value="YouTube Long-Form">YouTube Long-Form Editing</option>
-                <option value="Short-Form Content">Short-Form Content (Reels/TikTok/Shorts)</option>
-                <option value="Brand & Ads">Brand & Ad Creatives</option>
-                <option value="Podcast Editing">Podcast Editing</option>
-                <option value="Web Development">Website Design & Development</option>
-                <option value="Social Media Management">Social Media Management</option>
-                <option value="Other">Other</option>
-              </select>
-              {errors.projectType && <p className="mt-1 text-sm text-red-400">{errors.projectType}</p>}
-            </div>
+                {isSubmitting ? (
+                  <>
+                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    <MessageCircle className="w-5 h-5" />
+                    Send Message
+                  </>
+                )}
+              </button>
 
-            {/* Message */}
-            <div>
-              <label htmlFor="message" className="block text-white mb-2">
-                Message *
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                rows={6}
-                className={`w-full bg-white/5 border ${errors.message ? "border-red-500" : "border-white/10"
-                  } text-white px-4 py-3 rounded-xl focus:outline-none focus:border-[#8B1538] transition-colors resize-none`}
-                placeholder="Tell us about your project..."
-              />
-              {errors.message && <p className="mt-1 text-sm text-red-400">{errors.message}</p>}
-              <p className="mt-1 text-sm text-gray-500">
-                {formData.message.length} / 2000 characters
+              <p className="text-center text-sm text-gray-400">
+                🔒 Your information is secure and will never be shared
               </p>
-            </div>
-
-            {/* Submit Button */}
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="w-full bg-[#8B1538] hover:bg-[#6B1028] disabled:bg-gray-600 disabled:cursor-not-allowed text-white px-8 py-4 rounded-full transition-colors text-lg font-medium flex items-center justify-center gap-2"
-            >
-              {isSubmitting ? (
-                <>
-                  <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                  Sending...
-                </>
-              ) : (
-                <>
-                  <MessageCircle className="w-5 h-5" />
-                  Send Message
-                </>
-              )}
-            </button>
-
-            <p className="text-center text-sm text-gray-500">
-              We'll respond within 2 hours during business hours
-            </p>
-          </form>
+            </form>
+          </div>
 
           {/* Alternative Contact */}
           <div className="mt-12 text-center">
@@ -354,7 +455,7 @@ export function Contact() {
               href="https://wa.me/923398837213?text=Hey%20Zivo%20Creative%2C%20I'm%20interested%20in%20your%20services.%20Can%20we%20discuss%20my%20project%3F"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 border border-white/20 hover:border-white/40 text-white px-8 py-4 rounded-full transition-all"
+              className="inline-flex items-center gap-2 border border-white/20 hover:border-[#8B1538] hover:bg-[#8B1538]/10 text-white px-8 py-4 rounded-full transition-all"
             >
               <MessageCircle className="w-5 h-5" />
               <span>Message Us on WhatsApp</span>

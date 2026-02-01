@@ -3,9 +3,14 @@
 import { motion } from "framer-motion";
 import { Calendar } from "lucide-react";
 
-export function BookCallButton() {
+interface BookCallButtonProps {
+    onClick?: () => void;
+}
+
+export function BookCallButton({ onClick }: BookCallButtonProps) {
     return (
         <motion.button
+            onClick={onClick}
             className="group relative inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-[#8B1538] text-white rounded-full overflow-hidden transition-all text-base sm:text-lg font-medium"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

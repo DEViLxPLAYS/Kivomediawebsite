@@ -39,7 +39,7 @@ export function WorldMap({
             radius: 0.22,
             color: theme === "dark" ? "#FFFF7F40" : "#00000040",
             shape: "circle",
-            backgroundColor: theme === "dark" ? "black" : "white",
+            backgroundColor: "black",
         }),
         [map, theme]
     );

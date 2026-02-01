@@ -1,12 +1,15 @@
 import { MessageCircle, Play, ArrowRight, Check } from "lucide-react";
 import { Link } from "react-router";
+import { useState } from "react";
 import { ImageWithFallback } from "@/app/components/figma/ImageWithFallback";
 import { GlowingCard } from "../components/ui/glowing-card";
 import { ZivoTestimonials } from "@/app/components/ZivoTestimonials";
 import { ZivoWorldMap } from "@/app/components/ZivoWorldMap";
 import { BookCallButton } from "@/app/components/BookCallButton";
+import { LetsWorkTogether } from "@/app/components/ui/lets-work-section";
 
 export function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const services = [
     {
       title: "YouTube Long-Form",
@@ -77,7 +80,7 @@ export function Home() {
                 <MessageCircle className="w-5 h-5" />
                 <span>Contact Us</span>
               </Link>
-              <BookCallButton />
+              <BookCallButton onClick={() => setIsModalOpen(true)} />
             </div>
           </div>
         </div>
@@ -228,6 +231,9 @@ export function Home() {
           </div>
         </div>
       </section>
+
+      {/* Book a Call Modal */}
+      <LetsWorkTogether isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 }

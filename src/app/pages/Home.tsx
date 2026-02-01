@@ -3,6 +3,8 @@ import { Link } from "react-router";
 import { ImageWithFallback } from "@/app/components/figma/ImageWithFallback";
 import { GlowingCard } from "../components/ui/glowing-card";
 import { ZivoTestimonials } from "@/app/components/ZivoTestimonials";
+import { ZivoWorldMap } from "@/app/components/ZivoWorldMap";
+import { BookCallButton } from "@/app/components/BookCallButton";
 
 export function Home() {
   const services = [
@@ -75,12 +77,16 @@ export function Home() {
                 <MessageCircle className="w-5 h-5" />
                 <span>Contact Us</span>
               </Link>
+              <BookCallButton />
             </div>
           </div>
         </div>
 
 
       </section>
+
+      {/* World Map Section */}
+      <ZivoWorldMap />
 
       {/* Services Overview Section */}
       <section className="py-16 sm:py-20 md:py-24 bg-gradient-to-b from-black to-[#0A0A0A]">

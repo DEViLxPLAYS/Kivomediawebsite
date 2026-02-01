@@ -8,7 +8,7 @@ import { Briefcase, CheckCheck, Database, Server, Zap, Rocket } from "lucide-rea
 import { useRef, useState, useEffect } from "react";
 import { useSearchParams } from "react-router";
 
-type PricingCategory = "all-in-one" | "video-editing" | "web-development";
+type PricingCategory = "all-in-one" | "video-editing" | "web-development" | "youtube-automation";
 
 interface PlanFeature {
     text: string;
@@ -278,6 +278,107 @@ const webDevelopmentPackages: Plan[] = [
     },
 ];
 
+const youtubeAutomationPackages: Plan[] = [
+    {
+        name: "Starter Package",
+        description: "Ideal for beginners or small channels",
+        price: 300,
+        maxPrice: 600,
+        delivery: "Ongoing",
+        buttonText: "Get Started",
+        buttonVariant: "outline" as const,
+        features: [
+            { text: "Channel setup & branding (logo + banner)", icon: <Rocket size={20} /> },
+            { text: "Niche research & content planning", icon: <Briefcase size={20} /> },
+            { text: "8-12 short/long-form videos per month", icon: <Zap size={20} /> },
+            { text: "Script writing (AI + human edited)", icon: <Server size={20} /> },
+            { text: "SEO optimization (titles, tags, descriptions)", icon: <CheckCheck size={20} /> },
+            { text: "Thumbnail templates", icon: <Database size={20} /> },
+            { text: "Upload & scheduling", icon: <CheckCheck size={20} /> },
+        ],
+        includes: [
+            "Package Includes:",
+            "8-12 videos/month",
+            "Basic analytics report",
+            "1 revision per asset",
+        ],
+    },
+    {
+        name: "Growth Package",
+        description: "For channels aiming for real growth",
+        price: 800,
+        maxPrice: 1400,
+        delivery: "Ongoing",
+        buttonText: "Get Started",
+        buttonVariant: "outline" as const,
+        popular: true,
+        features: [
+            { text: "Everything in Starter, plus:", icon: <Rocket size={20} /> },
+            { text: "Advanced keyword & competitor research", icon: <Briefcase size={20} /> },
+            { text: "Custom thumbnails", icon: <Zap size={20} /> },
+            { text: "Voiceover (AI or human)", icon: <Server size={20} /> },
+            { text: "Video editing (cuts, color, transitions)", icon: <CheckCheck size={20} /> },
+            { text: "Custom end-screens & cards", icon: <Database size={20} /> },
+            { text: "Biweekly performance review", icon: <CheckCheck size={20} /> },
+        ],
+        includes: [
+            "Everything in Starter, plus:",
+            "12-20 videos/month",
+            "Custom thumbnails",
+            "Voiceovers included",
+            "Growth report",
+        ],
+    },
+    {
+        name: "Premium / Full Automation",
+        description: "Best for serious creators & businesses",
+        price: 1800,
+        maxPrice: 3000,
+        delivery: "Ongoing",
+        buttonText: "Get Started",
+        buttonVariant: "outline" as const,
+        features: [
+            { text: "Everything in Growth, plus:", icon: <Rocket size={20} /> },
+            { text: "Full video production (scripting → publishing)", icon: <Briefcase size={20} /> },
+            { text: "Human voiceovers", icon: <Zap size={20} /> },
+            { text: "Channel account management", icon: <Server size={20} /> },
+            { text: "Monetization setup (ads, merch links)", icon: <CheckCheck size={20} /> },
+            { text: "Full analytics dashboard", icon: <Database size={20} /> },
+            { text: "Daily posting & community management", icon: <CheckCheck size={20} /> },
+        ],
+        includes: [
+            "Everything in Growth, plus:",
+            "20-30+ videos/month",
+            "Dedicated account manager",
+            "Weekly strategy call",
+        ],
+    },
+    {
+        name: "Custom Package",
+        description: "Tailored plan based on your needs",
+        price: 0,
+        delivery: "Custom",
+        buttonText: "Get Quote",
+        buttonVariant: "outline" as const,
+        isCustom: true,
+        features: [
+            { text: "Number of videos (your choice)", icon: <Rocket size={20} /> },
+            { text: "Voiceover type (AI / human)", icon: <Briefcase size={20} /> },
+            { text: "Editing style (simple / cinematic)", icon: <Zap size={20} /> },
+            { text: "Thumbnail complexity", icon: <Server size={20} /> },
+            { text: "SEO level", icon: <CheckCheck size={20} /> },
+            { text: "Channel management or training", icon: <Database size={20} /> },
+        ],
+        includes: [
+            "Custom Options:",
+            "Pay-per-video model",
+            "One-time launch package",
+            "Content repurposing for TikTok/Instagram",
+            "Ads and channel growth campaigns",
+        ],
+    },
+];
+
 const categoryData: Record<PricingCategory, { title: string; subtitle: string; plans: Plan[] }> = {
     "all-in-one": {
         title: "All-in-One Packages",
@@ -293,6 +394,11 @@ const categoryData: Record<PricingCategory, { title: string; subtitle: string; p
         title: "Website Development",
         subtitle: "Modern, AI-powered websites that drive results",
         plans: webDevelopmentPackages,
+    },
+    "youtube-automation": {
+        title: "YouTube Automation",
+        subtitle: "Full-service YouTube channel automation and growth packages",
+        plans: youtubeAutomationPackages,
     },
 };
 
@@ -366,6 +472,17 @@ export default function PricingSection() {
                     )}
                 >
                     Web Development
+                </button>
+                <button
+                    onClick={() => setActiveCategory("youtube-automation")}
+                    className={cn(
+                        "px-4 sm:px-6 py-2.5 sm:py-3 rounded-full transition-all text-xs sm:text-sm font-medium whitespace-nowrap",
+                        activeCategory === "youtube-automation"
+                            ? "bg-[#8B1538] text-white shadow-lg shadow-[#8B1538]/20"
+                            : "bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border border-white/10"
+                    )}
+                >
+                    YouTube Automation
                 </button>
             </div>
 

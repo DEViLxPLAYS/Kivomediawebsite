@@ -66,7 +66,7 @@ export function ZivoTestimonials() {
                     </p>
                 </div>
 
-                <ContainerScroll className="container h-[300vh] overflow-x-hidden">
+                <ContainerScroll className="container h-[100vh] overflow-x-hidden">
                     <div className="sticky left-0 top-0 h-svh w-full py-8 sm:py-12 flex items-center justify-center overflow-hidden">
                         <CardsContainer className="mx-auto h-[380px] w-[300px] sm:h-[420px] sm:w-[340px] md:h-[450px] md:w-[350px] max-w-full">
                             {TESTIMONIALS.map((testimonial, index) => (

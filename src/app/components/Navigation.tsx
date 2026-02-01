@@ -32,6 +32,7 @@ export function Navigation() {
         { label: 'All-in-One Packages', url: '/pricing?category=all-in-one' },
         { label: 'Video Edit Packages', url: '/pricing?category=video-editing' },
         { label: 'Website Development', url: '/pricing?category=web-development' },
+        { label: 'YouTube Automation', url: '/pricing?category=youtube-automation' },
       ]
     },
     { name: 'Process', url: '/process', icon: FileText },

@@ -39,14 +39,14 @@ export function ZivoWorldMap() {
                             },
                             end: {
                                 lat: 25.2048,
-                                lng: 55.2708,
+                                lng: 53.2708,
                                 label: "Dubai"
                             },
                         },
                         {
                             start: {
                                 lat: 25.2048,
-                                lng: 55.2708,
+                                lng: 53.2708,
                                 label: "Dubai"
                             },
                             end: {

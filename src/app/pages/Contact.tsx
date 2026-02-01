@@ -151,26 +151,31 @@ export function Contact() {
     {
       icon: MessageCircle,
       title: "WhatsApp",
-      detail: "+92 339 8837213",
-      link: "https://wa.me/923398837213",
+      details: [
+        { text: "+92 339 8837213", link: "https://wa.me/923398837213" },
+        { text: "+92 334 7483286", link: "https://wa.me/923347483286" },
+      ],
     },
     {
       icon: Mail,
       title: "Email",
-      detail: "hello@zivocreative.com",
-      link: "mailto:hello@zivocreative.com",
+      details: [
+        { text: "info@zivocreative.com", link: "mailto:info@zivocreative.com" },
+      ],
     },
     {
       icon: Clock,
       title: "Response Time",
-      detail: "Within 2 hours",
-      link: null,
+      details: [
+        { text: "Within 2 hours", link: null },
+      ],
     },
     {
       icon: MapPin,
       title: "Location",
-      detail: "Global (Remote)",
-      link: null,
+      details: [
+        { text: "Global (Remote)", link: null },
+      ],
     },
   ];
 
@@ -201,18 +206,24 @@ export function Contact() {
                   <info.icon className="w-6 h-6 text-[#8B1538]" />
                 </div>
                 <h3 className="text-white mb-2">{info.title}</h3>
-                {info.link ? (
-                  <a
-                    href={info.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-[#8B1538] transition-colors"
-                  >
-                    {info.detail}
-                  </a>
-                ) : (
-                  <p className="text-gray-400">{info.detail}</p>
-                )}
+                <div className="space-y-1">
+                  {info.details.map((detail, detailIndex) => (
+                    <div key={detailIndex}>
+                      {detail.link ? (
+                        <a
+                          href={detail.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-gray-400 hover:text-[#8B1538] transition-colors block"
+                        >
+                          {detail.text}
+                        </a>
+                      ) : (
+                        <p className="text-gray-400">{detail.text}</p>
+                      )}
+                    </div>
+                  ))}
+                </div>
               </div>
             ))}
           </div>

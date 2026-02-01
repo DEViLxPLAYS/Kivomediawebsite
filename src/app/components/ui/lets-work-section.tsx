@@ -48,7 +48,7 @@ export function LetsWorkTogether({ isOpen, onClose }: LetsWorkTogetherProps) {
                     <X className="w-8 h-8" />
                 </button>
 
-                <section className="flex min-h-[80vh] items-center justify-center px-6 py-12 bg-gradient-to-b from-[#1a0a0f] to-black rounded-2xl border border-[#8B1538]/20">
+                <section className="flex min-h-[80vh] items-center justify-center px-4 sm:px-6 py-8 sm:py-12 bg-gradient-to-b from-[#1a0a0f] to-black rounded-2xl border border-[#8B1538]/20">
                     <div className="relative flex flex-col items-center gap-12">
                         <div
                             className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-8 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
@@ -190,9 +190,9 @@ export function LetsWorkTogether({ isOpen, onClose }: LetsWorkTogetherProps) {
                                 pointerEvents: isClicked ? "none" : "auto",
                             }}
                         >
-                            <div className="flex flex-col items-center gap-6">
+                            <div className="flex flex-col items-center gap-4 sm:gap-6">
                                 <h2
-                                    className="relative text-center text-5xl font-light tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                                    className="relative text-center text-4xl font-light tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
                                     style={{
                                         opacity: isClicked ? 0 : 1,
                                         transform: isClicked ? "translateY(-40px) scale(0.95)" : "translateY(0) scale(1)",
@@ -220,7 +220,7 @@ export function LetsWorkTogether({ isOpen, onClose }: LetsWorkTogetherProps) {
                                     </span>
                                 </h2>
 
-                                <div className="relative mt-4 flex size-16 items-center justify-center sm:size-20">
+                                <div className="relative mt-2 sm:mt-4 flex size-14 items-center justify-center sm:size-16 md:size-20">
                                     <div
                                         className="pointer-events-none absolute inset-0 rounded-full border transition-all ease-out"
                                         style={{

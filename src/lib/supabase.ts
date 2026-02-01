@@ -8,8 +8,10 @@ if (!supabaseUrl || !supabaseAnonKey) {
     console.warn('Supabase environment variables are not configured. Backend features will be disabled.')
 }
 
-// Create Supabase client
-export const supabase = createClient(supabaseUrl || '', supabaseAnonKey || '')
+// Create Supabase client only if environment variables are configured
+export const supabase = (supabaseUrl && supabaseAnonKey)
+    ? createClient(supabaseUrl, supabaseAnonKey)
+    : null
 
 // Types for database tables
 export interface ContactSubmission {
@@ -26,6 +28,11 @@ export interface ContactSubmission {
 // Helper function to submit contact form
 export async function submitContactForm(data: Omit<ContactSubmission, 'id' | 'created_at' | 'status'>) {
     try {
+        if (!supabase) {
+            console.warn('Supabase is not configured. Form submission skipped.')
+            return { success: false, error: 'Backend is not configured' }
+        }
+
         const { data: result, error } = await supabase
             .from('contact_submissions')
             .insert([{

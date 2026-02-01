@@ -33,24 +33,24 @@ export function About() {
 
   const team = [
     {
-      name: "Senior Editor",
+      name: "Hamzah Ayyan",
       role: "Long-Form Specialist",
       description: "10+ years crafting cinematic stories for YouTube's top creators",
     },
     {
-      name: "Motion Graphics",
-      role: "Animation Expert",
-      description: "Award-winning designer bringing brands to life through motion",
+      name: "Muhammad Arfa",
+      role: "Senior Developer & AI Automation Engineer",
+      description: "Expert in building custom workflows, AI integrations, and scalable web solutions",
     },
     {
-      name: "Short-Form Lead",
+      name: "Jawad Nadeem",
       role: "Viral Content Expert",
       description: "Master of hooks and trends with 500M+ views across platforms",
     },
     {
-      name: "Project Manager",
-      role: "Client Success",
-      description: "Ensuring every project exceeds expectations, every time",
+      name: "Mueez",
+      role: "Management & Project Manager",
+      description: "Ensuring every project exceeds expectations with seamless execution and client success",
     },
   ];
 

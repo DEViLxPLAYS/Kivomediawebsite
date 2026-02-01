@@ -3,7 +3,6 @@
 import { useRef, useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import DottedMap from "dotted-map";
-import { useTheme } from "next-themes";
 
 interface MapProps {
     dots?: Array<{
@@ -27,7 +26,6 @@ export function WorldMap({
 }: MapProps) {
     const svgRef = useRef<SVGSVGElement>(null);
     const [hoveredLocation, setHoveredLocation] = useState<string | null>(null);
-    const { theme } = useTheme();
 
     const map = useMemo(
         () => new DottedMap({ height: 100, grid: "diagonal" }),
@@ -37,11 +35,11 @@ export function WorldMap({
     const svgMap = useMemo(
         () => map.getSVG({
             radius: 0.22,
-            color: theme === "dark" ? "#FFFF7F40" : "#00000040",
+            color: "#FFFF7F40", // Always use dark theme color for visibility
             shape: "circle",
             backgroundColor: "black",
         }),
-        [map, theme]
+        [map]
     );
 
     const projectPoint = (lat: number, lng: number) => {
@@ -66,7 +64,7 @@ export function WorldMap({
     const fullCycleDuration = totalAnimationTime + pauseTime;
 
     return (
-        <div className="w-full aspect-[2/1] md:aspect-[2.5/1] lg:aspect-[2/1] dark:bg-black bg-white rounded-lg relative font-sans overflow-hidden">
+        <div className="w-full aspect-[2/1] md:aspect-[2.5/1] lg:aspect-[2/1] bg-black relative font-sans overflow-hidden">
             <img
                 src={`data:image/svg+xml;utf8,${encodeURIComponent(svgMap)}`}
                 className="h-full w-full [mask-image:linear-gradient(to_bottom,transparent,white_10%,white_90%,transparent)] pointer-events-none select-none object-cover"

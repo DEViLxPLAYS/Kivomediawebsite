@@ -1,7 +1,10 @@
 import { Check, ArrowRight, MessageCircle } from "lucide-react";
 import { GlowingCard } from "../components/ui/glowing-card";
+import { LetsWorkTogether } from "@/app/components/ui/lets-work-section";
+import { useState } from "react";
 
 export function Services() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const services = [
     {
       title: "YouTube Long-Form Editing",
@@ -49,21 +52,6 @@ export function Services() {
       turnaround: "3-5 days",
     },
     {
-      title: "Podcast Editing & Repurposing",
-      tagline: "Transform conversations into content goldmines",
-      description: "Full podcast production and strategic content repurposing to maximize your reach.",
-      features: [
-        "Multi-camera editing",
-        "Audio enhancement",
-        "Clip creation for social",
-        "Highlight reels",
-        "Transcript integration",
-        "Distribution support",
-      ],
-      idealFor: ["Podcasters", "Thought leaders", "Agencies", "Business owners"],
-      turnaround: "48-72 hours",
-    },
-    {
       title: "Website Design & Development",
       tagline: "Custom websites with AI-powered features",
       description: "Modern, responsive websites built for performance. From portfolio sites to e-commerce platforms with integrated AI chatbots.",
@@ -77,6 +65,21 @@ export function Services() {
       ],
       idealFor: ["Creators", "Small businesses", "E-commerce brands", "Agencies"],
       turnaround: "1-3 weeks",
+    },
+    {
+      title: "Faceless YouTube Automation",
+      tagline: "AI-powered YouTube channels that run on autopilot",
+      description: "Complete faceless YouTube channel setup with AI-generated scripts, automated voiceovers, and full content production. Build a profitable YouTube business without showing your face.",
+      features: [
+        "AI script writing & research",
+        "Automated AI voiceover",
+        "Video editing & production",
+        "Thumbnail & title optimization",
+        "Channel strategy & SEO",
+        "Upload scheduling & management",
+      ],
+      idealFor: ["Entrepreneurs", "Content creators", "Business owners", "Passive income seekers"],
+      turnaround: "5-7 days per video",
     },
   ];
 
@@ -156,17 +159,13 @@ export function Services() {
                     </div>
                   </div>
 
-                  <a
-                    href={`https://wa.me/923398837213?text=${encodeURIComponent(
-                      `Hey Zivo Creative, I want ${service.title} service which includes: ${service.features.join(", ")}`
-                    )}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <button
+                    onClick={() => setIsModalOpen(true)}
                     className="flex items-center justify-center gap-2 bg-[#8B1538] hover:bg-[#6B1028] text-white px-6 py-3 rounded-full transition-colors w-full"
                   >
                     <MessageCircle className="w-4 h-4" />
-                    <span>Get Started</span>
-                  </a>
+                    <span>Book a Call</span>
+                  </button>
                 </div>
               </div>
             </GlowingCard>
@@ -223,6 +222,9 @@ export function Services() {
           </a>
         </div>
       </section>
+
+      {/* Let's Work Together Modal */}
+      <LetsWorkTogether isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 }

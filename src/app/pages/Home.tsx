@@ -3,7 +3,7 @@ import { Link } from "react-router";
 import { useState } from "react";
 import { ImageWithFallback } from "@/app/components/figma/ImageWithFallback";
 import { GlowingCard } from "../components/ui/glowing-card";
-import { ZivoTestimonials } from "@/app/components/ZivoTestimonials";
+import { StaggerTestimonials } from "@/app/components/ui/stagger-testimonials";
 import { ZivoWorldMap } from "@/app/components/ZivoWorldMap";
 import { BookCallButton } from "@/app/components/BookCallButton";
 import { LetsWorkTogether } from "@/app/components/ui/lets-work-section";
@@ -22,14 +22,14 @@ export function Home() {
       features: ["Hook mastery", "Trend optimization", "Fast delivery", "Batch editing"],
     },
     {
-      title: "Podcast Editing",
-      description: "Transform raw footage into engaging podcast content",
-      features: ["Multi-cam editing", "Audio polish", "Clips for social", "Full repurposing"],
-    },
-    {
       title: "Web Development",
       description: "Custom websites with AI chatbot integration",
       features: ["Responsive design", "AI chatbots", "E-commerce", "SEO optimized"],
+    },
+    {
+      title: "Faceless YT Automation",
+      description: "AI-powered YouTube channels with automated content creation",
+      features: ["AI script generation", "Auto voiceover", "Full automation", "Channel management"],
     },
   ];
 
@@ -198,7 +198,7 @@ export function Home() {
       </section>
 
       {/* Testimonials */}
-      <ZivoTestimonials />
+      <StaggerTestimonials />
 
 
       {/* Final CTA */}

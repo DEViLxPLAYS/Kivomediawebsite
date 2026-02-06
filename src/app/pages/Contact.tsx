@@ -199,10 +199,33 @@ export function Contact() {
             "telephone": "+92-339-8837213",
             "contactType": "Customer Service",
             "availableLanguage": ["English"],
-            "areaServed": ["US", "CA"]
+            "areaServed": ["US", "CA"],
+            "hoursAvailable": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+              "opens": "00:00",
+              "closes": "23:59"
+            }
           }
         ],
         "email": "info@zivocreative.com"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://zivocreative.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Contact",
+            "item": "https://zivocreative.com/contact"
+          }
+        ]
       }
     ]
   };

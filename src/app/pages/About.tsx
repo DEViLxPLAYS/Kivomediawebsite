@@ -70,8 +70,33 @@ export function About() {
         "url": "https://zivocreative.com",
         "description": "Professional video editing, website development, and content creation services for creators and brands",
         "numberOfEmployees": team.length,
+        "foundingDate": "2023",
         "areaServed": ["US", "CA"],
-        "knowsAbout": ["Video Editing", "YouTube Automation", "Website Development", "Content Creation", "Short-Form Content"]
+        "knowsAbout": ["Video Editing", "YouTube Automation", "Website Development", "Content Creation", "Short-Form Content"],
+        "slogan": "We Build Content That Performs",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+92-339-8837213",
+          "contactType": "Customer Service",
+          "email": "info@zivocreative.com"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://zivocreative.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "About",
+            "item": "https://zivocreative.com/about"
+          }
+        ]
       }
     ]
   };

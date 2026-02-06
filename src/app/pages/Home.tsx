@@ -48,9 +48,49 @@ export function Home() {
         "url": "https://zivocreative.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://i.postimg.cc/SNGzjXYz/favicon.png"
+          "url": "https://i.postimg.cc/SNGzjXYz/favicon.png",
+          "width": 512,
+          "height": 512
         },
-        "description": "Professional video editing, YouTube automation, website development, and social media content creation services for creators and brands"
+        "description": "Professional video editing, YouTube automation, website development, and social media content creation services for creators and brands",
+        "foundingDate": "2023",
+        "areaServed": ["US", "CA"],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+92-339-8837213",
+          "contactType": "Customer Service",
+          "availableLanguage": ["English"],
+          "areaServed": ["US", "CA"]
+        },
+        "sameAs": [
+          "https://www.instagram.com/zivocreative/",
+          "https://www.youtube.com/@zivocreative"
+        ]
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://zivocreative.com/#localbusiness",
+        "name": "Zivo Creative",
+        "image": "https://i.postimg.cc/SNGzjXYz/favicon.png",
+        "telephone": "+92-339-8837213",
+        "email": "info@zivocreative.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "PK"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "31.5204",
+          "longitude": "74.3587"
+        },
+        "url": "https://zivocreative.com",
+        "priceRange": "$$",
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "00:00",
+          "closes": "23:59"
+        }
       },
       {
         "@type": "WebSite",
@@ -59,7 +99,60 @@ export function Home() {
         "name": "Zivo Creative",
         "publisher": {
           "@id": "https://zivocreative.com/#organization"
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://zivocreative.com/?s={search_term_string}",
+          "query-input": "required name=search_term_string"
         }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What services does Zivo Creative offer?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Zivo Creative offers professional video editing for YouTube long-form content, short-form content (Reels, TikToks, Shorts), custom website development with AI chatbot integration, and faceless YouTube automation services."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How fast is your turnaround time?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Our standard turnaround is 24-72 hours for long-form content and 12-24 hours for short-form videos. Rush delivery is available for urgent projects."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you offer unlimited revisions?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, our Professional and Enterprise plans include unlimited revisions until you're 100% satisfied with the final result."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can you develop custom websites with AI chatbots?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, we specialize in custom website development with integrated AI chatbots, responsive design, e-commerce functionality, and full SEO optimization."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://zivocreative.com"
+          }
+        ]
       }
     ]
   };

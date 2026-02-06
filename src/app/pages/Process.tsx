@@ -78,21 +78,48 @@ export function Process() {
 
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": " Zivo Creative Video Editing Process",
-    "description": "Our streamlined 4-step process for professional video editing and content creation",
-    "totalTime": "PT72H",
-    "step": steps.map((step, index) => ({
-      "@type": "HowToStep",
-      "position": index + 1,
-      "name": step.title,
-      "text": step.description,
-      "itemListElement": step.details.map((detail, idx) => ({
-        "@type": "HowToDirection",
-        "position": idx + 1,
-        "text": detail
-      }))
-    }))
+    "@graph": [
+      {
+        "@type": "HowTo",
+        "name": "Zivo Creative Video Editing Process",
+        "description": "Our streamlined 4-step process for professional video editing and content creation",
+        "totalTime": "PT72H",
+        "estimatedCost": {
+          "@type": "MonetaryAmount",
+          "currency": "USD",
+          "value": "199"
+        },
+        "step": steps.map((step, index) => ({
+          "@type": "HowToStep",
+          "position": index + 1,
+          "name": step.title,
+          "text": step.description,
+          "url": `https://zivocreative.com/process#step-${index + 1}`,
+          "itemListElement": step.details.map((detail, idx) => ({
+            "@type": "HowToDirection",
+            "position": idx + 1,
+            "text": detail
+          }))
+        }))
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://zivocreative.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Process",
+            "item": "https://zivocreative.com/process"
+          }
+        ]
+      }
+    ]
   };
 
   return (

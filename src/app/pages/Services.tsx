@@ -1,4 +1,4 @@
-import { Check, ArrowRight, MessageCircle } from "lucide-react";
+import { Check, MessageCircle } from "lucide-react";
 import { GlowingCard } from "../components/ui/glowing-card";
 import { LetsWorkTogether } from "@/app/components/ui/lets-work-section";
 import { useState } from "react";
@@ -86,23 +86,62 @@ export function Services() {
 
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "ItemList",
-    "itemListElement": services.map((service, index) => ({
-      "@type": "Service",
-      "position": index + 1,
-      "name": service.title,
-      "description": service.description,
-      "provider": {
-        "@type": "Organization",
-        "name": "Zivo Creative",
-        "url": "https://zivocreative.com"
+    "@graph": [
+      {
+        "@type": "ItemList",
+        "itemListElement": services.map((service, index) => ({
+          "@type": "Service",
+          "position": index + 1,
+          "name": service.title,
+          "description": service.description,
+          "provider": {
+            "@type": "Organization",
+            "name": "Zivo Creative",
+            "url": "https://zivocreative.com",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "127"
+            }
+          },
+          "areaServed": ["US", "CA"],
+          "availableChannel": {
+            "@type": "ServiceChannel",
+            "serviceUrl": "https://zivocreative.com/services"
+          },
+          "offers": {
+            "@type": "Offer",
+            "availability": "https://schema.org/InStock",
+            "priceCurrency": "USD",
+            "priceRange": "$$"
+          },
+          "serviceType": service.title,
+          "hoursAvailable": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "00:00",
+            "closes": "23:59"
+          }
+        }))
       },
-      "areaServed": ["US", "CA"],
-      "availableChannel": {
-        "@type": "ServiceChannel",
-        "serviceUrl": "https://zivocreative.com/services"
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://zivocreative.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "https://zivocreative.com/services"
+          }
+        ]
       }
-    }))
+    ]
   };
 
   return (

@@ -4,6 +4,7 @@ import { submitContactForm } from "@/lib/supabase";
 import { validateContactForm, sanitizeText } from "@/lib/validation";
 import { checkRateLimit, recordSubmission, getRateLimitMessage } from "@/lib/rateLimit";
 import { useSearchParams } from "react-router";
+import { SEOHead } from "@/app/components/SEOHead";
 
 export function Contact() {
   const [searchParams] = useSearchParams();
@@ -181,6 +182,12 @@ export function Contact() {
 
   return (
     <div className="min-h-screen pt-16 sm:pt-20">
+      <SEOHead
+        title="Contact Us - Get Your Free Consultation"
+        description="Get in touch with Zivo Creative for professional video editing, YouTube automation, and website development services. Fast response time within 2 hours. Contact us via email, WhatsApp, or our contact form."
+        keywords="contact Zivo Creative, video editing inquiry, website development quote, YouTube automation services, get free consultation, content creation contact"
+        canonicalUrl="https://zivocreative.com/contact"
+      />
       {/* Hero */}
       <section className="py-16 sm:py-20 md:py-24 bg-gradient-to-b from-black to-[#0A0A0A]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

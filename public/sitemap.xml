@@ -6,7 +6,7 @@
   <!-- Homepage - Highest Priority -->
   <url>
     <loc>https://zivocreative.com/</loc>
-    <lastmod>2026-02-01</lastmod>
+    <lastmod>2026-02-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://zivocreative.com/" />
@@ -17,7 +17,7 @@
   <!-- Services Page - High Priority -->
   <url>
     <loc>https://zivocreative.com/services</loc>
-    <lastmod>2026-02-01</lastmod>
+    <lastmod>2026-02-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://zivocreative.com/services" />
@@ -28,7 +28,7 @@
   <!-- Pricing Page - High Priority -->
   <url>
     <loc>https://zivocreative.com/pricing</loc>
-    <lastmod>2026-02-01</lastmod>
+    <lastmod>2026-02-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://zivocreative.com/pricing" />
@@ -39,7 +39,7 @@
   <!-- Contact Page - High Priority -->
   <url>
     <loc>https://zivocreative.com/contact</loc>
-    <lastmod>2026-02-01</lastmod>
+    <lastmod>2026-02-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://zivocreative.com/contact" />
@@ -50,7 +50,7 @@
   <!-- Portfolio/Work Page -->
   <url>
     <loc>https://zivocreative.com/work</loc>
-    <lastmod>2026-02-01</lastmod>
+    <lastmod>2026-02-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://zivocreative.com/work" />
@@ -61,7 +61,7 @@
   <!-- Process Page -->
   <url>
     <loc>https://zivocreative.com/process</loc>
-    <lastmod>2026-02-01</lastmod>
+    <lastmod>2026-02-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://zivocreative.com/process" />
@@ -72,7 +72,7 @@
   <!-- About Page -->
   <url>
     <loc>https://zivocreative.com/about</loc>
-    <lastmod>2026-02-01</lastmod>
+    <lastmod>2026-02-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://zivocreative.com/about" />

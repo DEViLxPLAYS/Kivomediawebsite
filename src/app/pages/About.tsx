@@ -1,4 +1,5 @@
 import { Target, Users, Zap, Award, MessageCircle } from "lucide-react";
+import { SEOHead } from "@/app/components/SEOHead";
 
 export function About() {
   const values = [
@@ -56,6 +57,12 @@ export function About() {
 
   return (
     <div className="min-h-screen pt-20">
+      <SEOHead
+        title="About Us - Professional Video Editing & Content Creation Team"
+        description="Meet the Zivo Creative team - elite video editors, motion designers, and content strategists. 500+ projects delivered, 100M+ views generated. Learn about our values, mission, and commitment to excellence in video editing and content creation."
+        keywords="about Zivo Creative, video editing team, professional editors, content creation agency, video production company, editing services team"
+        canonicalUrl="https://zivocreative.com/about"
+      />
       {/* Hero */}
       <section className="py-24 bg-gradient-to-b from-black to-[#0A0A0A]">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">

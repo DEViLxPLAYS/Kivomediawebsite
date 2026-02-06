@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Play, Filter } from "lucide-react";
 import { ImageWithFallback } from "@/app/components/figma/ImageWithFallback";
+import { SEOHead } from "@/app/components/SEOHead";
 
 export function Work() {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -65,6 +66,12 @@ export function Work() {
 
   return (
     <div className="min-h-screen pt-20">
+      <SEOHead
+        title="Our Work & Portfolio - Professional Video Editing Samples"
+        description="View our portfolio of professional video editing projects including YouTube long-form content, short-form Reels and TikTok videos, brand ads, and podcast editing. See real results from our clients with millions of views."
+        keywords="video editing portfolio, YouTube editing samples, video editing work, content creation portfolio, editing showcase, video production samples"
+        canonicalUrl="https://zivocreative.com/work"
+      />
       {/* Hero */}
       <section className="py-24 bg-gradient-to-b from-black to-[#0A0A0A]">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
@@ -87,11 +94,10 @@ export function Work() {
               <button
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
-                className={`px-4 py-2 rounded-full transition-colors whitespace-nowrap ${
-                  activeFilter === filter
+                className={`px-4 py-2 rounded-full transition-colors whitespace-nowrap ${activeFilter === filter
                     ? "bg-[#8B1538] text-white"
                     : "bg-white/5 text-gray-400 hover:bg-white/10"
-                }`}
+                  }`}
               >
                 {filter}
               </button>

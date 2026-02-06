@@ -8,7 +8,7 @@
             "url": "https://zivocreative.com",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://i.postimg.cc/zGd03Gxt/Chat-GPT-Image-Jan-28-2026-02-41-08-PM.png",
+                "url": "https://zivocreative.com/logo.png",
                 "width": 512,
                 "height": 512
             },
@@ -66,7 +66,7 @@
             "@type": "ProfessionalService",
             "@id": "https://zivocreative.com/#service",
             "name": "Zivo Creative - Video Editing Services",
-            "image": "https://i.postimg.cc/zGd03Gxt/Chat-GPT-Image-Jan-28-2026-02-41-08-PM.png",
+            "image": "https://zivocreative.com/og-image.png",
             "telephone": "+92-339-8837213",
             "email": "hello@zivocreative.com",
             "priceRange": "$$$",

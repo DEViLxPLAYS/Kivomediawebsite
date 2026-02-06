@@ -7,6 +7,7 @@ import { StaggerTestimonials } from "@/app/components/ui/stagger-testimonials";
 import { ZivoWorldMap } from "@/app/components/ZivoWorldMap";
 import { BookCallButton } from "@/app/components/BookCallButton";
 import { LetsWorkTogether } from "@/app/components/ui/lets-work-section";
+import { SEOHead } from "@/app/components/SEOHead";
 
 export function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -36,8 +37,41 @@ export function Home() {
 
 
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://zivocreative.com/#organization",
+        "name": "Zivo Creative",
+        "url": "https://zivocreative.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://zivocreative.com/logo.png"
+        },
+        "description": "Professional video editing, YouTube automation, website development, and social media content creation services for creators and brands"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://zivocreative.com/#website",
+        "url": "https://zivocreative.com",
+        "name": "Zivo Creative",
+        "publisher": {
+          "@id": "https://zivocreative.com/#organization"
+        }
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Professional Website Development, Video Editing & YouTube Automation"
+        description="Professional website development with AI chatbot integration, YouTube automation services, video editing, and social media content creation. Custom web development, YouTube editing, short-form content, and digital marketing solutions for creators and brands."
+        keywords="website development, custom web development, web design, AI chatbot integration, YouTube automation, video editing, social media content, YouTube editing, short-form videos, reels, TikTok, podcast editing, faceless YouTube automation, Zivo Creative"
+        canonicalUrl="https://zivocreative.com"
+        structuredData={structuredData}
+      />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6">
         {/* Background Image with Overlay */}

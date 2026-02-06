@@ -1,4 +1,5 @@
 import { Upload, Zap, RefreshCw, Download, MessageCircle } from "lucide-react";
+import { SEOHead } from "@/app/components/SEOHead";
 
 export function Process() {
   const steps = [
@@ -77,6 +78,12 @@ export function Process() {
 
   return (
     <div className="min-h-screen pt-20">
+      <SEOHead
+        title="Our Process - How We Deliver Professional Video Editing"
+        description="Learn about our streamlined video editing process from upload to final delivery. Fast turnaround within 48-72 hours, unlimited revisions, and professional quality guaranteed. See our step-by-step workflow for YouTube editing, short-form content, and more."
+        keywords="video editing process, editing workflow, video production timeline, YouTube editing turnaround, video editing revisions, content creation process"
+        canonicalUrl="https://zivocreative.com/process"
+      />
       {/* Hero */}
       <section className="py-24 bg-gradient-to-b from-black to-[#0A0A0A]">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">

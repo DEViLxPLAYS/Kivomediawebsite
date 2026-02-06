@@ -2,6 +2,7 @@ import { Check, ArrowRight, MessageCircle } from "lucide-react";
 import { GlowingCard } from "../components/ui/glowing-card";
 import { LetsWorkTogether } from "@/app/components/ui/lets-work-section";
 import { useState } from "react";
+import { SEOHead } from "@/app/components/SEOHead";
 
 export function Services() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -85,6 +86,12 @@ export function Services() {
 
   return (
     <div className="min-h-screen pt-20">
+      <SEOHead
+        title="Our Services - Website Development, Video Editing & Content Creation"
+        description="Professional video editing services including YouTube long-form editing, short-form content creation (Reels, TikToks, Shorts), website development with AI chatbot integration, and faceless YouTube automation. Complete content creation solutions for creators and brands."
+        keywords="video editing services, YouTube editing, short-form content, Reels editing, TikTok videos, website development, AI chatbot, faceless YouTube automation, content creation, social media content"
+        canonicalUrl="https://zivocreative.com/services"
+      />
       {/* Hero */}
       <section className="py-24 bg-gradient-to-b from-black to-[#0A0A0A]">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">

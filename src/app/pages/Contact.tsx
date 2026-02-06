@@ -180,6 +180,33 @@ export function Contact() {
     },
   ];
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ContactPage",
+        "url": "https://zivocreative.com/contact",
+        "name": "Contact Zivo Creative",
+        "description": "Get in touch with Zivo Creative for video editing, website development, and content creation services"
+      },
+      {
+        "@type": "Organization",
+        "name": "Zivo Creative",
+        "url": "https://zivocreative.com",
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+92-339-8837213",
+            "contactType": "Customer Service",
+            "availableLanguage": ["English"],
+            "areaServed": ["US", "CA"]
+          }
+        ],
+        "email": "info@zivocreative.com"
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen pt-16 sm:pt-20">
       <SEOHead
@@ -187,6 +214,7 @@ export function Contact() {
         description="Get in touch with Zivo Creative for professional video editing, YouTube automation, and website development services. Fast response time within 2 hours. Contact us via email, WhatsApp, or our contact form."
         keywords="contact Zivo Creative, video editing inquiry, website development quote, YouTube automation services, get free consultation, content creation contact"
         canonicalUrl="https://zivocreative.com/contact"
+        structuredData={structuredData}
       />
       {/* Hero */}
       <section className="py-16 sm:py-20 md:py-24 bg-gradient-to-b from-black to-[#0A0A0A]">

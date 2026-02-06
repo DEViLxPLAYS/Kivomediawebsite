@@ -12,6 +12,11 @@
     <xhtml:link rel="alternate" hreflang="en-us" href="https://zivocreative.com/" />
     <xhtml:link rel="alternate" hreflang="en-ca" href="https://zivocreative.com/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://zivocreative.com/" />
+    <image:image>
+      <image:loc>https://zivocreative.com/og-image.png</image:loc>
+      <image:title>Zivo Creative - Professional Website Development &amp; Video Editing</image:title>
+      <image:caption>Website development, video editing, and YouTube automation services</image:caption>
+    </image:image>
   </url>
 
   <!-- Services Page - High Priority -->

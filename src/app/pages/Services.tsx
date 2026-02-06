@@ -84,6 +84,27 @@ export function Services() {
     },
   ];
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": services.map((service, index) => ({
+      "@type": "Service",
+      "position": index + 1,
+      "name": service.title,
+      "description": service.description,
+      "provider": {
+        "@type": "Organization",
+        "name": "Zivo Creative",
+        "url": "https://zivocreative.com"
+      },
+      "areaServed": ["US", "CA"],
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "serviceUrl": "https://zivocreative.com/services"
+      }
+    }))
+  };
+
   return (
     <div className="min-h-screen pt-20">
       <SEOHead
@@ -91,6 +112,7 @@ export function Services() {
         description="Professional video editing services including YouTube long-form editing, short-form content creation (Reels, TikToks, Shorts), website development with AI chatbot integration, and faceless YouTube automation. Complete content creation solutions for creators and brands."
         keywords="video editing services, YouTube editing, short-form content, Reels editing, TikTok videos, website development, AI chatbot, faceless YouTube automation, content creation, social media content"
         canonicalUrl="https://zivocreative.com/services"
+        structuredData={structuredData}
       />
       {/* Hero */}
       <section className="py-24 bg-gradient-to-b from-black to-[#0A0A0A]">

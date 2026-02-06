@@ -8,6 +8,7 @@ import { ZivoWorldMap } from "@/app/components/ZivoWorldMap";
 import { BookCallButton } from "@/app/components/BookCallButton";
 import { LetsWorkTogether } from "@/app/components/ui/lets-work-section";
 import { SEOHead } from "@/app/components/SEOHead";
+import { WhyZivoCreative } from "@/app/components/WhyZivoCreative";
 
 export function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -47,7 +48,7 @@ export function Home() {
         "url": "https://zivocreative.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://zivocreative.com/logo.png"
+          "url": "https://i.postimg.cc/SNGzjXYz/favicon.png"
         },
         "description": "Professional video editing, YouTube automation, website development, and social media content creation services for creators and brands"
       },
@@ -172,6 +173,8 @@ export function Home() {
         </div>
       </section>
 
+      {/* Why Zivo Creative Section */}
+      <WhyZivoCreative />
 
 
       {/* Featured Work Preview */}

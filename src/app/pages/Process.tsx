@@ -76,6 +76,25 @@ export function Process() {
     },
   ];
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": " Zivo Creative Video Editing Process",
+    "description": "Our streamlined 4-step process for professional video editing and content creation",
+    "totalTime": "PT72H",
+    "step": steps.map((step, index) => ({
+      "@type": "HowToStep",
+      "position": index + 1,
+      "name": step.title,
+      "text": step.description,
+      "itemListElement": step.details.map((detail, idx) => ({
+        "@type": "HowToDirection",
+        "position": idx + 1,
+        "text": detail
+      }))
+    }))
+  };
+
   return (
     <div className="min-h-screen pt-20">
       <SEOHead
@@ -83,6 +102,7 @@ export function Process() {
         description="Learn about our streamlined video editing process from upload to final delivery. Fast turnaround within 48-72 hours, unlimited revisions, and professional quality guaranteed. See our step-by-step workflow for YouTube editing, short-form content, and more."
         keywords="video editing process, editing workflow, video production timeline, YouTube editing turnaround, video editing revisions, content creation process"
         canonicalUrl="https://zivocreative.com/process"
+        structuredData={structuredData}
       />
       {/* Hero */}
       <section className="py-24 bg-gradient-to-b from-black to-[#0A0A0A]">

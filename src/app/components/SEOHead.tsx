@@ -15,7 +15,7 @@ export function SEOHead({
     description,
     keywords = "website development, custom web development, video editing, YouTube automation, social media content, Zivo Creative",
     canonicalUrl = "https://zivocreative.com",
-    ogImage = "https://zivocreative.com/og-image.png",
+    ogImage = "https://i.postimg.cc/SNGzjXYz/favicon.png",
     ogType = "website",
     structuredData,
 }: SEOProps) {

@@ -55,6 +55,27 @@ export function About() {
     },
   ];
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "AboutPage",
+        "url": "https://zivocreative.com/about",
+        "name": "About Zivo Creative",
+        "description": "Elite video editors, motion designers, and content strategists delivering professional video editing and content creation services"
+      },
+      {
+        "@type": "Organization",
+        "name": "Zivo Creative",
+        "url": "https://zivocreative.com",
+        "description": "Professional video editing, website development, and content creation services for creators and brands",
+        "numberOfEmployees": team.length,
+        "areaServed": ["US", "CA"],
+        "knowsAbout": ["Video Editing", "YouTube Automation", "Website Development", "Content Creation", "Short-Form Content"]
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen pt-20">
       <SEOHead
@@ -62,6 +83,7 @@ export function About() {
         description="Meet the Zivo Creative team - elite video editors, motion designers, and content strategists. 500+ projects delivered, 100M+ views generated. Learn about our values, mission, and commitment to excellence in video editing and content creation."
         keywords="about Zivo Creative, video editing team, professional editors, content creation agency, video production company, editing services team"
         canonicalUrl="https://zivocreative.com/about"
+        structuredData={structuredData}
       />
       {/* Hero */}
       <section className="py-24 bg-gradient-to-b from-black to-[#0A0A0A]">

@@ -160,59 +160,78 @@ export function Home() {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Professional Website Development, Video Editing & YouTube Automation"
+        title="Website Development, Video Editing, YouTube Automation & Content Creation"
         description="Professional website development with AI chatbot integration, YouTube automation services, video editing, and social media content creation. Custom web development, YouTube editing, short-form content, and digital marketing solutions for creators and brands."
         keywords="website development, custom web development, web design, AI chatbot integration, YouTube automation, video editing, social media content, YouTube editing, short-form videos, reels, TikTok, podcast editing, faceless YouTube automation, Zivo Creative"
         canonicalUrl="https://zivocreative.com"
         structuredData={structuredData}
       />
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6">
-        {/* Background Image with Overlay */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background with Gradient */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black z-10" />
-          <ImageWithFallback
-            src="https://images.unsplash.com/photo-1575320854760-bfffc3550640?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2aWRlbyUyMGVkaXRpbmclMjB3b3Jrc3BhY2V8ZW58MXx8fHwxNzY5MjMxMTMwfDA&ixlib=rb-4.1.0&q=80&w=1080"
-            alt="Video editing workspace"
-            className="w-full h-full object-cover opacity-30"
-          />
+          <div className="absolute inset-0 bg-gradient-to-br from-black via-[#0A0A0A] to-black" />
           {/* Grain Texture */}
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=')] opacity-30 z-10" />
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=')] opacity-30" />
         </div>
 
-        {/* Content */}
-        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20">
-          <div className="space-y-6 sm:space-y-8">
-            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl tracking-tighter leading-tight">
-              <span className="block text-white">We Build Content</span>
-              <span className="block text-white">That</span>
-              <span className="block bg-gradient-to-r from-white to-[#8B1538] bg-clip-text text-transparent">
-                Performs.
-              </span>
-            </h1>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-400 max-w-3xl mx-auto px-4">
-              Video editing, content creation & web development for creators and brands
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-4 sm:pt-8 px-4">
-              <Link
-                to="/pricing"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#8B1538] hover:bg-[#6B1028] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full transition-all text-base sm:text-lg group"
-              >
-                <MessageCircle className="w-5 h-5" />
-                <span>Content Packages</span>
-              </Link>
-              <Link
-                to="/contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-white/20 hover:border-white/40 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full transition-all text-base sm:text-lg group"
-              >
-                <MessageCircle className="w-5 h-5" />
-                <span>Contact Us</span>
-              </Link>
-              <BookCallButton onClick={() => setIsModalOpen(true)} />
+        {/* Content - Split Layout */}
+        <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[calc(100vh-8rem)]">
+
+            {/* Left Side - Text Content */}
+            <div className="space-y-6 sm:space-y-8 text-center lg:text-left order-2 lg:order-1">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tighter leading-tight">
+                <span className="block text-white">We Build Content</span>
+                <span className="block text-white">That</span>
+                <span className="block bg-gradient-to-r from-white to-[#8B1538] bg-clip-text text-transparent">
+                  Performs.
+                </span>
+              </h1>
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-400 max-w-2xl mx-auto lg:mx-0">
+                Video editing, content creation & web development for creators and brands
+              </p>
+              <div className="flex flex-col sm:flex-row items-center lg:items-start lg:justify-start justify-center gap-3 sm:gap-4 pt-4 sm:pt-8">
+                <Link
+                  to="/pricing"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#8B1538] hover:bg-[#6B1028] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full transition-all text-base sm:text-lg group"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  <span>Content Packages</span>
+                </Link>
+                <Link
+                  to="/contact"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-white/20 hover:border-white/40 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full transition-all text-base sm:text-lg group"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  <span>Contact Us</span>
+                </Link>
+                <BookCallButton onClick={() => setIsModalOpen(true)} />
+              </div>
             </div>
+
+            {/* Right Side - Video Player */}
+            <div className="order-1 lg:order-2">
+              <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-black/40 backdrop-blur-sm shadow-2xl shadow-[#8B1538]/20">
+                {/* Video Container with aspect ratio */}
+                <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                  <iframe
+                    src="https://player.cloudinary.com/embed/?cloud_name=dxtuhnzlw&public_id=Website_Intro_Video_US_Style_kso5bd&fluid=true&controls=true&muted=false&autoplay=false&loop=false&show_logo=false&colors[base]=%23C41E3A&colors[accent]=%238B1538"
+                    allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+                    allowFullScreen
+                    className="absolute top-0 left-0 w-full h-full"
+                    style={{ border: 'none' }}
+                    title="Zivo Creative Intro"
+                  />
+                </div>
+
+                {/* Decorative Glow Effect */}
+                <div className="absolute -inset-1 bg-gradient-to-r from-[#8B1538]/20 via-[#C41E3A]/20 to-[#8B1538]/20 blur-xl -z-10 opacity-75" />
+              </div>
+            </div>
+
           </div>
         </div>
-
 
       </section>
 
@@ -241,7 +260,7 @@ export function Home() {
                   <ul className="space-y-2">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center gap-2 text-gray-300 text-sm">
-                        <Check className="w-4 h-4 text-[#8B1538]" />
+                        <Check className="w-4 h-4 text-red-500" />
                         <span>{feature}</span>
                       </li>
                     ))}

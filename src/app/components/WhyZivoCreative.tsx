@@ -82,7 +82,7 @@ export function WhyZivoCreative() {
 
                     <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tighter mb-4 sm:mb-6">
                         <span className="text-white">Why </span>
-                        <span className="text-[#8B1538]">Zivo Creative?</span>
+                        <span className="text-[#C41E3A]">Zivo Creative?</span>
                     </h2>
                     <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-3xl mx-auto px-4">
                         We combine the quality of top agencies with the speed and affordability you need

@@ -49,7 +49,7 @@ export function Services() {
         "Platform-specific versions",
         "Unlimited revisions",
       ],
-      idealFor: ["Brands", "Marketing agencies", "E-commerce", "Startups"],
+      idealFor: ["Brands", "Marketing agencies", "E-commerce businesses", "Startups", "Product launches"],
       turnaround: "3-5 days",
     },
     {
@@ -80,7 +80,7 @@ export function Services() {
         "Upload scheduling & management",
       ],
       idealFor: ["Entrepreneurs", "Content creators", "Business owners", "Passive income seekers"],
-      turnaround: "5-7 days per video",
+      turnaround: "24-48 hours",
     },
   ];
 

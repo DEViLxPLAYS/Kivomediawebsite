@@ -612,7 +612,7 @@ export default function PricingSection() {
                                         ? "bg-[#8B1538] hover:bg-[#6B1028] text-white shadow-md shadow-[#8B1538]/10"
                                         : "bg-[#8B1538] text-white hover:bg-[#6B1028]"
                                         }`}
-                                    onClick={() => window.open(`https://wa.me/923398837213?text=${encodeURIComponent(`Hey Zivo Creative, I'm interested in the ${plan.name} package.`)}`, '_blank')}
+                                    onClick={() => window.open(`https://wa.me/923190485953?text=${encodeURIComponent(`Hey Zivo Creative, I'm interested in the ${plan.name} package.`)}`, '_blank')}
                                 >
                                     {plan.buttonText}
                                 </button>

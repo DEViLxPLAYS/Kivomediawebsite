@@ -116,7 +116,7 @@ export function Contact() {
 
         // Open WhatsApp as backup/confirmation
         const messageText = `Hi Zivo Creative! I just submitted a contact form. Looking forward to hearing from you!`;
-        const whatsappUrl = `https://wa.me/923398837213?text=${encodeURIComponent(messageText)}`;
+        const whatsappUrl = `https://wa.me/923190485953?text=${encodeURIComponent(messageText)}`;
         setTimeout(() => {
           window.open(whatsappUrl, "_blank");
         }, 1500);
@@ -153,7 +153,7 @@ export function Contact() {
       icon: MessageCircle,
       title: "WhatsApp",
       details: [
-        { text: "+92 339 8837213", link: "https://wa.me/923398837213" },
+        { text: "+92 319 0485953", link: "https://wa.me/923190485953" },
         { text: "+92 334 7483286", link: "https://wa.me/923347483286" },
       ],
     },
@@ -196,7 +196,7 @@ export function Contact() {
         "contactPoint": [
           {
             "@type": "ContactPoint",
-            "telephone": "+92-339-8837213",
+            "telephone": "+92-319-0485953",
             "contactType": "Customer Service",
             "availableLanguage": ["English"],
             "areaServed": ["US", "CA"],
@@ -521,7 +521,7 @@ export function Contact() {
           <div className="mt-12 text-center">
             <p className="text-gray-400 mb-4">Prefer to chat directly?</p>
             <a
-              href="https://wa.me/923398837213?text=Hey%20Zivo%20Creative%2C%20I'm%20interested%20in%20your%20services.%20Can%20we%20discuss%20my%20project%3F"
+              href="https://wa.me/923190485953?text=Hey%20Zivo%20Creative%2C%20I'm%20interested%20in%20your%20services.%20Can%20we%20discuss%20my%20project%3F"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 border border-white/20 hover:border-[#8B1538] hover:bg-[#8B1538]/10 text-white px-8 py-4 rounded-full transition-all"

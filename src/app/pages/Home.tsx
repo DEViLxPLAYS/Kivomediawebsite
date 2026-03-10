@@ -48,7 +48,7 @@ export function Home() {
         "url": "https://zivocreative.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://i.postimg.cc/SNGzjXYz/favicon.png",
+          "url": "https://i.postimg.cc/zGd03Gxt/Chat-GPT-Image-Jan-28-2026-02-41-08-PM.png",
           "width": 512,
           "height": 512
         },
@@ -57,7 +57,7 @@ export function Home() {
         "areaServed": ["US", "CA"],
         "contactPoint": {
           "@type": "ContactPoint",
-          "telephone": "+92-339-8837213",
+          "telephone": "+92-319-0485953",
           "contactType": "Customer Service",
           "availableLanguage": ["English"],
           "areaServed": ["US", "CA"]
@@ -71,8 +71,8 @@ export function Home() {
         "@type": "LocalBusiness",
         "@id": "https://zivocreative.com/#localbusiness",
         "name": "Zivo Creative",
-        "image": "https://i.postimg.cc/SNGzjXYz/favicon.png",
-        "telephone": "+92-339-8837213",
+        "image": "https://i.postimg.cc/zGd03Gxt/Chat-GPT-Image-Jan-28-2026-02-41-08-PM.png",
+        "telephone": "+92-319-0485953",
         "email": "info@zivocreative.com",
         "address": {
           "@type": "PostalAddress",
@@ -346,6 +346,45 @@ export function Home() {
         </div>
       </section>
 
+      {/* Video Reviews */}
+      <section className="py-24 bg-gradient-to-b from-[#0A0A0A] to-black border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl tracking-tighter mb-6">
+              <span className="text-white">Video Reviews</span>{" "}
+              <span className="text-[#8B1538]">from Clients</span>
+            </h2>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+              See what our amazing clients have to say about working with us
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+            {[
+              "https://player.cloudinary.com/embed/?cloud_name=dxtuhnzlw&public_id=WhatsApp_Video_2026-03-10_at_4.00.18_PM_pwnf4d&fluid=true&controls=true&muted=false&autoplay=false&loop=false&show_logo=false&colors[base]=%23C41E3A&colors[accent]=%238B1538",
+              "https://player.cloudinary.com/embed/?cloud_name=dxtuhnzlw&public_id=WhatsApp_Video_2026-03-11_at_1.53.41_AM_epzt6e&fluid=true&controls=true&muted=false&autoplay=false&loop=false&show_logo=false&colors[base]=%23C41E3A&colors[accent]=%238B1538"
+            ].map((videoSrc, i) => (
+              <div
+                key={i}
+                className="group relative rounded-2xl overflow-hidden border border-white/10 bg-black/40 backdrop-blur-sm shadow-2xl shadow-[#8B1538]/20"
+              >
+                <div className="relative w-full" style={{ paddingBottom: '177.78%' /* 16:9 aspect ratio reversed for vertical video */ }}>
+                  <iframe
+                    src={videoSrc}
+                    allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+                    allowFullScreen
+                    className="absolute top-0 left-0 w-full h-full"
+                    style={{ border: 'none' }}
+                    title={`Client Video Review ${i + 1}`}
+                  />
+                </div>
+                <div className="absolute -inset-1 bg-gradient-to-r from-[#8B1538]/20 via-[#C41E3A]/20 to-[#8B1538]/20 blur-xl -z-10 opacity-75" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials */}
       <StaggerTestimonials />
 
@@ -362,7 +401,7 @@ export function Home() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="https://wa.me/923398837213"
+              href="https://wa.me/923190485953"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-[#8B1538] hover:bg-[#6B1028] text-white px-8 py-4 rounded-full transition-all text-lg"

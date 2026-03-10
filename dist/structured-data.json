@@ -36,7 +36,7 @@
             ],
             "contactPoint": {
                 "@type": "ContactPoint",
-                "telephone": "+92-339-8837213",
+                "telephone": "+92-319-0485953",
                 "contactType": "Customer Service",
                 "areaServed": [
                     "US",
@@ -67,7 +67,7 @@
             "@id": "https://zivocreative.com/#service",
             "name": "Zivo Creative - Video Editing Services",
             "image": "https://zivocreative.com/og-image.png",
-            "telephone": "+92-339-8837213",
+            "telephone": "+92-319-0485953",
             "email": "hello@zivocreative.com",
             "priceRange": "$$$",
             "address": {

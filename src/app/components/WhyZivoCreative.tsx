@@ -73,7 +73,7 @@ export function WhyZivoCreative() {
                         <div className="relative">
                             <div className="absolute inset-0 bg-[#8B1538]/20 blur-2xl rounded-full" />
                             <img
-                                src="https://i.postimg.cc/SNGzjXYz/favicon.png"
+                                src="https://i.postimg.cc/zGd03Gxt/Chat-GPT-Image-Jan-28-2026-02-41-08-PM.png"
                                 alt="Zivo Creative Logo"
                                 className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 object-contain"
                             />

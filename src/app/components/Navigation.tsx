@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router";
-import { MessageCircle, Home, FileText, User, Phone, Menu, X, Calendar } from "lucide-react";
+import { MessageCircle, Home, Briefcase, FileText, User, Menu, X, Calendar } from "lucide-react";
 import { NavBar } from "./ui/tubelight-navbar";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
@@ -32,6 +32,7 @@ export function Navigation() {
 
   const navItems = [
     { name: 'Home', url: '/', icon: Home },
+    { name: 'Services', url: '/services', icon: Briefcase },
     { name: 'Process', url: '/process', icon: FileText },
     { name: 'About', url: '/about', icon: User },
   ];

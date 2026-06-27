@@ -47,27 +47,6 @@ export function About() {
       phone: "+92 316 7001120",
       whatsapp: "923167001120",
     },
-    {
-      name: "Muhammad Arfa",
-      role: "Senior Developer & AI Automation Engineer",
-      description: "Expert in building custom workflows, AI integrations, and scalable web solutions.",
-      phone: null,
-      whatsapp: null,
-    },
-    {
-      name: "Hamzah Ayyan",
-      role: "Long-Form Video Specialist",
-      description: "10+ years crafting cinematic stories for YouTube's top creators.",
-      phone: null,
-      whatsapp: null,
-    },
-    {
-      name: "Mueez",
-      role: "Project Manager",
-      description: "Ensuring every project exceeds expectations with seamless execution and client success.",
-      phone: null,
-      whatsapp: null,
-    },
   ];
 
   const structuredData = {

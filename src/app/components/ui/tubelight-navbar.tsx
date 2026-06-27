@@ -24,13 +24,7 @@ export function NavBar({ items, className, mobile = false }: NavBarProps) {
     const [activeTab, setActiveTab] = useState("")
 
     useEffect(() => {
-        // Special handling for pricing since it's a dropdown
-        if (location.pathname.startsWith('/pricing')) {
-            setActiveTab('Pricing')
-            return
-        }
-
-        // Set active tab based on current path
+    // Set active tab based on current path
         const currentItem = items.find(item => {
             if (!item.url) return false
             if (item.url === "/") return location.pathname === "/"

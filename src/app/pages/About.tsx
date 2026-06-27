@@ -34,24 +34,39 @@ export function About() {
 
   const team = [
     {
-      name: "Hamzah Ayyan",
-      role: "Long-Form Specialist",
-      description: "10+ years crafting cinematic stories for YouTube's top creators",
+      name: "Jawad Nadeem",
+      role: "Founder & CEO",
+      description: "Visionary creator and viral content expert with 500M+ views across platforms. Leading Zivo Creative's mission to build content that performs.",
+      phone: "+92 316 7001120",
+      whatsapp: "923167001120",
+    },
+    {
+      name: "Saad",
+      role: "Co-Founder & Strategy Lead",
+      description: "Business strategist and growth architect driving client success and agency operations at Zivo Creative.",
+      phone: "+92 316 7001120",
+      whatsapp: "923167001120",
     },
     {
       name: "Muhammad Arfa",
       role: "Senior Developer & AI Automation Engineer",
-      description: "Expert in building custom workflows, AI integrations, and scalable web solutions",
+      description: "Expert in building custom workflows, AI integrations, and scalable web solutions.",
+      phone: null,
+      whatsapp: null,
     },
     {
-      name: "Jawad Nadeem",
-      role: "Viral Content Expert",
-      description: "Master of hooks and trends with 500M+ views across platforms",
+      name: "Hamzah Ayyan",
+      role: "Long-Form Video Specialist",
+      description: "10+ years crafting cinematic stories for YouTube's top creators.",
+      phone: null,
+      whatsapp: null,
     },
     {
       name: "Mueez",
-      role: "Management & Project Manager",
-      description: "Ensuring every project exceeds expectations with seamless execution and client success",
+      role: "Project Manager",
+      description: "Ensuring every project exceeds expectations with seamless execution and client success.",
+      phone: null,
+      whatsapp: null,
     },
   ];
 
@@ -206,23 +221,49 @@ export function About() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {team.map((member, index) => (
-              <div
-                key={index}
-                className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:border-white/20 transition-all"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="w-16 h-16 rounded-full bg-[#8B1538]/20 flex items-center justify-center flex-shrink-0">
-                    <Users className="w-8 h-8 text-[#8B1538]" />
-                  </div>
-                  <div>
-                    <h3 className="text-white text-xl mb-1">{member.name}</h3>
-                    <p className="text-[#8B1538] text-sm mb-3">{member.role}</p>
-                    <p className="text-gray-400 text-sm">{member.description}</p>
+            {team.map((member, index) => {
+              const isFounder = member.role.includes("Founder");
+              return (
+                <div
+                  key={index}
+                  className={`relative rounded-2xl p-8 transition-all ${
+                    isFounder
+                      ? "bg-gradient-to-br from-[#8B1538]/15 to-[#8B1538]/5 border-2 border-[#8B1538]/40 hover:border-[#8B1538]/60 shadow-lg shadow-[#8B1538]/10"
+                      : "bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20"
+                  }`}
+                >
+                  {isFounder && (
+                    <div className="absolute -top-3 left-6 bg-[#8B1538] text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full">
+                      ✦ {member.role.includes("Co-Founder") ? "Co-Founder" : "Founder"}
+                    </div>
+                  )}
+                  <div className="flex items-start gap-4">
+                    <div className={`w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0 ${
+                      isFounder ? "bg-[#8B1538]" : "bg-[#8B1538]/20"
+                    }`}>
+                      <Users className="w-8 h-8 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-white text-xl mb-0.5">{member.name}</h3>
+                      <p className="text-[#8B1538] text-sm mb-2 font-medium">{member.role}</p>
+                      <p className="text-gray-400 text-sm leading-relaxed mb-3">{member.description}</p>
+                      {member.phone && (
+                        <a
+                          href={`https://wa.me/${member.whatsapp}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-xs text-[#8B1538] hover:text-white transition-colors font-medium"
+                        >
+                          <MessageCircle className="w-3.5 h-3.5" />
+                          {member.phone}
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
+
           </div>
         </div>
       </section>

@@ -154,6 +154,7 @@ export function Contact() {
       title: "WhatsApp",
       details: [
         { text: "+92 319 0485953", link: "https://wa.me/923190485953" },
+        { text: "+92 316 7001120", link: "https://wa.me/923167001120" },
         { text: "+92 334 7483286", link: "https://wa.me/923347483286" },
       ],
     },

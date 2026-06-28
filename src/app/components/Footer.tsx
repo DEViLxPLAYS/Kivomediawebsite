@@ -72,12 +72,36 @@ export function Footer() {
           <div>
             <h4 className="text-[#1A1523] mb-4 font-semibold">Services</h4>
             <ul className="space-y-3">
-              <li className="text-[#6B7280] text-sm">AI Chatbots</li>
-              <li className="text-[#6B7280] text-sm">AI Voice Agents</li>
-              <li className="text-[#6B7280] text-sm">CRM Automation</li>
-              <li className="text-[#6B7280] text-sm">n8n &amp; GoHighLevel</li>
-              <li className="text-[#6B7280] text-sm">Web &amp; SaaS Development</li>
-              <li className="text-[#6B7280] text-sm">Video Editing &amp; Motion</li>
+              <li>
+                <Link to="/services/ai-chatbots" className="text-[#6B7280] hover:text-[#A78BFA] text-sm transition-colors">
+                  AI Chatbots
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/ai-voice-agents" className="text-[#6B7280] hover:text-[#A78BFA] text-sm transition-colors">
+                  AI Voice Agents
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/crm-automation" className="text-[#6B7280] hover:text-[#A78BFA] text-sm transition-colors">
+                  CRM Automation
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/n8n-workflows" className="text-[#6B7280] hover:text-[#A78BFA] text-sm transition-colors">
+                  n8n Workflows
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/web-development" className="text-[#6B7280] hover:text-[#A78BFA] text-sm transition-colors">
+                  Web Development
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/video-editing" className="text-[#6B7280] hover:text-[#A78BFA] text-sm transition-colors">
+                  Video Editing &amp; Motion
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -135,7 +159,21 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 pt-8 border-t border-[#E8E0FF]">
+        {/* Areas We Serve */}
+        <div className="mt-10 pt-6 border-t border-[#E8E0FF] text-center md:text-left">
+          <p className="text-[#1A1523] text-xs font-semibold uppercase tracking-wider mb-3">Areas We Serve</p>
+          <div className="flex flex-wrap gap-x-4 gap-y-2 justify-center md:justify-start text-sm">
+            <Link to="/locations/usa" className="text-[#6B7280] hover:text-[#A78BFA] transition-colors font-medium">United States (USA)</Link>
+            <span className="text-purple-300">·</span>
+            <Link to="/locations/canada" className="text-[#6B7280] hover:text-[#A78BFA] transition-colors font-medium">Canada</Link>
+            <span className="text-purple-300">·</span>
+            <Link to="/locations/california" className="text-[#6B7280] hover:text-[#A78BFA] transition-colors font-medium">California</Link>
+            <span className="text-purple-300">·</span>
+            <Link to="/locations/texas" className="text-[#6B7280] hover:text-[#A78BFA] transition-colors font-medium">Texas</Link>
+          </div>
+        </div>
+
+        <div className="mt-6 pt-6 border-t border-[#E8E0FF]">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-[#6B7280] text-sm">
               © 2025 ZROXZ. All rights reserved.

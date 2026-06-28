@@ -102,9 +102,9 @@ export function Home() {
   return (
     <div className="min-h-screen bg-white">
       <SEOHead
-        title="AI Automation, Web Development & Video Editing Agency"
-        description="ZROXZ is an AI automation and web development agency helping US businesses automate lead generation, build custom websites, and scale with AI — on autopilot."
-        keywords="AI automation, web development, video editing, AI chatbots, AI voice agents, CRM automation, n8n workflows, GoHighLevel, SaaS development, ZROXZ"
+        title="Best AI Automation Agency & Web Development Company in USA"
+        description="ZROXZ is the premier AI automation agency, website development company, and video editing agency. We serve businesses across the USA (California, Texas) and Canada to automate workflows and scale operations on autopilot."
+        keywords="best AI automation agency in USA, AI automation agency, video edit agency, website development agency, website development company, best website development in USA, California, Texas, Canada, AI chatbots, AI voice agents, CRM automation, n8n workflows, GoHighLevel, SaaS development, ZROXZ"
         canonicalUrl="https://zroxz.com"
         structuredData={structuredData}
       />

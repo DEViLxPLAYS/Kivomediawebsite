@@ -36,6 +36,12 @@ import { N8nWorkflowLeadGeneration } from "@/app/pages/blog/posts/N8nWorkflowLea
 import { AIAgencyVsFreelancer } from "@/app/pages/blog/posts/AIAgencyVsFreelancer";
 import { WebDevForUSBusinesses } from "@/app/pages/blog/posts/WebDevForUSBusinesses";
 
+// Locations
+import { USALocation } from "@/app/pages/locations/USALocation";
+import { CanadaLocation } from "@/app/pages/locations/CanadaLocation";
+import { CaliforniaLocation } from "@/app/pages/locations/CaliforniaLocation";
+import { TexasLocation } from "@/app/pages/locations/TexasLocation";
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -63,6 +69,12 @@ export const router = createBrowserRouter([
 
       // Case Studies
       { path: "case-studies/evinn-ai-voice-agent", Component: EvinnCaseStudy },
+
+      // Locations
+      { path: "locations/usa", Component: USALocation },
+      { path: "locations/canada", Component: CanadaLocation },
+      { path: "locations/california", Component: CaliforniaLocation },
+      { path: "locations/texas", Component: TexasLocation },
 
       // Blog
       { path: "blog", Component: BlogIndex },

@@ -1,51 +1,52 @@
-import { Target, Users, Zap, Award, MessageCircle } from "lucide-react";
+import { Target, Users, Zap, Award, Calendar } from "lucide-react";
 import { SEOHead } from "@/app/components/SEOHead";
+import { motion } from "framer-motion";
 
 export function About() {
   const values = [
     {
       icon: Target,
       title: "Excellence First",
-      description: "We don't do mediocre. Every frame, every transition, every edit is crafted to perfection.",
+      description: "We don't do mediocre. Every automation, every line of code, every frame is crafted to perfection.",
     },
     {
       icon: Zap,
-      title: "Speed Matters",
-      description: "Content moves fast. We move faster. Without ever compromising on quality.",
+      title: "AI-First",
+      description: "We build with AI at the core — faster delivery, smarter systems, and better results for clients.",
     },
     {
       icon: Users,
       title: "Partnership",
-      description: "We're not just vendors—we're your creative partners invested in your success.",
+      description: "We're not just vendors — we're your growth partners invested in your success long-term.",
     },
     {
       icon: Award,
       title: "Results Driven",
-      description: "Beautiful edits are worthless if they don't perform. We optimize for engagement and conversions.",
+      description: "Beautiful systems are worthless if they don't perform. We optimize for leads, revenue, and ROI.",
     },
   ];
 
   const stats = [
-    { number: "500+", label: "Projects Delivered" },
-    { number: "100M+", label: "Total Views Generated" },
-    { number: "50+", label: "Happy Clients" },
+    { number: "50+", label: "Clients Served" },
+    { number: "80+", label: "Daily AI Calls Handled" },
+    { number: "5+", label: "Websites Launched" },
     { number: "4.9/5", label: "Average Rating" },
   ];
 
   const team = [
     {
-      name: "Jawad Nadeem",
-      role: "Founder & CEO",
-      description: "Visionary creator and viral content expert with 500M+ views across platforms. Leading Zivo Creative's mission to build content that performs.",
-      phone: "+92 316 7001120",
-      whatsapp: "923167001120",
+      name: "Muhammad Arfa",
+      role: "AI Automation & Web Dev & SaaS",
+      description: "Visionary builder and AI systems architect leading ZROXZ's mission to automate, build, and scale businesses on autopilot.",
+      phone: "+92 310 0004068",
+      whatsapp: "923100004068",
     },
     {
-      name: "Saad",
-      role: "Co-Founder & Strategy Lead",
-      description: "Business strategist and growth architect driving client success and agency operations at Zivo Creative.",
-      phone: "+92 316 7001120",
-      whatsapp: "923167001120",
+      name: "Hamzah Ayyan",
+      role: "Video Editor & Motion Designer",
+      description: "Creative video editor and motion designer crafting compelling visual stories and animations that elevate ZROXZ's brand and client content.",
+      phone: "+92 312 5091172",
+      whatsapp: "923125091172",
     },
   ];
 
@@ -54,148 +55,156 @@ export function About() {
     "@graph": [
       {
         "@type": "AboutPage",
-        "url": "https://zivocreative.com/about",
-        "name": "About Zivo Creative",
-        "description": "Elite video editors, motion designers, and content strategists delivering professional video editing and content creation services"
+        "url": "https://zroxz.com/about",
+        "name": "About ZROXZ",
+        "description": "AI automation, web development, and video editing agency helping US businesses scale on autopilot"
       },
       {
         "@type": "Organization",
-        "name": "Zivo Creative",
-        "url": "https://zivocreative.com",
-        "description": "Professional video editing, website development, and content creation services for creators and brands",
+        "name": "ZROXZ",
+        "url": "https://zroxz.com",
+        "description": "AI automation, web development, and video editing for US businesses",
         "numberOfEmployees": team.length,
         "foundingDate": "2023",
         "areaServed": ["US", "CA"],
-        "knowsAbout": ["Video Editing", "YouTube Automation", "Website Development", "Content Creation", "Short-Form Content"],
-        "slogan": "We Build Content That Performs",
+        "knowsAbout": ["AI Automation", "AI Chatbots", "AI Voice Agents", "CRM Automation", "n8n", "GoHighLevel", "Web Development", "SaaS Development", "Video Editing"],
+        "slogan": "AI Automation · Web Development · Video Editing",
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+92-319-0485953",
           "contactType": "Customer Service",
-          "email": "info@zivocreative.com"
+          "email": "info@zroxz.com"
         }
       },
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://zivocreative.com"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "About",
-            "item": "https://zivocreative.com/about"
-          }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://zroxz.com" },
+          { "@type": "ListItem", "position": 2, "name": "About", "item": "https://zroxz.com/about" }
         ]
       }
     ]
   };
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-20 bg-white">
       <SEOHead
-        title="About Us - Professional Video Editing & Content Creation Team"
-        description="Meet the Zivo Creative team - elite video editors, motion designers, and content strategists. 500+ projects delivered, 100M+ views generated. Learn about our values, mission, and commitment to excellence in video editing and content creation."
-        keywords="about Zivo Creative, video editing team, professional editors, content creation agency, video production company, editing services team"
-        canonicalUrl="https://zivocreative.com/about"
+        title="About ZROXZ — AI Automation & Web Development Agency"
+        description="Meet the ZROXZ team — AI systems builders, web developers, and automation specialists helping US businesses scale on autopilot. Learn about our values, mission, and commitment to results."
+        keywords="about ZROXZ, AI automation agency, web development team, AI chatbots, AI voice agents, CRM automation"
+        canonicalUrl="https://zroxz.com/about"
         structuredData={structuredData}
       />
+
       {/* Hero */}
-      <section className="py-24 bg-gradient-to-b from-black to-[#0A0A0A]">
+      <section className="py-24 bg-[#F9F7FF]">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl tracking-tighter mb-6">
-            <span className="text-white">About</span>{" "}
-            <span className="text-[#8B1538]">Zivo Creative</span>
-          </h1>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Where content machines meet luxury storytelling
-          </p>
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h1 className="text-5xl md:text-6xl lg:text-7xl tracking-tighter mb-6">
+              <span className="text-[#1A1523]">About</span>{" "}
+              <span className="text-[#A78BFA]">ZROXZ</span>
+            </h1>
+            <p className="text-xl text-[#6B7280] max-w-2xl mx-auto">
+              AI automation, web development, and video editing — built for US businesses that want to scale
+            </p>
+          </motion.div>
         </div>
       </section>
 
       {/* Story */}
-      <section className="py-16 bg-[#0A0A0A]">
+      <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
-          <div className="space-y-6 text-gray-400 text-lg">
+          <div className="space-y-6 text-[#6B7280] text-lg">
             <p>
-              We started Zivo Creative with a simple belief: <span className="text-white">content creators deserve better editing partners</span>.
+              We started ZROXZ with a simple belief: <span className="text-[#1A1523] font-semibold">businesses deserve better automation partners</span>.
             </p>
             <p>
-              Too often, we saw creators stuck between two bad options—either sacrifice quality for speed with cheap editors, or sacrifice speed for quality with slow agencies.
+              Too often, we saw US businesses stuck between two bad options — either pay a huge agency and wait weeks, or hire a cheap freelancer and get inconsistent results.
             </p>
-            <p className="text-white text-xl">
-              We built Zivo Creative to solve this problem.
-            </p>
-            <p>
-              Today, we're a team of elite editors, motion designers, and content strategists working with some of the fastest-growing creators and brands in the world. We've edited everything from million-view YouTube videos to high-converting brand campaigns.
+            <p className="text-[#1A1523] text-xl font-semibold">
+              We built ZROXZ to solve this problem.
             </p>
             <p>
-              <span className="text-white">Our mission is simple:</span> help you create more, better, faster.
+              Today, we're a team of AI systems builders, web developers, and creative specialists working with growing businesses across the US, UK, and Middle East. We've built AI voice agents that handle 80+ calls daily, automation workflows that cut response times by 40%, and websites that load in under 2 seconds.
+            </p>
+            <p>
+              <span className="text-[#1A1523] font-semibold">Our mission is simple:</span> help you generate more leads, save more time, and scale faster — on autopilot.
             </p>
           </div>
         </div>
       </section>
 
       {/* Values */}
-      <section className="py-24 bg-gradient-to-b from-[#0A0A0A] to-black">
+      <section className="py-24 bg-[#F9F7FF]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl tracking-tighter mb-6">
-              <span className="text-white">Our</span>{" "}
-              <span className="text-[#8B1538]">Values</span>
+              <span className="text-[#1A1523]">Our</span>{" "}
+              <span className="text-[#A78BFA]">Values</span>
             </h2>
-            <p className="text-xl text-gray-400">
+            <p className="text-xl text-[#6B7280]">
               What drives everything we do
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:border-white/20 transition-all text-center"
+                className="bg-white border border-[#E8E0FF] rounded-2xl p-8 hover:border-[#A78BFA]/40 hover:shadow-[0_4px_20px_rgba(167,139,250,0.12)] transition-all text-center"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <div className="w-16 h-16 rounded-full bg-[#8B1538]/20 flex items-center justify-center mx-auto mb-6">
-                  <value.icon className="w-8 h-8 text-[#8B1538]" />
+                <div className="w-16 h-16 rounded-full bg-[#EDE9FE] flex items-center justify-center mx-auto mb-6">
+                  <value.icon className="w-8 h-8 text-[#A78BFA]" />
                 </div>
-                <h3 className="text-white text-xl mb-3">{value.title}</h3>
-                <p className="text-gray-400 text-sm">{value.description}</p>
-              </div>
+                <h3 className="text-[#1A1523] text-xl mb-3 font-semibold">{value.title}</h3>
+                <p className="text-[#6B7280] text-sm">{value.description}</p>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Stats */}
-      <section className="py-24 bg-black">
+      <section className="py-24 bg-white border-t border-[#E8E0FF]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl lg:text-6xl text-[#8B1538] mb-2">
+              <motion.div
+                key={index}
+                className="text-center"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <div className="text-4xl md:text-5xl lg:text-6xl text-[#A78BFA] mb-2 font-black">
                   {stat.number}
                 </div>
-                <div className="text-gray-400">{stat.label}</div>
-              </div>
+                <div className="text-[#6B7280]">{stat.label}</div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Team */}
-      <section className="py-24 bg-gradient-to-b from-black to-[#0A0A0A]">
+      <section className="py-24 bg-[#F9F7FF]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl tracking-tighter mb-6">
-              <span className="text-white">The</span>{" "}
-              <span className="text-[#8B1538]">Team</span>
+              <span className="text-[#1A1523]">The</span>{" "}
+              <span className="text-[#A78BFA]">Team</span>
             </h2>
-            <p className="text-xl text-gray-400">
-              Elite editors and designers, handpicked for excellence
+            <p className="text-xl text-[#6B7280]">
+              AI builders and strategists, handpicked for results
             </p>
           </div>
 
@@ -203,87 +212,90 @@ export function About() {
             {team.map((member, index) => {
               const isFounder = member.role.includes("Founder");
               return (
-                <div
+                <motion.div
                   key={index}
                   className={`relative rounded-2xl p-8 transition-all ${
                     isFounder
-                      ? "bg-gradient-to-br from-[#8B1538]/15 to-[#8B1538]/5 border-2 border-[#8B1538]/40 hover:border-[#8B1538]/60 shadow-lg shadow-[#8B1538]/10"
-                      : "bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20"
+                      ? "bg-gradient-to-br from-[#A78BFA]/15 to-[#7C3AED]/5 border-2 border-[#A78BFA]/40 hover:border-[#A78BFA]/60 shadow-lg shadow-[#A78BFA]/10"
+                      : "bg-white border border-[#E8E0FF] hover:border-[#A78BFA]/30 hover:shadow-[0_4px_20px_rgba(167,139,250,0.12)]"
                   }`}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
                   {isFounder && (
-                    <div className="absolute -top-3 left-6 bg-[#8B1538] text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full">
+                    <div className="absolute -top-3 left-6 text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full" style={{ background: "linear-gradient(135deg, #A78BFA 0%, #7C3AED 100%)" }}>
                       ✦ {member.role.includes("Co-Founder") ? "Co-Founder" : "Founder"}
                     </div>
                   )}
                   <div className="flex items-start gap-4">
                     <div className={`w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0 ${
-                      isFounder ? "bg-[#8B1538]" : "bg-[#8B1538]/20"
+                      isFounder ? "bg-[#A78BFA]" : "bg-[#EDE9FE]"
                     }`}>
-                      <Users className="w-8 h-8 text-white" />
+                      <Users className={`w-8 h-8 ${isFounder ? "text-white" : "text-[#A78BFA]"}`} />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-white text-xl mb-0.5">{member.name}</h3>
-                      <p className="text-[#8B1538] text-sm mb-2 font-medium">{member.role}</p>
-                      <p className="text-gray-400 text-sm leading-relaxed mb-3">{member.description}</p>
+                      <h3 className="text-[#1A1523] text-xl mb-0.5 font-semibold">{member.name}</h3>
+                      <p className="text-[#A78BFA] text-sm mb-2 font-medium">{member.role}</p>
+                      <p className="text-[#6B7280] text-sm leading-relaxed mb-3">{member.description}</p>
                       {member.phone && (
                         <a
                           href={`https://wa.me/${member.whatsapp}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 text-xs text-[#8B1538] hover:text-white transition-colors font-medium"
+                          className="inline-flex items-center gap-1.5 text-xs text-[#A78BFA] hover:text-[#7C3AED] transition-colors font-medium"
                         >
-                          <MessageCircle className="w-3.5 h-3.5" />
                           {member.phone}
                         </a>
                       )}
                     </div>
                   </div>
-                </div>
+                </motion.div>
               );
             })}
-
           </div>
         </div>
       </section>
 
       {/* Philosophy */}
-      <section className="py-24 bg-[#0A0A0A]">
+      <section className="py-24 bg-white border-t border-[#E8E0FF]">
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl tracking-tighter mb-6">
-              <span className="text-white">Our</span>{" "}
-              <span className="text-[#8B1538]">Philosophy</span>
+              <span className="text-[#1A1523]">Our</span>{" "}
+              <span className="text-[#A78BFA]">Philosophy</span>
             </h2>
           </div>
 
-          <div className="bg-white/5 border border-white/10 rounded-2xl p-12">
-            <blockquote className="text-2xl text-gray-300 text-center italic">
-              "Less clutter, more intent. Every frame should have a purpose. Every edit should drive action. Every video should perform."
+          <div className="bg-[#F9F7FF] border border-[#E8E0FF] rounded-2xl p-12 shadow-[0_2px_16px_rgba(167,139,250,0.08)]">
+            <blockquote className="text-2xl text-[#1A1523] text-center italic font-medium">
+              "Less manual work, more automation. Every system should generate leads while you sleep. Every build should scale without adding headcount."
             </blockquote>
-            <p className="text-center text-gray-500 mt-6">— Zivo Creative Team</p>
+            <p className="text-center text-[#6B7280] mt-6">— ZROXZ Team</p>
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-gradient-to-b from-[#0A0A0A] to-black">
+      <section className="py-24 bg-[#F9F7FF] border-t border-[#E8E0FF]">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-5xl tracking-tighter mb-6">
-            <span className="text-white">Work With</span>{" "}
-            <span className="text-[#8B1538]">The Best</span>
+            <span className="text-[#1A1523]">Work With</span>{" "}
+            <span className="text-[#A78BFA]">ZROXZ</span>
           </h2>
-          <p className="text-xl text-gray-400 mb-8">
-            Join the growing list of creators and brands who trust Zivo Creative
+          <p className="text-xl text-[#6B7280] mb-8">
+            Join growing businesses who trust ZROXZ to automate, build, and scale
           </p>
           <a
-            href="https://wa.me/923190485953"
+            href="https://calendly.com/arfa1054/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[#8B1538] hover:bg-[#6B1028] text-white px-8 py-4 rounded-full transition-all text-lg"
+            className="inline-flex items-center gap-2 text-white px-8 py-4 rounded-lg transition-all text-lg font-semibold"
+            style={{ background: "linear-gradient(135deg, #A78BFA 0%, #7C3AED 100%)" }}
           >
-            <MessageCircle className="w-5 h-5" />
-            <span>Start Your Project</span>
+            <Calendar className="w-5 h-5" />
+            <span>Book a Free Call</span>
           </a>
         </div>
       </section>

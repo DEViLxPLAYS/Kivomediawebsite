@@ -13,13 +13,13 @@ export interface SEOProps {
 export function SEOHead({
     title,
     description,
-    keywords = "website development, custom web development, video editing, YouTube automation, social media content, Zivo Creative",
-    canonicalUrl = "https://zivocreative.com",
+    keywords = "AI automation, web development, video editing, AI chatbots, AI voice agents, CRM automation, n8n workflows, GoHighLevel, SaaS development, ZROXZ",
+    canonicalUrl = "https://zroxz.com",
     ogImage = "https://i.postimg.cc/zGd03Gxt/Chat-GPT-Image-Jan-28-2026-02-41-08-PM.png",
     ogType = "website",
     structuredData,
 }: SEOProps) {
-    const fullTitle = `${title} | Zivo Creative`;
+    const fullTitle = `${title} | ZROXZ`;
 
     return (
         <Helmet>

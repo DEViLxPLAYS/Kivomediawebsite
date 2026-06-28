@@ -8,7 +8,7 @@ import { ScrollToTop } from "@/app/components/ScrollToTop";
 export function Layout() {
   return (
     <HelmetProvider>
-      <div className="min-h-screen bg-black text-white">
+      <div className="min-h-screen bg-white text-gray-900">
         <ScrollToTop />
         <Navigation />
         <main>

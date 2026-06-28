@@ -47,7 +47,7 @@ export function NavBar({ items, className, mobile = false }: NavBarProps) {
             )}
         >
             <div className={cn(
-                "flex items-center gap-3 bg-black/50 border border-white/10 backdrop-blur-lg py-1 px-1 rounded-full shadow-lg",
+                "flex items-center gap-3 bg-transparent border border-white/10 backdrop-blur-sm py-1 px-1 rounded-full shadow-lg",
                 mobile && "flex-col w-full rounded-xl p-2 bg-transparent border-none backdrop-blur-none"
             )}>
                 {items.map((item) => {
@@ -61,8 +61,8 @@ export function NavBar({ items, className, mobile = false }: NavBarProps) {
                                 <button
                                     className={cn(
                                         "relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors",
-                                        "text-white/80 hover:text-[#8B1538] flex items-center gap-1",
-                                        isActive && "bg-white/10 text-[#8B1538]",
+                                        "text-gray-800 hover:text-[#A78BFA] flex items-center gap-1",
+                                        isActive && "bg-white/10 text-[#A78BFA]",
                                     )}
                                 >
                                     <span>{item.name}</span>
@@ -75,7 +75,7 @@ export function NavBar({ items, className, mobile = false }: NavBarProps) {
                                         <Link
                                             key={idx}
                                             to={dropdownItem.url}
-                                            className="block px-4 py-3 text-sm text-gray-300 hover:bg-[#8B1538]/20 hover:text-white transition-colors border-b border-white/5 last:border-b-0"
+                                            className="block px-4 py-3 text-sm text-gray-300 hover:bg-[#A78BFA]/20 hover:text-white transition-colors border-b border-white/5 last:border-b-0"
                                         >
                                             {dropdownItem.label}
                                         </Link>
@@ -116,9 +116,9 @@ export function NavBar({ items, className, mobile = false }: NavBarProps) {
                             onClick={() => setActiveTab(item.name)}
                             className={cn(
                                 "relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors",
-                                "text-white/80 hover:text-[#8B1538]",
+                                "text-gray-800 hover:text-[#A78BFA]",
                                 mobile && "flex items-center gap-3 px-4 py-3 w-full text-base",
-                                isActive && "bg-white/10 text-[#8B1538]",
+                                isActive && "bg-purple-50 text-[#A78BFA]",
                             )}
                         >
                             <span className={cn("hidden md:inline", mobile && "inline")}>{item.name}</span>
@@ -131,7 +131,7 @@ export function NavBar({ items, className, mobile = false }: NavBarProps) {
                             {isActive && (
                                 <motion.div
                                     layoutId="lamp"
-                                    className="absolute inset-0 w-full bg-[#8B1538]/5 rounded-full -z-10"
+                                    className="absolute inset-0 w-full bg-[#A78BFA]/10 rounded-full -z-10"
                                     initial={false}
                                     transition={{
                                         type: "spring",
@@ -140,10 +140,10 @@ export function NavBar({ items, className, mobile = false }: NavBarProps) {
                                     }}
                                 >
                                     {!mobile && (
-                                        <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-[#8B1538] rounded-t-full">
-                                            <div className="absolute w-12 h-6 bg-[#8B1538]/20 rounded-full blur-md -top-2 -left-2" />
-                                            <div className="absolute w-8 h-6 bg-[#8B1538]/20 rounded-full blur-md -top-1" />
-                                            <div className="absolute w-4 h-4 bg-[#8B1538]/20 rounded-full blur-sm top-0 left-2" />
+                                        <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-[#A78BFA] rounded-t-full">
+                                            <div className="absolute w-12 h-6 bg-[#A78BFA]/20 rounded-full blur-md -top-2 -left-2" />
+                                            <div className="absolute w-8 h-6 bg-[#A78BFA]/20 rounded-full blur-md -top-1" />
+                                            <div className="absolute w-4 h-4 bg-[#A78BFA]/20 rounded-full blur-sm top-0 left-2" />
                                         </div>
                                     )}
                                 </motion.div>

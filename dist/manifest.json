@@ -1,11 +1,11 @@
 {
-    "name": "Zivo Creative - Website Development & Video Editing",
-    "short_name": "Zivo Creative",
-    "description": "Professional website development, YouTube automation, and video editing services",
+    "name": "ZROXZ - AI Automation, Web Development & Video Editing",
+    "short_name": "ZROXZ",
+    "description": "AI automation, web development and video editing agency for US businesses that want to scale on autopilot.",
     "start_url": "/",
     "display": "standalone",
-    "background_color": "#000000",
-    "theme_color": "#8B1538",
+    "background_color": "#ffffff",
+    "theme_color": "#A78BFA",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",

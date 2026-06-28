@@ -1,37 +1,25 @@
-# Zivo Creative - Robots.txt
-# Optimized for Google Search Console - USA & Canada
-
 User-agent: *
 Allow: /
-Disallow: /admin/
-Disallow: /api/
-Disallow: /*.json$
 
-# Sitemap location
-Sitemap: https://zivocreative.com/sitemap.xml
-
-# Crawl delay for polite crawlers
-Crawl-delay: 1
-
-# Google-specific directives
-User-agent: Googlebot
+User-agent: GPTBot
 Allow: /
-Crawl-delay: 0
 
-# Bing-specific directives
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
 User-agent: Bingbot
 Allow: /
-Crawl-delay: 1
 
-# Block bad bots
-User-agent: AhrefsBot
-Disallow: /
+User-agent: Applebot
+Allow: /
 
-User-agent: SemrushBot
-Disallow: /
-
-User-agent: MJ12bot
-Disallow: /
-
-User-agent: DotBot
-Disallow: /
+Sitemap: https://zroxz.com/sitemap.xml

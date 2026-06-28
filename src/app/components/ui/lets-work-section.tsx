@@ -26,7 +26,7 @@ export function LetsWorkTogether({ isOpen, onClose }: LetsWorkTogetherProps) {
     };
 
     const handleBookCall = () => {
-        window.open("https://calendly.com/creativezivo/30min", "_blank");
+        window.open("https://calendly.com/arfa1054/30min", "_blank");
     };
 
     if (!isOpen) return null;
@@ -278,7 +278,7 @@ export function LetsWorkTogether({ isOpen, onClose }: LetsWorkTogetherProps) {
                             <p className="max-w-md text-sm leading-relaxed text-gray-400">
                                 Have a project in mind? We'd love to hear about it. Let's create something exceptional together.
                             </p>
-                            <span className="text-xs tracking-widest uppercase text-gray-500">creativezivo@gmail.com</span>
+                            <span className="text-xs tracking-widest uppercase text-gray-500">info@zroxz.com</span>
                         </div>
                     </div>
                 </section>

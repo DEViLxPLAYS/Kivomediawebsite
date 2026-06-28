@@ -1,4 +1,4 @@
-import { Check, ArrowRight, MessageCircle, Calendar, Video, Globe, ShoppingCart, Shield, Zap } from "lucide-react";
+import { Check, ArrowRight, MessageCircle, Calendar, Bot, Mic, Workflow, Globe, Code, Video, Zap, Database } from "lucide-react";
 import { LetsWorkTogether } from "@/app/components/ui/lets-work-section";
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -6,91 +6,140 @@ import { SEOHead } from "@/app/components/SEOHead";
 
 const services = [
   {
-    icon: Video,
-    tag: "Content & Media",
-    title: "Video Editing",
+    icon: Bot,
+    tag: "AI Automation",
+    title: "AI Chatbots",
     description:
-      "Full-service video editing and AI-powered content production that brings your vision to life.",
+      "Intelligent conversational AI that qualifies leads, books appointments, and handles support — 24/7 without human intervention.",
     points: [
-      "YouTube long-form editing",
-      "YouTube automation systems",
-      "Faceless AI YouTube channels",
-      "AI content production",
-      "Shorts, Reels & TikToks",
-      "Motion graphics & animation",
-      "Color grading & sound design",
-      "Fast turnaround, premium quality",
+      "GPT-powered conversation flows",
+      "Lead qualification & scoring",
+      "Appointment booking automation",
+      "Multi-platform deployment",
+      "CRM & calendar integration",
+      "Custom training on your business",
     ],
-    gradient: "from-rose-900/30 via-transparent to-transparent",
-    glow: "rgba(139,21,56,0.35)",
+    gradient: "from-violet-100/60 via-transparent to-transparent",
+    glow: "rgba(167,139,250,0.3)",
   },
   {
-    icon: Globe,
-    tag: "Development",
-    title: "Website & App Development",
+    icon: Mic,
+    tag: "AI Automation",
+    title: "AI Voice Agents",
     description:
-      "We build fast, secure & scalable websites and mobile apps.",
+      "Human-like voice AI that handles inbound & outbound calls, follow-ups, and customer service — zero missed leads.",
     points: [
-      "Custom business websites",
-      "Mobile app development",
-      "Modern UI/UX design",
-      "API & AI integrations",
-      "Responsive optimization",
-      "Performance focused systems",
+      "80+ daily calls handled (Evinn.pk)",
+      "70% handle time reduction",
+      "Zero missed leads after hours",
+      "Natural conversation flows",
+      "CRM auto-logging",
+      "Multilingual support",
     ],
-    gradient: "from-blue-900/25 via-transparent to-transparent",
-    glow: "rgba(37,99,235,0.25)",
+    gradient: "from-purple-100/50 via-transparent to-transparent",
+    glow: "rgba(124,58,237,0.25)",
   },
   {
-    icon: ShoppingCart,
-    tag: "E-Commerce",
-    title: "E-Commerce Solutions",
+    icon: Workflow,
+    tag: "Automation",
+    title: "CRM Automation",
     description:
-      "Complete e-commerce systems to launch and scale your online business.",
+      "End-to-end CRM setup and automation — GoHighLevel, HubSpot, or custom — that turns your pipeline into a machine.",
     points: [
-      "Full e-commerce websites",
-      "Product & inventory management",
-      "Payment gateway integration",
-      "Analytics & reporting",
-      "Order management systems",
-      "Complete startup support",
+      "GoHighLevel setup & automation",
+      "Lead pipeline automation",
+      "Auto follow-up sequences",
+      "Client onboarding workflows",
+      "Reporting & analytics",
+      "Team notification systems",
     ],
-    gradient: "from-emerald-900/25 via-transparent to-transparent",
-    glow: "rgba(16,185,129,0.22)",
-  },
-  {
-    icon: Shield,
-    tag: "Security",
-    title: "Cyber Security",
-    description:
-      "Protect your business, servers and digital assets with advanced security solutions.",
-    points: [
-      "Website & server security",
-      "Malware & vulnerability scanning",
-      "Data protection systems",
-      "Firewall & security audits",
-      "Security monitoring",
-      "Threat prevention solutions",
-    ],
-    gradient: "from-yellow-900/20 via-transparent to-transparent",
-    glow: "rgba(234,179,8,0.2)",
+    gradient: "from-indigo-100/50 via-transparent to-transparent",
+    glow: "rgba(99,102,241,0.22)",
   },
   {
     icon: Zap,
     tag: "Automation",
-    title: "Automated Workflows",
+    title: "n8n Workflows",
     description:
-      "Smart automation systems that streamline your business operations and save time.",
+      "Custom n8n automation workflows that connect your tools and eliminate manual work across your entire business.",
     points: [
-      "CRM workflow automation",
-      "AI-powered business systems",
-      "Lead management automation",
-      "Automated client onboarding",
-      "Task & process automation",
-      "Business efficiency optimization",
+      "40% faster lead response",
+      "Multi-app workflow automation",
+      "API & webhook integrations",
+      "Slack, email, and CRM sync",
+      "Error handling & monitoring",
+      "Unlimited workflow scale",
     ],
-    gradient: "from-purple-900/25 via-transparent to-transparent",
-    glow: "rgba(147,51,234,0.25)",
+    gradient: "from-fuchsia-100/40 via-transparent to-transparent",
+    glow: "rgba(192,132,252,0.22)",
+  },
+  {
+    icon: Globe,
+    tag: "Development",
+    title: "Web Development",
+    description:
+      "Custom websites built fast, built to convert — React, Next.js, Supabase — with sub-2 second load times guaranteed.",
+    points: [
+      "5+ sites launched",
+      "Sub-2s load times",
+      "React + Next.js + Supabase",
+      "Responsive & SEO optimized",
+      "AI chatbot integration",
+      "E-commerce ready",
+    ],
+    gradient: "from-blue-100/40 via-transparent to-transparent",
+    glow: "rgba(59,130,246,0.2)",
+  },
+  {
+    icon: Code,
+    tag: "Development",
+    title: "SaaS Development",
+    description:
+      "Full-stack SaaS platforms with authentication, billing, and dashboards — from MVP to production-ready.",
+    points: [
+      "Full-stack SaaS architecture",
+      "Auth, billing & subscriptions",
+      "Admin dashboards",
+      "API development",
+      "Database design",
+      "Deployment & DevOps",
+    ],
+    gradient: "from-cyan-100/40 via-transparent to-transparent",
+    glow: "rgba(6,182,212,0.2)",
+  },
+  {
+    icon: Database,
+    tag: "Integration",
+    title: "GoHighLevel",
+    description:
+      "Complete GoHighLevel setup, automation, and management — your all-in-one sales & marketing machine.",
+    points: [
+      "Full GHL account setup",
+      "Funnel & pipeline builds",
+      "Email & SMS automation",
+      "Reputation management",
+      "Sub-account management",
+      "White-label setup",
+    ],
+    gradient: "from-emerald-100/40 via-transparent to-transparent",
+    glow: "rgba(16,185,129,0.2)",
+  },
+  {
+    icon: Video,
+    tag: "Media",
+    title: "Video Editing / Motion Design",
+    description:
+      "Professional video editing and AI motion design for content creators and brands serving US audiences.",
+    points: [
+      "Long-form YouTube editing",
+      "Short-form Reels & TikToks",
+      "AI motion graphics",
+      "Color grading & sound design",
+      "Content for US brands",
+      "Fast turnaround, premium quality",
+    ],
+    gradient: "from-rose-100/40 via-transparent to-transparent",
+    glow: "rgba(244,63,94,0.18)",
   },
 ];
 
@@ -109,47 +158,39 @@ export function Services() {
           description: service.description,
           provider: {
             "@type": "Organization",
-            name: "Zivo Creative",
-            url: "https://zivocreative.com",
+            name: "ZROXZ",
+            url: "https://zroxz.com",
           },
           areaServed: ["US", "CA"],
           availableChannel: {
             "@type": "ServiceChannel",
-            serviceUrl: "https://zivocreative.com/services",
+            serviceUrl: "https://zroxz.com/services",
           },
         })),
       },
       {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: "https://zivocreative.com" },
-          { "@type": "ListItem", position: 2, name: "Services", item: "https://zivocreative.com/services" },
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://zroxz.com" },
+          { "@type": "ListItem", position: 2, name: "Services", item: "https://zroxz.com/services" },
         ],
       },
     ],
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       <SEOHead
-        title="Our Services — Video Editing, Web Development, E-Commerce, Cyber Security & Automation"
-        description="Professional video editing, website & app development, e-commerce solutions, cyber security, and business workflow automation. Full-service digital agency for creators and brands."
-        keywords="video editing, YouTube automation, web development, e-commerce, cyber security, workflow automation, AI content, mobile app development"
-        canonicalUrl="https://zivocreative.com/services"
+        title="Services — AI Automation, Web Development, CRM & Video Editing"
+        description="ZROXZ offers AI chatbots, AI voice agents, CRM automation, n8n workflows, GoHighLevel, web development, SaaS development, and video editing for US businesses."
+        keywords="AI chatbots, AI voice agents, CRM automation, n8n workflows, GoHighLevel, web development, SaaS development, video editing, ZROXZ"
+        canonicalUrl="https://zroxz.com/services"
         structuredData={structuredData}
       />
 
       {/* ── HERO ───────────────────────────────────── */}
-      <section className="relative pt-36 pb-20 overflow-hidden">
-        {/* Noise texture */}
-        <div
-          className="absolute inset-0 opacity-20 pointer-events-none"
-          style={{
-            backgroundImage: `url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=")`,
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-[#0A0A0A] to-[#0A0A0A]" />
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#8B1538]/10 rounded-full blur-[120px] pointer-events-none" />
+      <section className="relative pt-36 pb-20 overflow-hidden bg-[#F9F7FF]">
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#A78BFA]/10 rounded-full blur-[120px] pointer-events-none" />
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
@@ -157,32 +198,23 @@ export function Services() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 bg-[#8B1538]/15 border border-[#8B1538]/30 text-[#8B1538] text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#8B1538] animate-pulse" />
+            <div className="inline-flex items-center gap-2 bg-[#A78BFA]/10 border border-[#A78BFA]/30 text-[#7C3AED] text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#A78BFA] animate-pulse" />
               What We Do
             </div>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl tracking-tighter mb-5">
-              <span className="text-white">Our </span>
-              <span className="text-[#8B1538]">Services</span>
+              <span className="text-[#1A1523]">Our </span>
+              <span className="text-[#A78BFA]">Services</span>
             </h1>
-            <p className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto">
-              From viral content to secured systems — everything your brand needs to dominate digitally.
+            <p className="text-lg sm:text-xl text-[#6B7280] max-w-2xl mx-auto">
+              From AI automation to luxury web builds — everything your business needs to dominate digitally.
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* ── SERVICE CARDS ──────────────────────────── */}
-      <section className="relative py-8 pb-24 overflow-hidden">
-        {/* Section noise + gradient background */}
-        <div
-          className="absolute inset-0 pointer-events-none opacity-25"
-          style={{
-            backgroundImage: `url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=")`,
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A] via-black to-[#0A0A0A]" />
-
+      <section className="relative py-8 pb-24 overflow-hidden bg-white">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
             {services.map((service, index) => (
@@ -198,27 +230,20 @@ export function Services() {
       </section>
 
       {/* ── HOW IT WORKS ───────────────────────────── */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A] to-black" />
-        <div
-          className="absolute inset-0 opacity-20 pointer-events-none"
-          style={{
-            backgroundImage: `url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=")`,
-          }}
-        />
+      <section className="relative py-20 overflow-hidden bg-[#F9F7FF]">
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-5xl tracking-tighter mb-4">
-            <span className="text-white">How It </span>
-            <span className="text-[#8B1538]">Works</span>
+            <span className="text-[#1A1523]">How It </span>
+            <span className="text-[#A78BFA]">Works</span>
           </h2>
-          <p className="text-gray-400 mb-14 text-lg">Our streamlined process ensures quality and speed</p>
+          <p className="text-[#6B7280] mb-14 text-lg">Our streamlined process ensures quality and speed</p>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { step: "01", title: "Contact Us", desc: "Reach out on WhatsApp or book a call" },
-              { step: "02", title: "Discovery", desc: "We understand your goals & requirements" },
-              { step: "03", title: "Execute", desc: "We deliver with speed and quality" },
-              { step: "04", title: "Deliver", desc: "You get the final result, ready to publish" },
+              { step: "01", title: "Book a Call", desc: "Schedule a free call on Calendly or reach out on WhatsApp" },
+              { step: "02", title: "Discovery", desc: "We understand your goals, stack, and automation needs" },
+              { step: "03", title: "Execute", desc: "We build and deliver with AI-powered speed and quality" },
+              { step: "04", title: "Launch", desc: "You get the final result, ready to scale" },
             ].map((item, i) => (
               <motion.div
                 key={i}
@@ -228,9 +253,9 @@ export function Services() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
-                <div className="text-5xl md:text-6xl text-[#8B1538]/25 font-bold">{item.step}</div>
-                <h3 className="text-lg text-white font-semibold">{item.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
+                <div className="text-5xl md:text-6xl text-[#A78BFA]/25 font-bold">{item.step}</div>
+                <h3 className="text-lg text-[#1A1523] font-semibold">{item.title}</h3>
+                <p className="text-[#6B7280] text-sm leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -238,7 +263,7 @@ export function Services() {
       </section>
 
       {/* ── CTA ────────────────────────────────────── */}
-      <section className="py-20 bg-black">
+      <section className="py-20 bg-white border-t border-[#E8E0FF]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -247,17 +272,20 @@ export function Services() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-4xl md:text-5xl tracking-tighter mb-4">
-              <span className="text-white">Ready to </span>
-              <span className="text-[#8B1538]">Get Started?</span>
+              <span className="text-[#1A1523]">Ready to </span>
+              <span className="text-[#A78BFA]">Get Started?</span>
             </h2>
-            <p className="text-gray-400 text-lg mb-8">
+            <p className="text-[#6B7280] text-lg mb-8">
               Let's discuss your project and build something that performs.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <motion.button
-                onClick={() => setIsModalOpen(true)}
-                className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#8B1538] text-white px-8 py-4 rounded-full text-base font-semibold overflow-hidden"
+              <motion.a
+                href="https://calendly.com/arfa1054/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-2 text-white px-8 py-4 rounded-lg text-base font-semibold overflow-hidden"
+                style={{ background: "linear-gradient(135deg, #A78BFA 0%, #7C3AED 100%)" }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.97 }}
               >
@@ -269,13 +297,13 @@ export function Services() {
                 />
                 <Calendar className="w-5 h-5 relative z-10" />
                 <span className="relative z-10">Book a Free Call</span>
-              </motion.button>
+              </motion.a>
 
               <motion.a
                 href="https://wa.me/923190485953"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-white/20 hover:border-[#8B1538]/60 hover:bg-[#8B1538]/10 text-white px-8 py-4 rounded-full text-base transition-all"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-[#A78BFA] hover:border-[#7C3AED] hover:bg-[#F3EFFF] text-[#7C3AED] px-8 py-4 rounded-lg text-base transition-all"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
               >
@@ -302,7 +330,7 @@ interface ServiceCardProps {
 function ServiceCard({ service, index, onBook }: ServiceCardProps) {
   return (
     <motion.div
-      className="group relative rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden cursor-default flex flex-col"
+      className="group relative rounded-2xl border border-[#E8E0FF] bg-white overflow-hidden cursor-default flex flex-col shadow-[0_2px_16px_rgba(167,139,250,0.06)]"
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -314,14 +342,6 @@ function ServiceCard({ service, index, onBook }: ServiceCardProps) {
         } as React.CSSProperties
       }
     >
-      {/* Noise texture overlay */}
-      <div
-        className="absolute inset-0 opacity-30 pointer-events-none z-0"
-        style={{
-          backgroundImage: `url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=")`,
-        }}
-      />
-
       {/* Gradient background on hover */}
       <div
         className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0`}
@@ -340,50 +360,52 @@ function ServiceCard({ service, index, onBook }: ServiceCardProps) {
         {/* Top row — icon + tag + arrow */}
         <div className="flex items-start justify-between mb-5">
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-xl bg-[#8B1538]/20 group-hover:bg-[#8B1538]/30 flex items-center justify-center transition-colors duration-300">
-              <service.icon className="w-6 h-6 text-[#8B1538]" />
+            <div className="w-12 h-12 rounded-xl bg-[#EDE9FE] group-hover:bg-[#A78BFA]/20 flex items-center justify-center transition-colors duration-300">
+              <service.icon className="w-6 h-6 text-[#A78BFA]" />
             </div>
-            <span className="text-[#8B1538] text-xs font-bold tracking-widest uppercase">
+            <span className="text-[#A78BFA] text-xs font-bold tracking-widest uppercase">
               {service.tag}
             </span>
           </div>
 
           {/* Arrow — animates on hover */}
-          <div className="w-9 h-9 rounded-full border border-white/10 group-hover:border-[#8B1538]/50 group-hover:bg-[#8B1538]/10 flex items-center justify-center transition-all duration-300 overflow-hidden">
+          <div className="w-9 h-9 rounded-full border border-[#E8E0FF] group-hover:border-[#A78BFA]/50 group-hover:bg-[#EDE9FE] flex items-center justify-center transition-all duration-300 overflow-hidden">
             <motion.div
               animate={{ x: 0 }}
               whileHover={{ x: 2 }}
               className="flex items-center"
             >
-              <ArrowRight className="w-4 h-4 text-gray-500 group-hover:text-[#8B1538] transition-colors duration-300 group-hover:translate-x-0.5" />
+              <ArrowRight className="w-4 h-4 text-[#6B7280] group-hover:text-[#A78BFA] transition-colors duration-300 group-hover:translate-x-0.5" />
             </motion.div>
           </div>
         </div>
 
         {/* Title + Description */}
-        <h2 className="text-xl sm:text-2xl font-bold text-white mb-2 tracking-tight">
+        <h2 className="text-xl sm:text-2xl font-bold text-[#1A1523] mb-2 tracking-tight">
           {service.title}
         </h2>
-        <p className="text-gray-400 text-sm leading-relaxed mb-6">{service.description}</p>
+        <p className="text-[#6B7280] text-sm leading-relaxed mb-6">{service.description}</p>
 
         {/* Feature list */}
         <ul className="space-y-2 mb-8 flex-1">
           {service.points.map((point, i) => (
             <li key={i} className="flex items-start gap-2.5 text-sm">
-              <Check className="w-4 h-4 text-[#8B1538] mt-0.5 flex-shrink-0" />
-              <span className="text-gray-300">{point}</span>
+              <Check className="w-4 h-4 text-[#A78BFA] mt-0.5 flex-shrink-0" />
+              <span className="text-[#1A1523]">{point}</span>
             </li>
           ))}
         </ul>
 
         {/* CTA */}
-        <button
-          onClick={onBook}
-          className="mt-auto w-full flex items-center justify-center gap-2 bg-[#8B1538]/0 border border-[#8B1538]/30 hover:bg-[#8B1538] hover:border-[#8B1538] text-[#8B1538] hover:text-white px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300"
+        <a
+          href="https://calendly.com/arfa1054/30min"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-auto w-full flex items-center justify-center gap-2 border border-[#A78BFA]/40 hover:border-[#7C3AED] hover:bg-[#7C3AED] hover:text-white text-[#7C3AED] px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300"
         >
           <Calendar className="w-4 h-4" />
           <span>Book a Call</span>
-        </button>
+        </a>
       </div>
     </motion.div>
   );

@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
-import { MessageCircle, Mail, Clock, MapPin, AlertCircle, CheckCircle2, Link as LinkIcon, User, Zap, Briefcase } from "lucide-react";
+import { MessageCircle, Mail, Clock, MapPin, AlertCircle, CheckCircle2, Link as LinkIcon, User, Zap, Briefcase, Calendar } from "lucide-react";
 import { submitContactForm } from "@/lib/supabase";
 import { validateContactForm, sanitizeText } from "@/lib/validation";
 import { checkRateLimit, recordSubmission, getRateLimitMessage } from "@/lib/rateLimit";
 import { useSearchParams } from "react-router";
 import { SEOHead } from "@/app/components/SEOHead";
+import { motion } from "framer-motion";
 
 export function Contact() {
   const [searchParams] = useSearchParams();
@@ -84,7 +85,6 @@ export function Contact() {
     setIsSubmitting(true);
 
     try {
-      // Submit to Supabase
       const result = await submitContactForm({
         name: sanitizeText(formData.name),
         email: formData.email.toLowerCase().trim(),
@@ -94,7 +94,6 @@ export function Contact() {
       });
 
       if (result.success) {
-        // Record successful submission for rate limiting
         recordSubmission();
 
         setSubmitStatus({
@@ -102,7 +101,6 @@ export function Contact() {
           message: "Thank you! We've received your message and will get back to you within 2 hours.",
         });
 
-        // Reset form
         setFormData({
           name: "",
           businessName: "",
@@ -115,7 +113,7 @@ export function Contact() {
         });
 
         // Open WhatsApp as backup/confirmation
-        const messageText = `Hi Zivo Creative! I just submitted a contact form. Looking forward to hearing from you!`;
+        const messageText = `Hi ZROXZ! I just submitted a contact form. Looking forward to hearing from you!`;
         const whatsappUrl = `https://wa.me/923190485953?text=${encodeURIComponent(messageText)}`;
         setTimeout(() => {
           window.open(whatsappUrl, "_blank");
@@ -142,7 +140,6 @@ export function Contact() {
       ...formData,
       [name]: value,
     });
-    // Clear error for this field when user starts typing
     if (errors[name]) {
       setErrors({ ...errors, [name]: "" });
     }
@@ -162,7 +159,7 @@ export function Contact() {
       icon: Mail,
       title: "Email",
       details: [
-        { text: "info@zivocreative.com", link: "mailto:info@zivocreative.com" },
+        { text: "info@zroxz.com", link: "mailto:info@zroxz.com" },
       ],
     },
     {
@@ -186,14 +183,14 @@ export function Contact() {
     "@graph": [
       {
         "@type": "ContactPage",
-        "url": "https://zivocreative.com/contact",
-        "name": "Contact Zivo Creative",
-        "description": "Get in touch with Zivo Creative for video editing, website development, and content creation services"
+        "url": "https://zroxz.com/contact",
+        "name": "Contact ZROXZ",
+        "description": "Get in touch with ZROXZ for AI automation, web development, and video editing services"
       },
       {
         "@type": "Organization",
-        "name": "Zivo Creative",
-        "url": "https://zivocreative.com",
+        "name": "ZROXZ",
+        "url": "https://zroxz.com",
         "contactPoint": [
           {
             "@type": "ContactPoint",
@@ -201,70 +198,78 @@ export function Contact() {
             "contactType": "Customer Service",
             "availableLanguage": ["English"],
             "areaServed": ["US", "CA"],
-            "hoursAvailable": {
-              "@type": "OpeningHoursSpecification",
-              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-              "opens": "00:00",
-              "closes": "23:59"
-            }
           }
         ],
-        "email": "info@zivocreative.com"
+        "email": "info@zroxz.com"
       },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://zivocreative.com"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Contact",
-            "item": "https://zivocreative.com/contact"
-          }
-        ]
-      }
     ]
   };
 
   return (
-    <div className="min-h-screen pt-16 sm:pt-20">
+    <div className="min-h-screen pt-16 sm:pt-20 bg-white">
       <SEOHead
-        title="Contact Us - Get Your Free Consultation"
-        description="Get in touch with Zivo Creative for professional video editing, YouTube automation, and website development services. Fast response time within 2 hours. Contact us via email, WhatsApp, or our contact form."
-        keywords="contact Zivo Creative, video editing inquiry, website development quote, YouTube automation services, get free consultation, content creation contact"
-        canonicalUrl="https://zivocreative.com/contact"
+        title="Contact ZROXZ — Get Your Free Consultation"
+        description="Get in touch with ZROXZ for AI automation, web development, and video editing services. Fast response within 2 hours. Contact us via email, WhatsApp, or our contact form."
+        keywords="contact ZROXZ, AI automation inquiry, web development quote, get free consultation"
+        canonicalUrl="https://zroxz.com/contact"
         structuredData={structuredData}
       />
+
       {/* Hero */}
-      <section className="py-16 sm:py-20 md:py-24 bg-gradient-to-b from-black to-[#0A0A0A]">
+      <section className="py-16 sm:py-20 md:py-24 bg-[#F9F7FF]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-tighter mb-4 sm:mb-6">
-            <span className="text-white">Get In</span>{" "}
-            <span className="text-[#8B1538]">Touch</span>
-          </h1>
-          <p className="text-base sm:text-lg md:text-xl text-gray-400 px-4">
-            Let's discuss your project and bring your vision to life
-          </p>
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            {/* Book a Call Primary CTA */}
+            <div className="mb-8">
+              <div className="inline-flex items-center gap-2 bg-[#A78BFA]/10 border border-[#A78BFA]/30 text-[#7C3AED] text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full mb-6">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#A78BFA] animate-pulse" />
+                First Priority
+              </div>
+              <div className="bg-gradient-to-br from-[#A78BFA]/10 to-[#7C3AED]/5 border border-[#A78BFA]/20 rounded-2xl p-8 mb-8">
+                <h2 className="text-2xl font-bold text-[#1A1523] mb-2">Ready to talk? Book a Free Call</h2>
+                <p className="text-[#6B7280] mb-6">Schedule a 30-minute strategy call — fastest way to get started.</p>
+                <motion.a
+                  href="https://calendly.com/arfa1054/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-white px-8 py-4 rounded-lg text-base font-semibold"
+                  style={{ background: "linear-gradient(135deg, #A78BFA 0%, #7C3AED 100%)" }}
+                  whileHover={{ scale: 1.04 }}
+                  whileTap={{ scale: 0.97 }}
+                >
+                  <Calendar className="w-5 h-5" />
+                  <span>Book a Free Call on Calendly</span>
+                </motion.a>
+              </div>
+            </div>
+
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-tighter mb-4 sm:mb-6">
+              <span className="text-[#1A1523]">Or Send Us</span>{" "}
+              <span className="text-[#A78BFA]">a Message</span>
+            </h1>
+            <p className="text-base sm:text-lg md:text-xl text-[#6B7280] px-4">
+              Fill out the form below and we'll get back to you within 2 hours
+            </p>
+          </motion.div>
         </div>
       </section>
 
       {/* Contact Info */}
-      <section className="py-12 sm:py-16 bg-[#0A0A0A]">
+      <section className="py-12 sm:py-16 bg-white border-t border-[#E8E0FF]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {contactInfo.map((info, index) => (
               <div
                 key={index}
-                className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:border-white/20 transition-all text-center">
-                <div className="w-12 h-12 bg-[#8B1538]/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <info.icon className="w-6 h-6 text-[#8B1538]" />
+                className="bg-[#F9F7FF] border border-[#E8E0FF] rounded-2xl p-6 hover:border-[#A78BFA]/30 hover:shadow-[0_4px_20px_rgba(167,139,250,0.1)] transition-all text-center">
+                <div className="w-12 h-12 bg-[#EDE9FE] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <info.icon className="w-6 h-6 text-[#A78BFA]" />
                 </div>
-                <h3 className="text-white mb-2">{info.title}</h3>
+                <h3 className="text-[#1A1523] mb-2 font-semibold">{info.title}</h3>
                 <div className="space-y-1">
                   {info.details.map((detail, detailIndex) => (
                     <div key={detailIndex}>
@@ -273,12 +278,12 @@ export function Contact() {
                           href={detail.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-gray-400 hover:text-[#8B1538] transition-colors block"
+                          className="text-[#6B7280] hover:text-[#A78BFA] transition-colors block text-sm"
                         >
                           {detail.text}
                         </a>
                       ) : (
-                        <p className="text-gray-400">{detail.text}</p>
+                        <p className="text-[#6B7280] text-sm">{detail.text}</p>
                       )}
                     </div>
                   ))}
@@ -290,14 +295,14 @@ export function Contact() {
       </section>
 
       {/* Contact Form */}
-      <section className="py-16 sm:py-20 md:py-24 bg-gradient-to-b from-black to-[#0A0A0A]">
+      <section className="py-16 sm:py-20 md:py-24 bg-[#F9F7FF] border-t border-[#E8E0FF]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tighter mb-3 sm:mb-4">
-              <span className="text-white">Send Us a</span>{" "}
-              <span className="text-[#8B1538]">Message</span>
+              <span className="text-[#1A1523]">Send Us a</span>{" "}
+              <span className="text-[#A78BFA]">Message</span>
             </h2>
-            <p className="text-sm sm:text-base text-gray-400 px-4">
+            <p className="text-sm sm:text-base text-[#6B7280] px-4">
               Fill out the form below and we'll get back to you within 2 hours
             </p>
           </div>
@@ -306,8 +311,8 @@ export function Contact() {
           {submitStatus.type && (
             <div
               className={`mb-6 p-4 rounded-xl border flex items-start gap-3 ${submitStatus.type === "success"
-                ? "bg-green-500/10 border-green-500/30 text-green-400"
-                : "bg-red-500/10 border-red-500/30 text-red-400"
+                ? "bg-green-50 border-green-200 text-green-700"
+                : "bg-red-50 border-red-200 text-red-600"
                 }`}
             >
               {submitStatus.type === "success" ? (
@@ -319,14 +324,14 @@ export function Contact() {
             </div>
           )}
 
-          {/* Beautiful Form Card */}
-          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-10 shadow-2xl">
+          {/* Form Card */}
+          <div className="bg-white border border-[#E8E0FF] rounded-3xl p-8 md:p-10 shadow-[0_2px_16px_rgba(167,139,250,0.08)]">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Name */}
                 <div>
-                  <label htmlFor="name" className="block text-white mb-2 font-medium flex items-center gap-2">
-                    <User className="w-4 h-4 text-[#8B1538]" />
+                  <label htmlFor="name" className="block text-[#1A1523] mb-2 font-medium flex items-center gap-2">
+                    <User className="w-4 h-4 text-[#A78BFA]" />
                     Your Name *
                   </label>
                   <input
@@ -335,17 +340,17 @@ export function Contact() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className={`w-full bg-white border ${errors.name ? "border-red-500" : "border-gray-200"
-                      } text-black px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B1538] focus:border-transparent transition-all placeholder-gray-400`}
+                    className={`w-full bg-[#F9F7FF] border ${errors.name ? "border-red-400" : "border-[#E8E0FF]"
+                      } text-[#1A1523] px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#A78BFA] focus:border-transparent transition-all placeholder-[#6B7280]/50`}
                     placeholder="John Doe"
                   />
-                  {errors.name && <p className="mt-1 text-sm text-red-400">{errors.name}</p>}
+                  {errors.name && <p className="mt-1 text-sm text-red-500">{errors.name}</p>}
                 </div>
 
-                {/* Business/Influencer Name */}
+                {/* Business/Brand Name */}
                 <div>
-                  <label htmlFor="businessName" className="block text-white mb-2 font-medium flex items-center gap-2">
-                    <Briefcase className="w-4 h-4 text-[#8B1538]" />
+                  <label htmlFor="businessName" className="block text-[#1A1523] mb-2 font-medium flex items-center gap-2">
+                    <Briefcase className="w-4 h-4 text-[#A78BFA]" />
                     Business/Brand Name
                   </label>
                   <input
@@ -354,8 +359,8 @@ export function Contact() {
                     name="businessName"
                     value={formData.businessName}
                     onChange={handleChange}
-                    className="w-full bg-white border border-gray-200 text-black px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B1538] focus:border-transparent transition-all placeholder-gray-400"
-                    placeholder="Your brand or channel name"
+                    className="w-full bg-[#F9F7FF] border border-[#E8E0FF] text-[#1A1523] px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#A78BFA] focus:border-transparent transition-all placeholder-[#6B7280]/50"
+                    placeholder="Your business or brand name"
                   />
                 </div>
               </div>
@@ -363,8 +368,8 @@ export function Contact() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Email */}
                 <div>
-                  <label htmlFor="email" className="block text-white mb-2 font-medium flex items-center gap-2">
-                    <Mail className="w-4 h-4 text-[#8B1538]" />
+                  <label htmlFor="email" className="block text-[#1A1523] mb-2 font-medium flex items-center gap-2">
+                    <Mail className="w-4 h-4 text-[#A78BFA]" />
                     Email *
                   </label>
                   <input
@@ -373,17 +378,17 @@ export function Contact() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className={`w-full bg-white border ${errors.email ? "border-red-500" : "border-gray-200"
-                      } text-black px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B1538] focus:border-transparent transition-all placeholder-gray-400`}
+                    className={`w-full bg-[#F9F7FF] border ${errors.email ? "border-red-400" : "border-[#E8E0FF]"
+                      } text-[#1A1523] px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#A78BFA] focus:border-transparent transition-all placeholder-[#6B7280]/50`}
                     placeholder="john@example.com"
                   />
-                  {errors.email && <p className="mt-1 text-sm text-red-400">{errors.email}</p>}
+                  {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>}
                 </div>
 
                 {/* Phone */}
                 <div>
-                  <label htmlFor="phone" className="block text-white mb-2 font-medium flex items-center gap-2">
-                    <MessageCircle className="w-4 h-4 text-[#8B1538]" />
+                  <label htmlFor="phone" className="block text-[#1A1523] mb-2 font-medium flex items-center gap-2">
+                    <MessageCircle className="w-4 h-4 text-[#A78BFA]" />
                     Phone (Optional)
                   </label>
                   <input
@@ -392,19 +397,19 @@ export function Contact() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className={`w-full bg-white border ${errors.phone ? "border-red-500" : "border-gray-200"
-                      } text-black px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B1538] focus:border-transparent transition-all placeholder-gray-400`}
+                    className={`w-full bg-[#F9F7FF] border ${errors.phone ? "border-red-400" : "border-[#E8E0FF]"
+                      } text-[#1A1523] px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#A78BFA] focus:border-transparent transition-all placeholder-[#6B7280]/50`}
                     placeholder="+1 (555) 000-0000"
                   />
-                  {errors.phone && <p className="mt-1 text-sm text-red-400">{errors.phone}</p>}
+                  {errors.phone && <p className="mt-1 text-sm text-red-500">{errors.phone}</p>}
                 </div>
               </div>
 
               {/* Social Media Link */}
               <div>
-                <label htmlFor="socialMediaLink" className="block text-white mb-2 font-medium flex items-center gap-2">
-                  <LinkIcon className="w-4 h-4 text-[#8B1538]" />
-                  Social Media Link (Optional)
+                <label htmlFor="socialMediaLink" className="block text-[#1A1523] mb-2 font-medium flex items-center gap-2">
+                  <LinkIcon className="w-4 h-4 text-[#A78BFA]" />
+                  Website/Social Link (Optional)
                 </label>
                 <input
                   type="url"
@@ -412,46 +417,44 @@ export function Contact() {
                   name="socialMediaLink"
                   value={formData.socialMediaLink}
                   onChange={handleChange}
-                  className="w-full bg-white border border-gray-200 text-black px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B1538] focus:border-transparent transition-all placeholder-gray-400"
-                  placeholder="https://instagram.com/yourbrand or YouTube channel"
+                  className="w-full bg-[#F9F7FF] border border-[#E8E0FF] text-[#1A1523] px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#A78BFA] focus:border-transparent transition-all placeholder-[#6B7280]/50"
+                  placeholder="https://yourbusiness.com or instagram.com/yourbrand"
                 />
-                <p className="mt-1 text-sm text-gray-400">Attach your social media profile for reference</p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Project Type */}
                 <div>
-                  <label htmlFor="projectType" className="block text-white mb-2 font-medium">
-                    Package/Service *
+                  <label htmlFor="projectType" className="block text-[#1A1523] mb-2 font-medium">
+                    Service Needed *
                   </label>
                   <select
                     id="projectType"
                     name="projectType"
                     value={formData.projectType}
                     onChange={handleChange}
-                    className={`w-full bg-white border ${errors.projectType ? "border-red-500" : "border-gray-200"
-                      } text-black px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B1538] focus:border-transparent transition-all`}
+                    className={`w-full bg-[#F9F7FF] border ${errors.projectType ? "border-red-400" : "border-[#E8E0FF]"
+                      } text-[#1A1523] px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#A78BFA] focus:border-transparent transition-all`}
                   >
-                    <option value="" className="text-gray-400">Select a package</option>
-                    <option value="All-in-One Starter Growth">All-in-One: Starter Growth</option>
-                    <option value="All-in-One Accelerator">All-in-One: Accelerator</option>
-                    <option value="All-in-One Premium Authority">All-in-One: Premium Authority</option>
-                    <option value="All-in-One Custom Enterprise">All-in-One: Custom Enterprise</option>
-                    <option value="Video Edit Starter Growth">Video Edit: Starter Growth</option>
-                    <option value="Video Edit Accelerator">Video Edit: Accelerator</option>
-                    <option value="Video Edit Premium Authority">Video Edit: Premium Authority</option>
-                    <option value="Website Starter">Website: Starter</option>
-                    <option value="Website Growth">Website: Growth</option>
-                    <option value="Website Enterprise">Website: Enterprise</option>
+                    <option value="" className="text-[#6B7280]">Select a service</option>
+                    <option value="AI Chatbot">AI Chatbot</option>
+                    <option value="AI Voice Agent">AI Voice Agent</option>
+                    <option value="CRM Automation">CRM Automation</option>
+                    <option value="n8n Workflows">n8n Workflows</option>
+                    <option value="GoHighLevel Setup">GoHighLevel Setup</option>
+                    <option value="Web Development">Web Development</option>
+                    <option value="SaaS Development">SaaS Development</option>
+                    <option value="Video Editing">Video Editing / Motion Design</option>
+                    <option value="Full Package">Full Package (Multiple Services)</option>
                     <option value="Other">Other</option>
                   </select>
-                  {errors.projectType && <p className="mt-1 text-sm text-red-400">{errors.projectType}</p>}
+                  {errors.projectType && <p className="mt-1 text-sm text-red-500">{errors.projectType}</p>}
                 </div>
 
                 {/* Priority */}
                 <div>
-                  <label htmlFor="priority" className="block text-white mb-2 font-medium flex items-center gap-2">
-                    <Zap className="w-4 h-4 text-[#8B1538]" />
+                  <label htmlFor="priority" className="block text-[#1A1523] mb-2 font-medium flex items-center gap-2">
+                    <Zap className="w-4 h-4 text-[#A78BFA]" />
                     Priority
                   </label>
                   <select
@@ -459,12 +462,12 @@ export function Contact() {
                     name="priority"
                     value={formData.priority}
                     onChange={handleChange}
-                    className="w-full bg-white border border-gray-200 text-black px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B1538] focus:border-transparent transition-all"
+                    className="w-full bg-[#F9F7FF] border border-[#E8E0FF] text-[#1A1523] px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#A78BFA] focus:border-transparent transition-all"
                   >
                     <option value="normal">Normal Priority</option>
                     <option value="fast">Fast Priority ⚡</option>
                   </select>
-                  <p className="mt-1 text-sm text-gray-400">
+                  <p className="mt-1 text-sm text-[#6B7280]">
                     {formData.priority === "fast"
                       ? "We'll prioritize your request for faster turnaround"
                       : "Standard response within 2 hours"}
@@ -474,7 +477,7 @@ export function Contact() {
 
               {/* Message */}
               <div>
-                <label htmlFor="message" className="block text-white mb-2 font-medium">
+                <label htmlFor="message" className="block text-[#1A1523] mb-2 font-medium">
                   Message *
                 </label>
                 <textarea
@@ -483,12 +486,12 @@ export function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   rows={8}
-                  className={`w-full bg-white border ${errors.message ? "border-red-500" : "border-gray-200"
-                    } text-black px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B1538] focus:border-transparent transition-all resize-none placeholder-gray-400`}
+                  className={`w-full bg-[#F9F7FF] border ${errors.message ? "border-red-400" : "border-[#E8E0FF]"
+                    } text-[#1A1523] px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#A78BFA] focus:border-transparent transition-all resize-none placeholder-[#6B7280]/50`}
                   placeholder="Tell us about your project, goals, and any specific requirements..."
                 />
-                {errors.message && <p className="mt-1 text-sm text-red-400">{errors.message}</p>}
-                <p className="mt-1 text-sm text-gray-400">
+                {errors.message && <p className="mt-1 text-sm text-red-500">{errors.message}</p>}
+                <p className="mt-1 text-sm text-[#6B7280]">
                   {formData.message.length} / 2000 characters
                 </p>
               </div>
@@ -497,7 +500,8 @@ export function Contact() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-[#8B1538] to-[#6B1028] hover:from-[#6B1028] hover:to-[#8B1538] disabled:from-gray-600 disabled:to-gray-600 disabled:cursor-not-allowed text-white px-8 py-4 rounded-full transition-all text-lg font-bold flex items-center justify-center gap-2 shadow-lg shadow-[#8B1538]/20 hover:shadow-[#8B1538]/40 hover:scale-[1.02] active:scale-[0.98]"
+                className="w-full disabled:opacity-50 disabled:cursor-not-allowed text-white px-8 py-4 rounded-xl transition-all text-lg font-bold flex items-center justify-center gap-2 shadow-lg hover:scale-[1.02] active:scale-[0.98]"
+                style={{ background: "linear-gradient(135deg, #A78BFA 0%, #7C3AED 100%)" }}
               >
                 {isSubmitting ? (
                   <>
@@ -512,7 +516,7 @@ export function Contact() {
                 )}
               </button>
 
-              <p className="text-center text-sm text-gray-400">
+              <p className="text-center text-sm text-[#6B7280]">
                 🔒 Your information is secure and will never be shared
               </p>
             </form>
@@ -520,15 +524,16 @@ export function Contact() {
 
           {/* Alternative Contact */}
           <div className="mt-12 text-center">
-            <p className="text-gray-400 mb-4">Prefer to chat directly?</p>
+            <p className="text-[#6B7280] mb-4">Prefer to book a call directly?</p>
             <a
-              href="https://wa.me/923190485953?text=Hey%20Zivo%20Creative%2C%20I'm%20interested%20in%20your%20services.%20Can%20we%20discuss%20my%20project%3F"
+              href="https://calendly.com/arfa1054/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 border border-white/20 hover:border-[#8B1538] hover:bg-[#8B1538]/10 text-white px-8 py-4 rounded-full transition-all"
+              className="inline-flex items-center gap-2 text-white px-8 py-4 rounded-lg transition-all font-semibold"
+              style={{ background: "linear-gradient(135deg, #A78BFA 0%, #7C3AED 100%)" }}
             >
-              <MessageCircle className="w-5 h-5" />
-              <span>Message Us on WhatsApp</span>
+              <Calendar className="w-5 h-5" />
+              <span>Book a Free Call on Calendly</span>
             </a>
           </div>
         </div>

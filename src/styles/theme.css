@@ -178,4 +178,27 @@
     font-weight: var(--font-weight-normal);
     line-height: 1.5;
   }
+
+  /* ── Global mobile responsiveness ── */
+  html {
+    font-size: var(--font-size);
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Prevent content from touching edges on small screens */
+  .container-safe {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
 }

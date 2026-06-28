@@ -1,7 +1,7 @@
 // Simple client-side rate limiting
 // Prevents spam submissions
 
-const RATE_LIMIT_KEY = 'zivo_contact_submissions'
+const RATE_LIMIT_KEY = 'zroxz_contact_submissions'
 const MAX_SUBMISSIONS = 3
 const TIME_WINDOW = 10 * 60 * 1000 // 10 minutes in milliseconds
 

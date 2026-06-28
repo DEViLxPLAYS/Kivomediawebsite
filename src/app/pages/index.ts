@@ -4,3 +4,4 @@ export { Work } from "./Work";
 export { Process } from "./Process";
 export { About } from "./About";
 export { Contact } from "./Contact";
+export { BookUs } from "./BookUs";

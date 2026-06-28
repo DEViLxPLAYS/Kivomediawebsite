@@ -35,9 +35,9 @@ export function WorldMap({
     const svgMap = useMemo(
         () => map.getSVG({
             radius: 0.22,
-            color: "#FFFF7F40", // Always use dark theme color for visibility
+            color: "#A78BFA40", // Soft purple dots on white
             shape: "circle",
-            backgroundColor: "black",
+            backgroundColor: "white",
         }),
         [map]
     );
@@ -64,7 +64,7 @@ export function WorldMap({
     const fullCycleDuration = totalAnimationTime + pauseTime;
 
     return (
-        <div className="w-full aspect-[2/1] md:aspect-[2.5/1] lg:aspect-[2/1] bg-black relative font-sans overflow-hidden">
+        <div className="w-full aspect-[2/1] md:aspect-[2.5/1] lg:aspect-[2/1] bg-white relative font-sans overflow-hidden">
             <img
                 src={`data:image/svg+xml;utf8,${encodeURIComponent(svgMap)}`}
                 className="h-full w-full [mask-image:linear-gradient(to_bottom,transparent,white_10%,white_90%,transparent)] pointer-events-none select-none object-cover"

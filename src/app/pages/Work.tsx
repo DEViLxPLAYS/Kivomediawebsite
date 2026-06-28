@@ -1,61 +1,61 @@
 import { useState } from "react";
-import { Play, Filter } from "lucide-react";
+import { Play, Filter, Calendar } from "lucide-react";
 import { ImageWithFallback } from "@/app/components/figma/ImageWithFallback";
 import { SEOHead } from "@/app/components/SEOHead";
 
 export function Work() {
   const [activeFilter, setActiveFilter] = useState("All");
 
-  const filters = ["All", "Long-Form", "Short-Form", "Brand & Ads", "Podcasts"];
+  const filters = ["All", "AI Automation", "Web Dev", "Video Editing", "SaaS"];
 
   const projects = [
     {
       id: 1,
-      title: "Tech Review Series",
-      client: "TechVision YouTube",
-      category: "Long-Form",
+      title: "AI Voice Agent — Evinn.pk",
+      client: "Evinn.pk",
+      category: "AI Automation",
       thumbnail: "https://images.unsplash.com/photo-1758390851386-79c99432120e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaW5lbWF0aWMlMjBjYW1lcmElMjBlcXVpcG1lbnR8ZW58MXx8fHwxNzY5MTE1NDcyfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      views: "2.3M views",
+      views: "80+ daily calls handled",
     },
     {
       id: 2,
-      title: "Product Launch Campaign",
-      client: "StartupCo",
-      category: "Brand & Ads",
+      title: "n8n + GoHighLevel Automation",
+      client: "US SaaS Client",
+      category: "AI Automation",
       thumbnail: "https://images.unsplash.com/photo-1624717369095-ebacc7d68a40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb250ZW50JTIwY3JlYXRvciUyMGZpbG1pbmd8ZW58MXx8fHwxNzY5MjAyNzAzfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      views: "5.2M impressions",
+      views: "40% faster lead response",
     },
     {
       id: 3,
-      title: "Viral Reels Series",
-      client: "LifestyleInfluencer",
-      category: "Short-Form",
+      title: "React + Supabase SaaS Build",
+      client: "US Tech Startup",
+      category: "SaaS",
       thumbnail: "https://images.unsplash.com/photo-1575320854760-bfffc3550640?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2aWRlbyUyMGVkaXRpbmclMjB3b3Jrc3BhY2V8ZW58MXx8fHwxNzY5MjMxMTMwfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      views: "12M+ views",
+      views: "Sub-2s load time",
     },
     {
       id: 4,
-      title: "Business Podcast",
-      client: "Leadership Talks",
-      category: "Podcasts",
+      title: "Business Website Launch",
+      client: "US Real Estate Brand",
+      category: "Web Dev",
       thumbnail: "https://images.unsplash.com/photo-1758390851386-79c99432120e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaW5lbWF0aWMlMjBjYW1lcmElMjBlcXVpcG1lbnR8ZW58MXx8fHwxNzY5MTE1NDcyfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      views: "150K+ downloads",
+      views: "3x conversion lift",
     },
     {
       id: 5,
-      title: "Educational Series",
-      client: "LearnHub",
-      category: "Long-Form",
+      title: "AI Motion Design Reel",
+      client: "US Brand Agency",
+      category: "Video Editing",
       thumbnail: "https://images.unsplash.com/photo-1624717369095-ebacc7d68a40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb250ZW50JTIwY3JlYXRvciUyMGZpbG1pbmd8ZW58MXx8fHwxNzY5MjAyNzAzfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      views: "890K views",
+      views: "5M+ impressions",
     },
     {
       id: 6,
-      title: "TikTok Viral Series",
-      client: "FitnessGuru",
-      category: "Short-Form",
+      title: "AI Chatbot Lead Qualifier",
+      client: "US Insurance Broker",
+      category: "AI Automation",
       thumbnail: "https://images.unsplash.com/photo-1575320854760-bfffc3550640?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2aWRlbyUyMGVkaXRpbmclMjB3b3Jrc3BhY2V8ZW58MXx8fHwxNzY5MjMxMTMwfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      views: "8.5M views",
+      views: "15+ booked calls/week",
     },
   ];
 
@@ -69,9 +69,9 @@ export function Work() {
     "@graph": [
       {
         "@type": "CollectionPage",
-        "name": "Portfolio - Zivo Creative Work Showcase",
-        "description": "Professional video editing portfolio showcasing YouTube content, short-form videos, and web development projects",
-        "url": "https://zivocreative.com/work",
+        "name": "ZROXZ Work Portfolio",
+        "description": "AI automation, web development, and video editing projects by ZROXZ",
+        "url": "https://zroxz.com/work",
         "mainEntity": {
           "@type": "ItemList",
           "itemListElement": projects.map((project, index) => ({
@@ -80,75 +80,62 @@ export function Work() {
             "name": project.title,
             "creator": {
               "@type": "Organization",
-              "name": "Zivo Creative"
+              "name": "ZROXZ"
             },
             "image": project.thumbnail,
             "genre": project.category,
-            "description": `Professional ${project.category} project: ${project.title}`,
-            "url": "https://zivocreative.com/work",
-            "interactionStatistic": {
-              "@type": "InteractionCounter",
-              "interactionType": "https://schema.org/WatchAction",
-              "userInteractionCount": Math.floor(Math.random() * 100000) + 50000
-            }
+            "description": `ZROXZ project: ${project.title}`,
+            "url": "https://zroxz.com/work",
           }))
         }
       },
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://zivocreative.com"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Work",
-            "item": "https://zivocreative.com/work"
-          }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://zroxz.com" },
+          { "@type": "ListItem", "position": 2, "name": "Work", "item": "https://zroxz.com/work" }
         ]
       }
     ]
   };
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-20 bg-white">
       <SEOHead
-        title="Our Work & Portfolio - Professional Video Editing Samples"
-        description="View our portfolio of professional video editing projects including YouTube long-form content, short-form Reels and TikTok videos, brand ads, and podcast editing. See real results from our clients with millions of views."
-        keywords="video editing portfolio, YouTube editing samples, video editing work, content creation portfolio, editing showcase, video production samples"
-        canonicalUrl="https://zivocreative.com/work"
+        title="Our Work — AI Automation, Web Development & Video Editing Portfolio"
+        description="See ZROXZ's portfolio of AI automation systems, web development projects, and video editing work. Real results for US businesses."
+        keywords="ZROXZ portfolio, AI automation projects, web development portfolio, video editing samples, AI chatbot, AI voice agent"
+        canonicalUrl="https://zroxz.com/work"
         structuredData={structuredData}
       />
+
       {/* Hero */}
-      <section className="py-24 bg-gradient-to-b from-black to-[#0A0A0A]">
+      <section className="py-24 bg-[#F9F7FF]">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl lg:text-7xl tracking-tighter mb-6">
-            <span className="text-white">Our</span>{" "}
-            <span className="text-[#8B1538]">Work</span>
+            <span className="text-[#1A1523]">Our</span>{" "}
+            <span className="text-[#A78BFA]">Work</span>
           </h1>
-          <p className="text-xl text-gray-400">
-            Proof, not promises. See what we've created for our clients.
+          <p className="text-xl text-[#6B7280]">
+            Proof, not promises. Real results for real businesses.
           </p>
         </div>
       </section>
 
       {/* Filters */}
-      <section className="py-8 bg-[#0A0A0A] border-b border-white/10">
+      <section className="py-8 bg-white border-b border-[#E8E0FF]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center gap-4 overflow-x-auto">
-            <Filter className="w-5 h-5 text-gray-400 flex-shrink-0" />
+            <Filter className="w-5 h-5 text-[#6B7280] flex-shrink-0" />
             {filters.map((filter) => (
               <button
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
-                className={`px-4 py-2 rounded-full transition-colors whitespace-nowrap ${activeFilter === filter
-                  ? "bg-[#8B1538] text-white"
-                  : "bg-white/5 text-gray-400 hover:bg-white/10"
+                className={`px-4 py-2 rounded-full transition-colors whitespace-nowrap text-sm font-medium ${activeFilter === filter
+                  ? "text-white"
+                  : "bg-[#F9F7FF] text-[#6B7280] hover:bg-[#EDE9FE] border border-[#E8E0FF]"
                   }`}
+                style={activeFilter === filter ? { background: "linear-gradient(135deg, #A78BFA 0%, #7C3AED 100%)" } : {}}
               >
                 {filter}
               </button>
@@ -158,33 +145,33 @@ export function Work() {
       </section>
 
       {/* Portfolio Grid */}
-      <section className="py-16 bg-[#0A0A0A]">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredProjects.map((project) => (
               <div
                 key={project.id}
-                className="group relative aspect-video bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-white/20 transition-all cursor-pointer"
+                className="group relative aspect-video bg-[#F9F7FF] border border-[#E8E0FF] rounded-2xl overflow-hidden hover:border-[#A78BFA]/40 transition-all cursor-pointer shadow-[0_2px_16px_rgba(167,139,250,0.06)]"
               >
                 <ImageWithFallback
                   src={project.thumbnail}
                   alt={project.title}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1A1523]/90 via-[#1A1523]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-16 h-16 rounded-full bg-[#8B1538] flex items-center justify-center transform scale-0 group-hover:scale-100 transition-transform">
+                    <div className="w-16 h-16 rounded-full flex items-center justify-center transform scale-0 group-hover:scale-100 transition-transform" style={{ background: "linear-gradient(135deg, #A78BFA 0%, #7C3AED 100%)" }}>
                       <Play className="w-7 h-7 text-white" />
                     </div>
                   </div>
                   <div className="absolute bottom-0 left-0 right-0 p-6">
                     <div className="space-y-2">
-                      <div className="inline-block px-3 py-1 bg-[#8B1538]/80 rounded-full">
-                        <span className="text-white text-xs">{project.category}</span>
+                      <div className="inline-block px-3 py-1 bg-[#A78BFA]/80 rounded-full">
+                        <span className="text-white text-xs font-semibold">{project.category}</span>
                       </div>
-                      <h3 className="text-white text-lg">{project.title}</h3>
-                      <p className="text-gray-400 text-sm">{project.client}</p>
-                      <p className="text-gray-500 text-xs">{project.views}</p>
+                      <h3 className="text-white text-lg font-semibold">{project.title}</h3>
+                      <p className="text-white/70 text-sm">{project.client}</p>
+                      <p className="text-[#A78BFA] text-xs font-semibold">{project.views}</p>
                     </div>
                   </div>
                 </div>
@@ -195,22 +182,24 @@ export function Work() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-gradient-to-b from-[#0A0A0A] to-black">
+      <section className="py-24 bg-[#F9F7FF] border-t border-[#E8E0FF]">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-5xl tracking-tighter mb-6">
-            <span className="text-white">Want Results Like</span>{" "}
-            <span className="text-[#8B1538]">These?</span>
+            <span className="text-[#1A1523]">Want Results Like</span>{" "}
+            <span className="text-[#A78BFA]">These?</span>
           </h2>
-          <p className="text-xl text-gray-400 mb-8">
-            Let's create something amazing together
+          <p className="text-xl text-[#6B7280] mb-8">
+            Let's build something that generates leads while you sleep
           </p>
           <a
-            href="https://wa.me/923190485953"
+            href="https://calendly.com/arfa1054/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[#8B1538] hover:bg-[#6B1028] text-white px-8 py-4 rounded-full transition-all text-lg"
+            className="inline-flex items-center gap-2 text-white px-8 py-4 rounded-lg transition-all text-lg font-semibold"
+            style={{ background: "linear-gradient(135deg, #A78BFA 0%, #7C3AED 100%)" }}
           >
-            <span>Start Your Project</span>
+            <Calendar className="w-5 h-5" />
+            <span>Book a Free Call</span>
           </a>
         </div>
       </section>

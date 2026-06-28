@@ -9,7 +9,7 @@ const SQRT_5000 = Math.sqrt(5000);
 const testimonials = [
     {
         tempId: 0,
-        testimonial: "Zivo Creative built a website for me which gets me leads and they make the best content and short form edits!",
+        testimonial: "ZROXZ built us an AI voice agent that handles 80+ calls daily — zero missed leads, even after hours.",
         by: "Michael Chen, E-commerce CEO",
         imgSrc: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&q=80"
     },
@@ -27,7 +27,7 @@ const testimonials = [
     },
     {
         tempId: 3,
-        testimonial: "Zivo Creative's short-form content edits boosted my engagement by 3x. They truly understand social media!",
+        testimonial: "ZROXZ set up our n8n automation and GoHighLevel workflows in days. Our lead response time dropped by 40%!",
         by: "Emily Rodriguez, Influencer",
         imgSrc: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&q=80"
     },
@@ -39,7 +39,7 @@ const testimonials = [
     },
     {
         tempId: 5,
-        testimonial: "The turnaround time is unbelievable! Zivo Creative delivers quality work faster than anyone else.",
+        testimonial: "The turnaround time is unbelievable! ZROXZ delivers quality work faster than any agency I've worked with.",
         by: "Lisa Thompson, Content Creator",
         imgSrc: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&q=80"
     },
@@ -51,7 +51,7 @@ const testimonials = [
     },
     {
         tempId: 7,
-        testimonial: "Zivo Creative transformed my raw footage into viral-worthy content. Highly recommend!",
+        testimonial: "ZROXZ transformed our entire sales process with AI. The chatbot alone books 15+ calls a week!",
         by: "Nina Patel, Social Media Manager",
         imgSrc: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&q=80"
     },
@@ -63,7 +63,7 @@ const testimonials = [
     },
     {
         tempId: 9,
-        testimonial: "Working with Zivo Creative has been a game-changer for my YouTube channel!",
+        testimonial: "Working with ZROXZ has been a game-changer for our business. The website they built converts at 3x our old one!",
         by: "Amanda Foster, YouTuber",
         imgSrc: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=150&h=150&fit=crop&q=80"
     }
@@ -90,8 +90,8 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
             className={cn(
                 "absolute left-1/2 top-1/2 cursor-pointer border-2 p-8 transition-all duration-500 ease-in-out",
                 isCenter
-                    ? "z-10 bg-[#8B1538] text-white border-[#8B1538]"
-                    : "z-0 bg-black/90 text-gray-300 border-white/10 hover:border-[#8B1538]/50"
+                    ? "z-10 bg-[#7C3AED] text-white border-[#7C3AED]"
+                    : "z-0 bg-white/95 text-[#6B7280] border-[#E8E0FF] hover:border-[#A78BFA]/50"
             )}
             style={{
                 width: cardSize,
@@ -103,7 +103,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
           translateY(${isCenter ? -65 : position % 2 ? 15 : -15}px)
           rotate(${isCenter ? 0 : position % 2 ? 2.5 : -2.5}deg)
         `,
-                boxShadow: isCenter ? "0px 8px 0px 4px rgba(139, 21, 56, 0.3)" : "0px 0px 0px 0px transparent"
+                boxShadow: isCenter ? "0px 8px 0px 4px rgba(124, 58, 237, 0.25)" : "0px 0px 0px 0px transparent"
             }}
         >
             <span
@@ -174,15 +174,15 @@ export const StaggerTestimonials: React.FC = () => {
     }, []);
 
     return (
-        <section className="py-16 sm:py-20 md:py-24 bg-black">
+        <section className="py-16 sm:py-20 md:py-24 bg-white border-t border-[#E8E0FF]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12 sm:mb-16">
                     <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter mb-4 sm:mb-6">
-                        <span className="text-white">What Clients</span>{" "}
-                        <span className="text-[#8B1538]">Say</span>
+                        <span className="text-[#1A1523]">What Clients</span>{" "}
+                        <span className="text-[#A78BFA]">Say</span>
                     </h2>
-                    <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-3xl mx-auto px-4">
-                        Trusted by creators and brands worldwide
+                    <p className="text-base sm:text-lg md:text-xl text-[#6B7280] max-w-3xl mx-auto px-4">
+                        Trusted by businesses and brands worldwide
                     </p>
                 </div>
 
@@ -209,8 +209,8 @@ export const StaggerTestimonials: React.FC = () => {
                             onClick={() => handleMove(-1)}
                             className={cn(
                                 "flex h-14 w-14 items-center justify-center text-2xl transition-colors",
-                                "bg-black border-2 border-white/20 hover:bg-[#8B1538] hover:text-white hover:border-[#8B1538]",
-                                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8B1538] focus-visible:ring-offset-2"
+                                "bg-white border-2 border-[#E8E0FF] hover:bg-[#7C3AED] hover:text-white hover:border-[#7C3AED]",
+                                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A78BFA] focus-visible:ring-offset-2"
                             )}
                             aria-label="Previous testimonial"
                         >
@@ -220,8 +220,8 @@ export const StaggerTestimonials: React.FC = () => {
                             onClick={() => handleMove(1)}
                             className={cn(
                                 "flex h-14 w-14 items-center justify-center text-2xl transition-colors",
-                                "bg-black border-2 border-white/20 hover:bg-[#8B1538] hover:text-white hover:border-[#8B1538]",
-                                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8B1538] focus-visible:ring-offset-2"
+                                "bg-white border-2 border-[#E8E0FF] hover:bg-[#7C3AED] hover:text-white hover:border-[#7C3AED]",
+                                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A78BFA] focus-visible:ring-offset-2"
                             )}
                             aria-label="Next testimonial"
                         >

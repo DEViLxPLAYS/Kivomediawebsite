@@ -612,7 +612,7 @@ export default function PricingSection() {
                                         ? "bg-[#8B1538] hover:bg-[#6B1028] text-white shadow-md shadow-[#8B1538]/10"
                                         : "bg-[#8B1538] text-white hover:bg-[#6B1028]"
                                         }`}
-                                    onClick={() => window.open(`https://wa.me/923190485953?text=${encodeURIComponent(`Hey Zivo Creative, I'm interested in the ${plan.name} package.`)}`, '_blank')}
+                                    onClick={() => window.open(`https://wa.me/923190485953?text=${encodeURIComponent(`Hey ZROXZ, I'm interested in the ${plan.name} package.`)}`, '_blank')}
                                 >
                                     {plan.buttonText}
                                 </button>
@@ -630,7 +630,7 @@ export default function PricingSection() {
 
                                         const features = plan.includes.slice(1).join('\n');
 
-                                        const message = `Hello Zivo Creative,\n\nI want ${categoryName} ${plan.name} Package which includes:\n${features}\n\nat a service fee of ${priceRange} depending on my project size and details.\n\nI would like to speak to a representative as soon as possible.\n\nThanks.`;
+                                        const message = `Hello ZROXZ,\n\nI want ${categoryName} ${plan.name} Package which includes:\n${features}\n\nat a service fee of ${priceRange} depending on my project size and details.\n\nI would like to speak to a representative as soon as possible.\n\nThanks.`;
 
                                         window.location.href = `/contact?message=${encodeURIComponent(message)}&package=${encodeURIComponent(categoryName + " " + plan.name)}`;
                                     }}

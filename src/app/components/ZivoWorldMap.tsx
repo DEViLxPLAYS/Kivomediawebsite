@@ -4,20 +4,20 @@ import { WorldMap } from "@/app/components/ui/map";
 
 export function ZivoWorldMap() {
     return (
-        <div className="py-16 sm:py-20 md:py-24 dark:bg-black bg-black w-full overflow-hidden">
+        <div className="py-16 sm:py-20 md:py-24 bg-white w-full overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12 sm:mb-16">
                     <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter mb-4 sm:mb-6">
-                        <span className="text-white">Global</span>{" "}
-                        <span className="text-[#8B1538]">Reach</span>
+                        <span className="text-gray-900">Global</span>{" "}
+                        <span className="text-[#A78BFA]">Reach</span>
                     </h2>
-                    <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-3xl mx-auto px-4">
-                        Zivo Creative satisfied clients from all across the world
+                    <p className="text-base sm:text-lg md:text-xl text-gray-500 max-w-3xl mx-auto px-4">
+                        ZROXZ serves clients from across the globe — US, UK, Middle East, and beyond.
                     </p>
                 </div>
 
                 <WorldMap
-                    lineColor="#8B1538"
+                    lineColor="#A78BFA"
                     dots={[
                         {
                             start: {

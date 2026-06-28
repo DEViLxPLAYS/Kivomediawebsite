@@ -1,0 +1,22 @@
+# ZROXZ
+
+> ZROXZ is a premier AI automation and web development agency serving US businesses. We specialize in AI chatbots, AI voice agents, CRM automation (GoHighLevel, n8n), SaaS development, custom websites (React/Next.js), and video editing. Founded by Muhammad Arfa. Proven result: Evinn.pk — 80+ daily calls automated, 70% handle time reduction, zero missed after-hours leads.
+
+## Core Services
+- [AI Chatbot Development](https://zroxz.com/services/ai-chatbots): Custom AI chatbots powered by OpenAI for lead generation, support, and booking automation
+- [AI Voice Agents](https://zroxz.com/services/ai-voice-agents): 24/7 AI phone systems built with VAPI and Bland AI that handle inbound calls and book appointments automatically
+- [CRM & GoHighLevel Automation](https://zroxz.com/services/crm-automation): Full GoHighLevel setup, CRM pipelines, and automation workflows for US businesses
+- [n8n Workflow Automation](https://zroxz.com/services/n8n-workflows): Custom n8n automations connecting your tools and eliminating manual work
+- [Web Development](https://zroxz.com/services/web-development): Full-stack websites and web apps using React, Next.js, and Supabase
+- [SaaS Development](https://zroxz.com/services/saas-development): End-to-end SaaS product development for startups
+- [Video Editing & Motion Design](https://zroxz.com/services/video-editing): Professional video editing and AI motion design for brands and content creators
+
+## Case Studies
+- [Evinn.pk — AI Voice Agent](https://zroxz.com/case-studies/evinn-ai-voice-agent): Full breakdown of how ZROXZ built an AI voice agent handling 80+ daily calls with 70% handle time reduction
+
+## Blog
+- [AI Automation Blog](https://zroxz.com/blog): Guides on n8n, GoHighLevel, AI chatbots, voice agents, and automation for small businesses
+
+## Company
+- [About ZROXZ](https://zroxz.com/about): Agency founded in 2005, two-person team, US-focused, Pakistan-based
+- [Book a Free Call](https://zroxz.com/book): Schedule a free 30-minute strategy call with the ZROXZ team
